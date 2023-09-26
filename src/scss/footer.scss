@@ -1,3 +1,172 @@
 //====================================================================================================
+.footer {
+   position: relative;
+   padding-top: 80px;
+   padding-bottom: 130px;
+
+   background: url(../img/theme/map.png) no-repeat;
+   background-position: center right;
+   background-size: contain;
+
+
+   @media (max-width: em(1730)){
+      background-position: bottom right;
+      background-size: 45%;
+   }
+
+   @media (max-width: em(1446)){
+      background: url(../img/theme/mobile_map.png) no-repeat;
+      background-position: 100% 100%;
+      background-size: contain;
+   }
+
+   @media (max-width: em(1260)){
+      background-position: 100% 45%;
+      background-size: 32%;
+   }
+
+   @media (max-width: em(1024)){
+       padding-bottom: 86px; 
+       background-position: 100% 47%;
+       background-size: 46%;
+   }
+
+   @media (max-width:$mobile){
+      background-size: 54%; 
+      background-position: 100% 60%;
+   }
+
+   @media (max-width: em(620)){
+      background-size: 68%; 
+   }
+
+   @media (max-width: em(520)){
+      background-size: 84%; 
+   }
+
+   @media (max-width: em(420)){
+      background-size: contain; 
+   }
+
+
+   // .footer__container
+   &__container {
+   }
+
+   // .footer__content
+   &__content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      gap: 54px;
+      margin-bottom: 28px;
+
+      @media (max-width: 1024px){
+          flex-direction: column; 
+          align-items: center;
+          gap: 330px;
+      }
+   }
+
+    // .footer__logo
+    &__logo {
+      flex: 0 1 368px;
+      img {
+         width: 100%;
+         height: auto;
+      }
+
+      @media (max-width:$mobile){
+         max-width: 242px;
+         flex: 0 1 auto;
+      }
+   }
+
+   // .footer__contacts
+   &__contacts {
+      display: flex;
+      flex-direction: column;
+
+      @media (max-width: 1024px){
+          order: -1; 
+          text-align: center;
+      }
+   }
+
+   // .footer__heading
+   &__heading {
+      font-family: Grotesk, sans-serif;
+      @include adaptiveValue("font-size", 60, 32);
+      font-style: normal;
+      font-weight: 800;
+      @include adaptiveValue("line-height", 84, 32);
+      letter-spacing: -0.6px;
+      margin-bottom: 36px;
+
+      @media (max-width:$mobile){
+          margin-bottom: 26px; 
+      }
+
+      @media (max-width:$mobileSmall){
+          margin-bottom: 16px; 
+      }
+   }
+
+   // .footer__linck
+   &__linck {
+      font-family: $fontFamily, sans-serif;
+      @include adaptiveValue("font-size", 40, 24);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.2; /* 120% */
+      letter-spacing: -0.4px;
+      display: block;
+      transition: all 0.3s ease-in;
+
+      @media (any-hover: hover) {
+         &:hover {
+           text-decoration: underline;
+         }
+       }
+     
+       &:focus,
+       &:focus-visible {
+         text-decoration: underline;
+       }
+
+      &_addr {
+         max-width: 437px;
+         margin-top: 26px;
+         @media (max-width:$mobile){
+             margin: 16px auto 0 auto; 
+         }
+      }
+   }
+
+   // .footer__copyright
+   &__copyright {
+      font-family: $fontFamily, sans-serif;
+      font-size: 20px;
+      @include adaptiveValue("font-size", 20, 14);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.4; 
+      letter-spacing: -0.2px;
+
+      a {
+         text-decoration: underline;
+         transition: all 0.2s ease-in;
+      }
+
+      @media (max-width: em(1024)){
+         text-align: center;
+      }
+
+      @media (max-width:$mobile){
+         line-height: 1.28; 
+      }
+   }
+}
+
 
 //====================================================================================================
