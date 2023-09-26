@@ -71,6 +71,7 @@
     // .footer__logo
     &__logo {
       flex: 0 1 368px;
+      outline: none;
       img {
          width: 100%;
          height: auto;
@@ -112,6 +113,25 @@
       }
    }
 
+   &__phones {
+      .footer__linck:first-child {
+         margin-bottom: 16px;
+      }
+
+      .footer__linck {
+         
+      @media (any-hover: hover) {
+         &:hover {
+            &::after {
+               left: 0;
+               width: 100%;
+            }
+           
+         }
+      }
+      }
+   }
+
    // .footer__linck
    &__linck {
       font-family: $fontFamily, sans-serif;
@@ -120,15 +140,22 @@
       font-weight: 400;
       line-height: 1.2; /* 120% */
       letter-spacing: -0.4px;
-      display: block;
+      display: inline-block;
       transition: all 0.3s ease-in;
+      position: relative;
+      outline: none;
 
-      @media (any-hover: hover) {
-         &:hover {
-           text-decoration: underline;
-         }
-       }
-     
+      &::after {
+         position: absolute;
+         content: '';
+         height: 2px;
+         background-color: #000;
+         bottom: 0;
+         left: 50%;
+         width: 0;
+         transition: all 0.3s ease-in;
+      }
+
        &:focus,
        &:focus-visible {
          text-decoration: underline;
@@ -137,6 +164,7 @@
       &_addr {
          max-width: 437px;
          margin-top: 26px;
+         // display: inline-block;
          @media (max-width:$mobile){
              margin: 16px auto 0 auto; 
          }
@@ -154,8 +182,15 @@
       letter-spacing: -0.2px;
 
       a {
+         outline: none;
          text-decoration: underline;
          transition: all 0.2s ease-in;
+
+         &:focus,
+         &:focus-visible {
+            box-shadow: rgba(255, 255, 255, 0.16) 0px 1px 4px, #FFF 0px 0px 0px 3px;
+            border-radius: 4px;
+         }
       }
 
       @media (max-width: em(1024)){
