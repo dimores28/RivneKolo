@@ -1,0 +1,195 @@
+.heading {
+  font-family: Cy Grotesk;
+  @include adaptiveValue("font-size", 80, 28);
+  @include adaptiveValue("line-height", 1.05, 1.07);
+  font-style: normal;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.heading_2 {
+  font-family: Cy Grotesk;
+  @include adaptiveValue("font-size", 60, 28);
+  @include adaptiveValue("line-height", 1.33, 1.07);
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.heading_3 {
+  font-family: Cy Grotesk;
+  @include adaptiveValue("font-size", 52, 28);
+  @include adaptiveValue("line-height", 1.07, 1.14);
+  font-style: normal;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: Cy Grotesk;
+  @include adaptiveValue("font-size", 48, 24);
+  @include adaptiveValue("line-height", 1.25, 1.16);
+  font-style: normal;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.title_2 {
+  font-family: Cy Grotesk;
+  @include adaptiveValue("font-size", 40, 24);
+  @include adaptiveValue("line-height", 2.1, 1.16);
+  font-style: normal;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.title_3 {
+  font-family: Montserrat;
+  @include adaptiveValue("font-size", 32, 28);
+  @include adaptiveValue("line-height", 1.25, 1.07);
+  font-style: normal;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.title_5 {
+  font-family: Montserrat;
+  @include adaptiveValue("font-size", 24, 14);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.caption {
+  font-family: Montserrat;
+  @include adaptiveValue("font-size", 36, 18);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 122.222%; /* 122.222% */
+  text-transform: uppercase;
+}
+
+.body {
+  font-family: Montserrat;
+  @include adaptiveValue("font-size", 44, 18);
+  @include adaptiveValue("line-height", 1.18, 1.22);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.body_2 {
+  font-family: Montserrat;
+  @include adaptiveValue("font-size", 40, 24);
+  @include adaptiveValue("line-height", 1.2, 1.16);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.body_3 {
+  font-family: Montserrat;
+  @include adaptiveValue("font-size", 36, 18);
+  @include adaptiveValue("line-height", 1.33, 1.22);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.body_4 {
+  font-family: Montserrat;
+  @include adaptiveValue("font-size", 36, 18);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 111.111%; /* 111.111% */
+}
+
+.body_5 {
+  font-family: Montserrat;
+  @include adaptiveValue("font-size", 24, 18);
+  @include adaptiveValue("line-height", 1.16, 1.22);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.body_6 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  @include adaptiveValue("font-size", 20, 14);
+  @include adaptiveValue("line-height", 1.4, 1.28);
+}
+
+.form_input {
+  font-family: Montserrat;
+  @include adaptiveValue("font-size", 20, 16);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 120% */
+}
+
+.price {
+  font-family: Cy Grotesk;
+  @include adaptiveValue("font-size", 32, 22);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 125%; /* 125% */
+}
+
+.price_2 {
+  font-family: Cy Grotesk;
+  @include adaptiveValue("font-size", 51, 26);
+  font-size: 51.417px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 72.727%; /* 72.727% */
+}
+
+.weight {
+  font-family: Montserrat;
+  @include adaptiveValue("font-size", 32, 19);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 125%; /* 125% */
+}
+
+.weight_2 {
+  font-family: Montserrat;
+  @include adaptiveValue("font-size", 59, 28);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 125%; /* 125% */
+}
+.number {
+  font-family: Montserrat;
+  @include adaptiveValue("font-size", 40, 24);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 120% */
+}
+
+.date {
+  font-family: Montserrat;
+  @include adaptiveValue("font-size", 14, 8);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.menu__link {
+  font-family:
+    Cy Grotesk,
+    sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.lang__menu-link {
+  font-family:
+    Cy Grotesk,
+    sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
+}
