@@ -114,7 +114,25 @@
       border: 1px solid tomato;
       width: 372px;
       height: 372px;
-      margin-left: -24%;
+      margin-left: -24.5%;
+
+      &_2 {
+         width: 420px;
+         height: 390px;
+         margin-left: -31%;
+      }
+
+      &_3 {
+         width: 394px;
+         height: 392px;
+         margin-left: -28%;
+      }
+
+      &_4 {
+         width: 458px;
+         height: 458px;
+         margin-left: -35%;
+      }
    }
 
    // .assortment__info-bg
