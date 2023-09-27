@@ -4,9 +4,13 @@ import { isMobile } from "./functions.js";
 import { flsModules } from "./modules.js";
 
 
-ScrollReveal().reveal(".test", {
-   delay: 450,
-   distance: "100%",
-   duration: 600,
-   origin: "left",
- });
+
+//GSAP====================================================================================================
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+gsap.fromTo(".heading__span-1", {opacity: 0, x: -300},{opacity: 1, x: 0, duration: 0.6});
+gsap.fromTo(".heading__span-2", {opacity: 0, x: 300}, {opacity: 1, x: 0, duration: 0.6});
