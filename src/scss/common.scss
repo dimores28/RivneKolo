@@ -96,3 +96,55 @@ button {
 //   box-shadow: #59fcff17 0px 1px 4px, #59FBFF 0px 0px 0px 3px;
 //  }
 
+.runningline {
+  display: block;
+  min-height: 50vh;
+  padding-top: 50px;
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  height: 10vh;
+  background: #FFDF00;
+  background-image:  url( '../img/bg1.png');
+  background-repeat: repeat;
+  background-size: contain;
+  width: 100%;
+  z-index: -1;
+
+  &_l {
+    top: 50px;
+    left: 0;
+    animation: ritateLeft 15s linear infinite;
+  }
+
+  &_r {
+    top: calc(10vh + 50px);
+    left: 0;
+    animation: rotateRight 15s linear infinite;
+  }
+}
+
+
+@keyframes rotateRight {
+	0%{
+		background-position: 0;
+	}
+	100%{
+		background-position: 100%;
+	}
+}
+
+@keyframes ritateLeft {
+	0%{
+		background-position: 100%;
+	}
+	100%{
+		background-position: 0;
+	}
+}
+
+.content {
+
+}
