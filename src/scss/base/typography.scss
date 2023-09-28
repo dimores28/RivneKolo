@@ -1,5 +1,5 @@
 .heading {
-  font-family: Cy Grotesk;
+  font-family: Grotesk, sans-serif;
   @include adaptiveValue("font-size", 80, 28);
   @include adaptiveValue("line-height", 1.05, 1.07);
   font-style: normal;
@@ -7,7 +7,7 @@
   text-transform: uppercase;
 }
 .heading_2 {
-  font-family: Cy Grotesk;
+  font-family: Grotesk, sans-serif;
   @include adaptiveValue("font-size", 60, 28);
   @include adaptiveValue("line-height", 1.33, 1.07);
   font-style: normal;
@@ -15,7 +15,7 @@
 }
 
 .heading_3 {
-  font-family: Cy Grotesk;
+  font-family: Grotesk, sans-serif;
   @include adaptiveValue("font-size", 52, 28);
   @include adaptiveValue("line-height", 1.07, 1.14);
   font-style: normal;
@@ -24,7 +24,7 @@
 }
 
 .title {
-  font-family: Cy Grotesk;
+  font-family: Grotesk, sans-serif;
   @include adaptiveValue("font-size", 48, 24);
   @include adaptiveValue("line-height", 1.25, 1.16);
   font-style: normal;
@@ -33,7 +33,7 @@
 }
 
 .title_2 {
-  font-family: Cy Grotesk;
+  font-family: Grotesk, sans-serif;
   @include adaptiveValue("font-size", 40, 24);
   @include adaptiveValue("line-height", 2.1, 1.16);
   font-style: normal;
@@ -42,7 +42,7 @@
 }
 
 .title_3 {
-  font-family: Montserrat;
+  font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 32, 28);
   @include adaptiveValue("line-height", 1.25, 1.07);
   font-style: normal;
@@ -51,7 +51,7 @@
 }
 
 .title_5 {
-  font-family: Montserrat;
+  font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 24, 14);
   font-style: normal;
   font-weight: 700;
@@ -59,7 +59,7 @@
 }
 
 .caption {
-  font-family: Montserrat;
+  font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 36, 18);
   font-style: normal;
   font-weight: 700;
@@ -68,7 +68,7 @@
 }
 
 .body {
-  font-family: Montserrat;
+  font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 44, 18);
   @include adaptiveValue("line-height", 1.18, 1.22);
   font-style: normal;
@@ -76,7 +76,7 @@
 }
 
 .body_2 {
-  font-family: Montserrat;
+  font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 40, 24);
   @include adaptiveValue("line-height", 1.2, 1.16);
   font-size: 40px;
@@ -85,7 +85,7 @@
 }
 
 .body_3 {
-  font-family: Montserrat;
+  font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 36, 18);
   @include adaptiveValue("line-height", 1.33, 1.22);
   font-style: normal;
@@ -93,7 +93,7 @@
 }
 
 .body_4 {
-  font-family: Montserrat;
+  font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 36, 18);
   font-style: normal;
   font-weight: 400;
@@ -101,7 +101,7 @@
 }
 
 .body_5 {
-  font-family: Montserrat;
+  font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 24, 18);
   @include adaptiveValue("line-height", 1.16, 1.22);
   font-style: normal;
@@ -109,7 +109,7 @@
 }
 
 .body_6 {
-  font-family: Montserrat;
+  font-family: $fontFamily, sans-serif;
   font-style: normal;
   font-weight: 400;
   @include adaptiveValue("font-size", 20, 14);
@@ -117,7 +117,7 @@
 }
 
 .form_input {
-  font-family: Montserrat;
+  font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 20, 16);
   font-size: 20px;
   font-style: normal;
@@ -126,7 +126,7 @@
 }
 
 .price {
-  font-family: Cy Grotesk;
+  font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 32, 22);
   font-style: normal;
   font-weight: 800;
@@ -134,7 +134,7 @@
 }
 
 .price_2 {
-  font-family: Cy Grotesk;
+  font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 51, 26);
   font-size: 51.417px;
   font-style: normal;
@@ -143,7 +143,7 @@
 }
 
 .weight {
-  font-family: Montserrat;
+  font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 32, 19);
   font-style: normal;
   font-weight: 800;
@@ -151,14 +151,14 @@
 }
 
 .weight_2 {
-  font-family: Montserrat;
+  font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 59, 28);
   font-style: normal;
   font-weight: 800;
   line-height: 125%; /* 125% */
 }
 .number {
-  font-family: Montserrat;
+  font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 40, 24);
   font-style: normal;
   font-weight: 400;
@@ -166,7 +166,7 @@
 }
 
 .date {
-  font-family: Montserrat;
+  font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 14, 8);
   font-style: normal;
   font-weight: 400;
@@ -175,7 +175,7 @@
 
 .menu__link {
   font-family:
-    Cy Grotesk,
+    Grotesk,
     sans-serif;
   font-size: 24px;
   font-style: normal;
@@ -185,7 +185,7 @@
 }
 .lang__menu-link {
   font-family:
-    Cy Grotesk,
+    Grotesk,
     sans-serif;
   font-size: 24px;
   font-style: normal;
