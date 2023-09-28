@@ -415,9 +415,9 @@
 .bagels {
    transition: all 0.3s ease-in;
 
-   .assortment__product {
-      transform: rotate(9deg);
-   }
+   // .assortment__product {
+   //    transform: rotate(9deg);
+   // }
 
    @media (any-hover: hover) {
       &:hover {
@@ -453,6 +453,41 @@
       }
    }
 
+   &._watcher-view {
+      @media (max-width:$mobileSmall){
+         .assortment__product {
+            transform: rotate(1deg);
+         }
+   
+         .assortment__bagels_1 {
+            top: 0;
+            left: 20%;
+         }
+   
+         .assortment__bagels_2 {
+            left: 0;
+            z-index: 10;
+         }
+   
+         .assortment__bagels_3 {
+            top: 5%;
+            left: 64%;
+         }
+   
+         .assortment__bagels_4 {
+            left: 62%;
+            top: 44%;
+         }
+   
+         .assortment__bagels_5 {
+            left: 60%;
+            top: 61%;
+            z-index: 11;
+         }
+      }
+   }
+
+
    @media (max-width: em(564)){
       .assortment__bagels_1 {
          width: 61px;
@@ -484,10 +519,6 @@
 .nuts {
    transition: all 0.3s ease-in;
 
-   .assortment__product {
-      transform: rotate(20deg);
-   }
-
    @media (any-hover: hover) {
       &:hover {
          .assortment__product {
@@ -517,6 +548,36 @@
          }
       }
    
+   }
+
+   &._watcher-view {
+      @media (max-width:$mobileSmall){
+         .assortment__product {
+            transform: rotate(15deg);
+         }
+   
+         .assortment__nuts_1 {
+            left: 0;
+            top: 40%;
+         }
+   
+         .assortment__nuts_2 {
+            z-index: 10;
+            left: 66%;
+            top: 62%;
+         }
+   
+         .assortment__nuts_3 {
+            top: -1%;
+            left: 56%;
+            z-index: 11;
+         }
+   
+         .assortment__nuts_4 { 
+            top: 2%;
+            left: 26%;
+         } 
+      }
    }
 
    @media (max-width: em(564)){
