@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
@@ -28,80 +28,51 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Список слайдерів
 	// Перевіряємо, чи є слайдер на сторінці
-	if (document.querySelector('.swiper')) { // Вказуємо склас потрібного слайдера
+	if (document.querySelector('.madein__slider')) { // Вказуємо склас потрібного слайдера
 		// Створюємо слайдер
-		new Swiper('.swiper', { // Вказуємо склас потрібного слайдера
-			// Підключаємо модулі слайдера
-			// для конкретного випадку
-			modules: [Navigation],
-			observer: true,
-			observeParents: true,
-			slidesPerView: 1,
-			spaceBetween: 0,
-			//autoHeight: true,
-			speed: 800,
+		new Swiper('.madein__slider', { // Вказуємо склас потрібного слайдера
+			modules: [Navigation, Autoplay],
+			loop: true,
 
-			//touchRatio: 0,
-			//simulateTouch: false,
-			//loop: true,
-			//preloadImages: false,
-			//lazy: true,
-
-			/*
-			// Ефекти
-			effect: 'fade',
 			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
-			*/
+				// Пауза между прокруткой
+				delay: 1000,
+				// Закончить на последнем слайде
+				stopOnLastSlide: false,
+				// Отключить после ручного переключения
+				disableOnInteraction: true,
+			 },
 
-			// Пагінація
-			/*
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-			},
-			*/
-
-			// Скроллбар
-			/*
-			scrollbar: {
-				el: '.swiper-scrollbar',
-				draggable: true,
-			},
-			*/
-
-			// Кнопки "вліво/вправо"
-			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
-			},
-			/*
+			 // швидкість
+  			speed: 800,
+			 
 			// Брейкпоінти
 			breakpoints: {
-				640: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
+				340: {
+					slidesPerView: 1.5,
+					spaceBetween: 8,
 				},
 				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
+					slidesPerView: 1.5,
+					spaceBetween: 16,
 				},
 				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
+					slidesPerView: 2.5,
+					spaceBetween: 20,
 				},
 			},
-			*/
+			
 			// Події
 			on: {
-
+				init() {
+					this.el.addEventListener("mouseenter", () => {
+					  this.autoplay.stop();
+					});
+			
+					this.el.addEventListener("mouseleave", () => {
+					  this.autoplay.start();
+					});
+				 },
 			}
 		});
 	}
