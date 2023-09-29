@@ -1,6 +1,8 @@
 .madein {
    background: #FFF8E0;
    padding-bottom: 50px;
+   position: relative;
+   z-index: 20;
 
    // .madein__container
    &__container {
@@ -12,11 +14,23 @@
       margin-left: auto;
       margin-right: auto;
       text-align: center;
-      @include adaptiveValue("margin-bottom", 50, 32);
+      margin-bottom: 0;
+      transform: translateY(-50%);
 
       span:first-child {
          display: block;
          margin-bottom: 32px;
+      }
+
+      @media (max-width: em(1280)){
+         max-width: 840px;
+      }
+      @media (max-width: em(934)){
+         max-width: 622px;
+      }
+
+      @media (max-width: em(420)){
+         transform: translateY(-44%);   
       }
    }
 
@@ -27,10 +41,12 @@
       position: relative;
       transform-style: preserve-3d;
       box-sizing: border-box;
+      margin-top: -50px;
 
       @media (max-width:$mobile){
           flex-direction: column; 
           gap: 40px;
+          margin-top: -30px;
       }
    }
 
