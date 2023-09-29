@@ -45,6 +45,7 @@ madeinTL.from(".madein__sticker", {
   rotationY: 90,
   stagger: 1,
 });
+
 const madeinTlHero = gsap.timeline({
   scrollTrigger: {
     trigger: "hero__wraper",
