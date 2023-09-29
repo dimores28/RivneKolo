@@ -17,6 +17,7 @@
     line-height: 1.07;
   }
   line-height: 1.33;
+  @include adaptiveValue("line-height", 84, 30);
   font-style: normal;
   text-transform: uppercase;
 }
@@ -222,4 +223,13 @@
   font-weight: 800;
   line-height: normal;
   text-transform: uppercase;
+}
+
+.paragraph {
+  color: #000;
+  font-family: $fontFamily, sans-serif;
+  @include adaptiveValue("font-size", 44, 18);
+  font-style: normal;
+  font-weight: 500;
+  @include adaptiveValue("line-height", 52, 22);
 }

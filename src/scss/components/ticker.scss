@@ -1,0 +1,43 @@
+@keyframes rotateRight {
+	0%{
+		background-position: 0;
+	}
+	100%{
+		background-position: 100%;
+	}
+}
+
+@keyframes ritateLeft {
+	0%{
+		background-position: 100%;
+	}
+	100%{
+		background-position: 0;
+	}
+}
+
+.ticker {
+   background: #FFDF00;
+   background-repeat: repeat;
+   background-size: contain;
+   width: 100%;
+}
+
+.ticker-left {
+   animation: ritateLeft 15s linear infinite;
+}
+
+.ticker-right {
+   animation: rotateRight 15s linear infinite;
+}
+
+.ticker-bg1 {
+   background-image: url( '../img/bg1.png');
+}
+.ticker-bg2 {
+   background-image: url( '../img/bg2.png');
+}
+.ticker-bg3 {
+   background-image: url( '../img/bg3.png');
+}
+
