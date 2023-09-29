@@ -30,3 +30,8 @@ const madeinTL = gsap.timeline({
  });
 
  madeinTL.from(".madein__sticker", { transformOrigin: "right center", rotationY: 90,  stagger: 1});
+
+ const hendTL = gsap.timeline({repeat: -1, yoyo: true});
+//  hendTL.yoyo( true ); 
+ hendTL.to('.social__hand', {x: "115%", y: "-19%", duration: 1})
+       .to(".social__shadow", {x: "180%", y: "235%", scale: 0.4, duration: 1}, "-=1");
