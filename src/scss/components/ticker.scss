@@ -21,6 +21,7 @@
    background-repeat: repeat;
    background-size: contain;
    width: 100%;
+	@include adaptiveValue("height", 200, 96);
 }
 
 .ticker-left {
@@ -39,5 +40,8 @@
 }
 .ticker-bg3 {
    background-image: url( '../img/bg3.png');
+}
+.ticker-bg4 {
+   background-image: url( '../img/bg4.png');
 }
 
