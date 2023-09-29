@@ -1,0 +1,54 @@
+.offer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__wrap {
+    max-width: 1550px;
+    width: 100%;
+    margin-bottom: 120px;
+  }
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 106px;
+  }
+
+  .swiper-slide-active {
+    transform: scale(1);
+    .offer__slide-text {
+      display: block;
+    }
+  }
+  &__slide {
+    max-width: 586px;
+    width: 100%;
+    max-height: 836px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    transform: scale(0.6);
+
+    &-title {
+      width: 100%;
+    }
+
+    &-text {
+      display: none;
+      max-width: 484px;
+      width: 100%;
+      max-height: 220px;
+      padding: 30px;
+      background-color: #fff;
+    }
+  }
+}
