@@ -17,10 +17,9 @@
   &__lang {
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 70px;
-    height: 50px;
+    justify-content: flex-end;
+    width: 10%;
+    height: 45px;
   }
 }
 
@@ -29,6 +28,9 @@
   position: relative;
   height: 45px;
   width: toRem(51);
+  display: flex;
+  align-items: center;
+  gap: 116px;
   //   max-width: toRem(1400);
   //   transform: scaleX(7%);
   transform-origin: left;
@@ -36,7 +38,7 @@
   padding: 0px 10px;
   border-radius: 12px;
   //   background-color: transparent;
-  transition: all 0.6s ease-in;
+  // transition: all 0.6s ease-in;
   overflow: hidden;
 
   &__body {
@@ -103,23 +105,20 @@
 }
 
 .lang {
+  position: absolute;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   flex-direction: column;
   background-color: #fff;
   overflow: hidden;
   border-radius: 12px;
   width: 70px;
-  padding: 8px;
-  height: 50px;
-  &__menu {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: #fff;
-  }
+  height: 45px;
+  gap: 10px;
 
   &__menu-item {
+    padding: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,14 +131,12 @@
 
 .menu-open {
   .menu {
-    display: flex;
-    align-items: center;
     // transform: scaleX(100%);
-    width: toRem(1400);
+    // width: toRem(1400);
     // border-radius: 12px;
     // padding: 0px 10px;
     background-color: #fff;
-    gap: 116px;
+
     // transition: all 0.6s ease-in;
     // transform-origin: left;
     // transition-delay: 0.3s;
