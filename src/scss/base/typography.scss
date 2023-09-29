@@ -203,3 +203,14 @@
   font-weight: 500;
   @include adaptiveValue("line-height", 52, 22);
 }
+
+.message {
+  color: #000;
+  text-align: center;
+  font-family: $fontFamily, sans-serif;
+  @include adaptiveValue("font-size", 36, 18);
+  font-style: normal;
+  font-weight: 700;
+  @include adaptiveValue("line-height", 44, 22);
+  text-transform: uppercase;
+}
