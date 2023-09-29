@@ -50,7 +50,7 @@ const madeinTlHero = gsap.timeline({
   scrollTrigger: {
     trigger: "hero__wraper",
     start: "center center",
-    end: "+=90%",
+    end: "+=100%",
     // scrub: 1,
     // pin: true,
     // markers: true,
