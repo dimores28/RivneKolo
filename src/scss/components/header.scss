@@ -12,6 +12,12 @@
     align-items: center;
     padding-top: 32px;
     padding-bottom: 32px;
+    @media (max-width: $mobile) {
+      padding-top: 7px;
+      padding-bottom: 0;
+      flex-direction: column;
+      align-items: flex-end;
+    }
   }
 
   &__lang {
@@ -21,6 +27,13 @@
     width: 10%;
     height: 45px;
   }
+
+  &__lang-mobile {
+    display: none;
+    @media (max-width: $mobile) {
+      display: flex;
+    }
+  }
 }
 
 .menu {
@@ -29,17 +42,16 @@
   height: 45px;
   width: toRem(51);
   display: flex;
-  align-items: center;
   gap: 116px;
-  //   max-width: toRem(1400);
-  //   transform: scaleX(7%);
-  transform-origin: left;
   align-items: center;
   padding: 0px 10px;
   border-radius: 12px;
-  //   background-color: transparent;
-  // transition: all 0.6s ease-in;
   overflow: hidden;
+  background-color: transparent;
+  @media (max-width: $mobile) {
+    background-color: #fff;
+    gap: 0;
+  }
 
   &__body {
     display: flex;
@@ -62,6 +74,9 @@
 }
 
 .icon-menu {
+  @media (max-width: $mobile) {
+    background-color: #fff;
+  }
   display: block;
   position: relative;
   width: toRem(31);
@@ -105,6 +120,9 @@
 }
 
 .lang {
+  @media (max-width: $mobile) {
+    display: none;
+  }
   position: absolute;
   display: flex;
   align-items: center;

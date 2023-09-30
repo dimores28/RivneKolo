@@ -1,6 +1,6 @@
 .heading {
   font-family: Grotesk, sans-serif;
-  @include adaptiveValue("font-size", 80, 28);
+  @include adaptiveValue("font-size", 80, 26);
   @media (max-width: $tablet) {
     line-height: 1.07;
   }

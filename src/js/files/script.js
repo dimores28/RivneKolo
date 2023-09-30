@@ -74,14 +74,15 @@ let active = false;
 
 const openTl = gsap.timeline({ paused: true });
 const closeTl = gsap.timeline({ paused: true });
-
+// mm.add("(max-width: 767px)", () => {});
+// mm.add("(min-width: 768px)", () => {});
 openTl
   .to(".menu", { width: "90%", backgroundColor: "white", duration: 0.6 })
   .to(".menu__link", { opacity: 1, duration: 0.4, delay: 0.3 });
 
 closeTl.to(".menu__link", { opacity: 0, duration: 0.4 }).to(".menu", {
   width: "51px",
-  backgroundColor: "transparent",
+
   duration: 0.6,
   delay: 0.4,
 });
