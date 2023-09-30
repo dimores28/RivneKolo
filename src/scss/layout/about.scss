@@ -1,0 +1,66 @@
+.about {
+   padding-top: 150px;
+
+   // .about__container
+   &__container {
+      display: flex;
+      align-items: flex-start;
+   }
+
+   // .about__content
+   &__content {
+      flex: 1 1 60%;
+      padding-top: 50px;
+   }
+
+   // .about__bagel
+   &__bagel {
+      flex: 1 1 40%;
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+      }
+   }
+
+   &__scene {
+      margin-bottom: 100px;
+   }
+
+   &__scene_1 .row_2{
+      span {
+         position: relative;
+         display: inline-block;
+         margin-right: 16px;
+      }
+
+      img {
+         position: absolute;
+         right: -42px;
+         bottom: 0;
+      }
+   }
+}
+
+
+.advanteges {
+   display: flex;
+   flex-wrap: wrap;
+
+   // .advanteges__item
+   &__item {
+      width: calc(100% / 3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   // .advanteges__img
+   &__img {
+   }
+
+   // .advanteges__desc
+   &__desc {
+   }
+}
