@@ -153,7 +153,7 @@ function initSliders() {
 
 			autoplay: {
 				// Пауза между прокруткой
-				delay: 500,
+				delay: 900,
 				// Закончить на последнем слайде
 				stopOnLastSlide: false,
 				// Отключить после ручного переключения
