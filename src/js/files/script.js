@@ -49,48 +49,95 @@ madeinTlHero.from(".hero__text", { opacity: 0, x: 400, });
 
 //Animate menu ===========================================
 
-const button = document.querySelector(".menu__icon");
-let active = false;
+if(document.querySelector('.menu')) {
+  let mm = gsap.matchMedia(),
+  breakPoint = 768;
 
-const openTl = gsap.timeline({ paused: true });
-const closeTl = gsap.timeline({ paused: true });
+  const button = document.querySelector(".menu__icon");
+  let active = false;
 
-openTl
-  .to(".menu", { width: "90%", backgroundColor: "white", duration: 0.6 })
-  .to(".menu__link", { opacity: 1, duration: 0.4, delay: 0.3 });
+  const openTl = gsap.timeline({ paused: true });
+  const closeTl = gsap.timeline({ paused: true });
 
-closeTl.to(".menu__link", { opacity: 0, duration: 0.4 }).to(".menu", {
-  width: "51px",
-  backgroundColor: "transparent",
-  duration: 0.6,
-  delay: 0.4,
-});
 
-button.addEventListener("click", () => {
-  if (!active) openTl.seek(0).play();
-  else closeTl.seek(0).play();
+  mm.add({
 
-  active = !active;
-});
+    isDesktop: `(min-width: ${breakPoint}px)`,
+    isMobile: `(max-width: ${breakPoint - 1}px)`,
+    reduceMotion: "(prefers-reduced-motion: reduce)"
+
+    }, (context) => {
+
+    let { isDesktop, isMobile } = context.conditions;
+
+    if(isDesktop) {
+      openTl.to(".menu", { width: "90%", backgroundColor: "white", duration: 0.6 })
+      .to(".menu__link", { opacity: 1, duration: 0.4, delay: 0.3 });
+
+      closeTl.to(".menu__link", { opacity: 0, duration: 0.4 })
+            .to(".menu", { width: "51px", backgroundColor: "transparent", duration: 0.6, delay: 0.4,});
+    }
+
+    if(isMobile) {
+      openTl.to(".menu", { width: "300px", height: "auto", duration: 0.6 })
+      .to(".menu__link", { opacity: 1, duration: 0.4, delay: 0.3 })
+      .to(".header__lang", { opacity: 1, duration: 0.3, delay: 0.1 });
+
+      closeTl.to(".header__lang", { opacity: 0, duration: 0.3 })
+             .to(".menu__link", { opacity: 0, duration: 0.4 })
+             .to(".menu", { width: "51px", height: "45px", duration: 0.6, delay: 0.4,});
+    }
+
+  }); 
+
+
+  button.addEventListener("click", () => {
+    if (!active) openTl.seek(0).play();
+    else closeTl.seek(0).play();
+  
+    active = !active;
+  });
+}
+
+
 
 //Animate language ===========================================
-const openButton = document.querySelector(".select_btn");
-let activeMenu = false;
+if(document.querySelector('.header__lang')) {
+  let mm = gsap.matchMedia(),
+  breakPoint = 768;
 
-const openMenu = gsap.timeline({ paused: true });
-const closeMenu = gsap.timeline({ paused: true });
+  const openButton = document.querySelector(".lang");
+  let activeMenu = false;
 
-openMenu.to(".lang", { height: "210px", duration: 0.6 });
+  const openMenu = gsap.timeline({ paused: true });
+  const closeMenu = gsap.timeline({ paused: true });
 
-closeMenu.to(".lang", {
-  height: "45px",
-  duration: 0.6,
-  delay: 0.4,
-});
+  mm.add({
 
-openButton.addEventListener("click", () => {
-  if (!activeMenu) openMenu.seek(0).play();
-  else closeMenu.seek(0).play();
+    isDesktop: `(min-width: ${breakPoint}px)`,
+    isMobile: `(max-width: ${breakPoint - 1}px)`,
+    reduceMotion: "(prefers-reduced-motion: reduce)"
 
-  activeMenu = !activeMenu;
-});
+    }, (context) => {
+
+    let { isDesktop, isMobile } = context.conditions;
+
+    if(isDesktop) {
+      openMenu.to(".lang", { height: "210px", duration: 0.6 });
+      closeMenu.to(".lang", { height: "45px", duration: 0.6,  delay: 0.4,});
+    }
+
+    if(isMobile) {
+
+    }
+
+  }); 
+
+  openButton.addEventListener("click", () => {
+    if (!activeMenu) openMenu.seek(0).play();
+    else closeMenu.seek(0).play();
+  
+    activeMenu = !activeMenu;
+  });
+}
+

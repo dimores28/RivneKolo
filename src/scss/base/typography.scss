@@ -210,6 +210,18 @@
   font-weight: 800;
   line-height: normal;
   text-transform: uppercase;
+
+  @media (max-width: em(1054)){
+    font-size: 18px;
+  }
+
+  @media (max-width: em(850)){
+    font-size: 16px; 
+  }
+
+  @media (max-width:$mobile){
+    font-size: 20px;
+  }
 }
 .lang__menu-link {
   font-family: Grotesk, sans-serif;
@@ -218,6 +230,10 @@
   font-weight: 800;
   line-height: normal;
   text-transform: uppercase;
+
+  @media (max-width:$mobile){
+    font-size: 20px;
+  }
 }
 
 

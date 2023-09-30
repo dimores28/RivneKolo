@@ -36,7 +36,7 @@ function initSliders() {
 
 			autoplay: {
 				// Пауза между прокруткой
-				delay: 1000,
+				delay: 500,
 				// Закончить на последнем слайде
 				stopOnLastSlide: false,
 				// Отключить после ручного переключения
@@ -86,7 +86,7 @@ function initSliders() {
 	  
 			  autoplay: {
 				 // Пауза между прокруткой
-				 delay: 1000,
+				 delay: 800,
 				 // Закончить на последнем слайде
 				 stopOnLastSlide: false,
 				 // Отключить после ручного переключения
