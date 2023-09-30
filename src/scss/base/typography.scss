@@ -146,13 +146,21 @@
   line-height: 1.4;
 }
 
-.form_input {
+.form__placeholder {
   font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 20, 16);
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: 120%; /* 120% */
+}
+
+.form__input {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .price {
@@ -211,15 +219,15 @@
   line-height: normal;
   text-transform: uppercase;
 
-  @media (max-width: em(1054)){
+  @media (max-width: em(1054)) {
     font-size: 18px;
   }
 
-  @media (max-width: em(850)){
-    font-size: 16px; 
+  @media (max-width: em(850)) {
+    font-size: 16px;
   }
 
-  @media (max-width:$mobile){
+  @media (max-width: $mobile) {
     font-size: 20px;
   }
 }
@@ -231,11 +239,10 @@
   line-height: normal;
   text-transform: uppercase;
 
-  @media (max-width:$mobile){
+  @media (max-width: $mobile) {
     font-size: 20px;
   }
 }
-
 
 .paragraph {
   color: #000;
@@ -254,5 +261,14 @@
   font-style: normal;
   font-weight: 700;
   @include adaptiveValue("line-height", 44, 22);
+  text-transform: uppercase;
+}
+
+.ticker__text {
+  font-family: Montserrat;
+  font-size: 140px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 84px; /* 60% */
   text-transform: uppercase;
 }
