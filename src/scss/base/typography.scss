@@ -256,3 +256,13 @@
   @include adaptiveValue("line-height", 44, 22);
   text-transform: uppercase;
 }
+
+.scene-text {
+  font-family: Grotesk, sans-serif;
+  @include adaptiveValue("font-size", 52, 20);
+  @include adaptiveValue("line-height", 72, 24);
+  text-align: center;
+  font-style: normal;
+  font-weight: 800;
+  text-transform: uppercase;
+}
