@@ -356,6 +356,30 @@ document.querySelectorAll(".advanteges__item").forEach((item) => {
 });
 
 
+function changeImg(progress) {
+	const img = document.querySelector('.about__bagel .bagel');
+	let newImg = 'bagel';
+
+	switch(progress) {
+		case 0:  newImg = 'bagel'; break;
+		case 1:  newImg = 'f2'; break;
+		case 2:  newImg = 'f3'; break;
+		case 3:  newImg = 'f4'; break;
+		case 4:  newImg = 'f5'; break;
+		case 5:  newImg = 'bagel'; break;
+		case 6:  newImg = 'f2'; break;
+		case 7:  newImg = 'f3'; break;
+		case 8:  newImg = 'f4'; break;
+		case 9:  newImg = 'f5'; break;
+		case 10:  newImg = 'bagel'; break;
+
+		default: newImg = 'bagel'; break;
+	}
+
+	img.style.backgroundImage = `url(../../img/about/${newImg}.png)`;
+
+}
+
 if(document.querySelector('.about__bagel')) {
 	let mm = gsap.matchMedia(),
 	breakPoint = 768;
@@ -380,6 +404,12 @@ if(document.querySelector('.about__bagel')) {
 					end: `+=${contentHeight * 0.7}`,
 					scrub: 1,
 					pin: true,
+					// onUpdate: (self) => {
+					// 	// Calculate the progress of the ScrollTrigger
+					// 	const progress = self.progress.toFixed(1) * 10;
+					// 	console.log(progress);
+					// 	changeImg(progress);
+					//  },
 					// markers: true
 				},
 			});
@@ -395,7 +425,7 @@ if(document.querySelector('.about__bagel')) {
 					end: `+=${contentHeight}`,
 					scrub: 1,
 					pin: false,
-					markers: true
+					// markers: true
 				},
 			});
 			
