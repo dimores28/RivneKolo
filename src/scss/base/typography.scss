@@ -1,7 +1,10 @@
 .heading {
   font-family: Grotesk, sans-serif;
   @include adaptiveValue("font-size", 80, 28);
-  @include adaptiveValue("line-height", 1.05, 1.07);
+  @media (max-width: $tablet) {
+    line-height: 1.07;
+  }
+  line-height: 1.05;
   font-style: normal;
   font-weight: 800;
   text-transform: uppercase;
@@ -17,7 +20,10 @@
 .heading_3 {
   font-family: Grotesk, sans-serif;
   @include adaptiveValue("font-size", 52, 28);
-  @include adaptiveValue("line-height", 1.07, 1.14);
+  @media (max-width: $tablet) {
+    line-height: 1.14;
+  }
+  line-height: 1.07;
   font-style: normal;
   font-weight: 800;
   text-transform: uppercase;
@@ -26,7 +32,10 @@
 .title {
   font-family: Grotesk, sans-serif;
   @include adaptiveValue("font-size", 48, 24);
-  @include adaptiveValue("line-height", 1.25, 1.16);
+  @media (max-width: $tablet) {
+    line-height: 1.16;
+  }
+  line-height: 1.25;
   font-style: normal;
   font-weight: 800;
   text-transform: uppercase;
@@ -35,7 +44,10 @@
 .title_2 {
   font-family: Grotesk, sans-serif;
   @include adaptiveValue("font-size", 40, 24);
-  @include adaptiveValue("line-height", 2.1, 1.16);
+  @media (max-width: $tablet) {
+    line-height: 1.16;
+  }
+  line-height: 2.1;
   font-style: normal;
   font-weight: 800;
   text-transform: uppercase;
@@ -44,7 +56,10 @@
 .title_3 {
   font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 32, 28);
-  @include adaptiveValue("line-height", 1.25, 1.07);
+  @media (max-width: $tablet) {
+    line-height: 1.07;
+  }
+  line-height: 1.25;
   font-style: normal;
   font-weight: 800;
   text-transform: uppercase;
@@ -70,7 +85,10 @@
 .body {
   font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 44, 18);
-  @include adaptiveValue("line-height", 1.18, 1.22);
+  @media (max-width: $tablet) {
+    line-height: 1.22;
+  }
+  line-height: 1.18;
   font-style: normal;
   font-weight: 500;
 }
@@ -78,7 +96,10 @@
 .body_2 {
   font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 40, 24);
-  @include adaptiveValue("line-height", 1.2, 1.16);
+  @media (max-width: $tablet) {
+    line-height: 1.16;
+  }
+  line-height: 1.2;
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
@@ -87,7 +108,10 @@
 .body_3 {
   font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 36, 18);
-  @include adaptiveValue("line-height", 1.33, 1.22);
+  @media (max-width: $tablet) {
+    line-height: 1.22;
+  }
+  line-height: 1.33;
   font-style: normal;
   font-weight: 500;
 }
@@ -103,7 +127,10 @@
 .body_5 {
   font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 24, 18);
-  @include adaptiveValue("line-height", 1.16, 1.22);
+  @media (max-width: $tablet) {
+    line-height: 1.22;
+  }
+  line-height: 1.16;
   font-style: normal;
   font-weight: 400;
 }
@@ -113,7 +140,10 @@
   font-style: normal;
   font-weight: 400;
   @include adaptiveValue("font-size", 20, 14);
-  @include adaptiveValue("line-height", 1.4, 1.28);
+  @media (max-width: $tablet) {
+    line-height: 1.28;
+  }
+  line-height: 1.4;
 }
 
 .form_input {
@@ -174,9 +204,7 @@
 }
 
 .menu__link {
-  font-family:
-    Grotesk,
-    sans-serif;
+  font-family: Grotesk, sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 800;
@@ -184,9 +212,7 @@
   text-transform: uppercase;
 }
 .lang__menu-link {
-  font-family:
-    Grotesk,
-    sans-serif;
+  font-family: Grotesk, sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 800;
