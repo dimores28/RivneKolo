@@ -75,75 +75,75 @@ function initSliders() {
 				 },
 			}
 		});
+	}
 
-		if (document.querySelector(".instagram__slider")) {
-			// Вказуємо склас потрібного слайдера
-			// Створюємо слайдер
-			new Swiper(".instagram__slider", {
-			  // Вказуємо склас потрібного слайдера
-			  modules: [Navigation, Autoplay],
-			  loop: true,
-	  
-			  autoplay: {
-				 // Пауза между прокруткой
-				 delay: 800,
-				 // Закончить на последнем слайде
-				 stopOnLastSlide: false,
-				 // Отключить после ручного переключения
-				 disableOnInteraction: true,
-			  },
-	  
-			  // швидкість
-			  speed: 800,
-	  
-			  // Брейкпоінти
-			  breakpoints: {
-				 340: {
-					spaceBetween: 16,
-					slidesPerView: "auto",
-					centeredSlides: true,
-				 },
-	  
-				 768: {
-					spaceBetween: 30,
-					slidesPerView: "auto",
-					centeredSlides: true,
-				 },
-	  
-				 1268: {
-					spaceBetween: 60,
-					slidesPerView: "3",
-					centeredSlides: true,
-				 },
-			  },
-	  
-			  // Події
-			  on: {
-				 init() {
-					this.el.addEventListener("mouseenter", () => {
-					  this.autoplay.stop();
-					});
-	  
-					this.el.addEventListener("mouseleave", () => {
-					  this.autoplay.start();
-					});
-				 },
-			  },
-			});
-		 }
-	  
-		 if (document.querySelector(".offer__slider")) {
-			new Swiper(".offer__slider", {
-			  modules: [Navigation, Autoplay],
-			  spaceBetween: 30,
-			  slidesPerView: 3,
-			  centeredSlides: true,
-			  roundLengths: true,
-			  loop: true,
-			  loopAdditionalSlides: 30,
-			  slideToClickedSlide: true,
-			});
-		 }
+	if (document.querySelector(".instagram__slider")) {
+		// Вказуємо склас потрібного слайдера
+		// Створюємо слайдер
+		new Swiper(".instagram__slider", {
+		  // Вказуємо склас потрібного слайдера
+		  modules: [Navigation, Autoplay],
+		  loop: true,
+  
+		  autoplay: {
+			 // Пауза между прокруткой
+			 delay: 800,
+			 // Закончить на последнем слайде
+			 stopOnLastSlide: false,
+			 // Отключить после ручного переключения
+			 disableOnInteraction: true,
+		  },
+  
+		  // швидкість
+		  speed: 800,
+  
+		  // Брейкпоінти
+		  breakpoints: {
+			 340: {
+				spaceBetween: 16,
+				slidesPerView: "auto",
+				centeredSlides: true,
+			 },
+  
+			 768: {
+				spaceBetween: 30,
+				slidesPerView: "auto",
+				centeredSlides: true,
+			 },
+  
+			 1268: {
+				spaceBetween: 60,
+				slidesPerView: "3",
+				centeredSlides: true,
+			 },
+		  },
+  
+		  // Події
+		  on: {
+			 init() {
+				this.el.addEventListener("mouseenter", () => {
+				  this.autoplay.stop();
+				});
+  
+				this.el.addEventListener("mouseleave", () => {
+				  this.autoplay.start();
+				});
+			 },
+		  },
+		});
+	}
+  
+	if (document.querySelector(".offer__slider")) {
+		new Swiper(".offer__slider", {
+		  modules: [Navigation, Autoplay],
+		  spaceBetween: 30,
+		  slidesPerView: 3,
+		  centeredSlides: true,
+		  roundLengths: true,
+		  loop: true,
+		  loopAdditionalSlides: 30,
+		  slideToClickedSlide: true,
+		});
 	}
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
