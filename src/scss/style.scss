@@ -163,9 +163,12 @@ body {
 
 @import "components/header.scss";
 @import "layout/hero.scss";
+@import "layout/about.scss";
 @import "layout/instagram.scss";
 @import "layout/offer.scss";
 @import "layout/feedback.scss";
+@import "layout/cooperation.scss";
+
 // Підключення стилів окремих сторінок
 @import "home";
 @import "products";
