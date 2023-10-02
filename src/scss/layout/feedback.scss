@@ -131,9 +131,15 @@
   }
   &__btn {
     z-index: 10;
+    
+    span {
+      padding: 22px 42px;
+    }
+
     @media (max-width: $mobile) {
-      // margin-bottom: 71px;
-      // width: 260px;
+      span {
+        padding: 15px 76px;
+      }
     }
   }
 
@@ -148,6 +154,24 @@
   }
   .label-textarea {
     grid-area: textarea;
+  }
+}
+
+.feedback .form {
+  &__btn {
+    z-index: 10;
+    
+    span {
+      padding: 22px 42px;
+    }
+
+    @media (max-width: $mobile) {
+      height: 62px;
+      
+      span {
+        padding: 15px 76px;
+      }
+    }
   }
 }
 

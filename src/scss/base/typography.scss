@@ -281,6 +281,7 @@
   font-style: normal;
   font-weight: 900;
   @include adaptiveValue("line-height", 84, 46);
+}
 
 .scene-text {
   font-family: Grotesk, sans-serif;
