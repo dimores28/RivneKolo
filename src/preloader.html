@@ -15,6 +15,14 @@
 		visibility: visible;
 	}
 </style>
+<body>
+	<div class="fls-preloader">
+		<div class="fls-preloader__body">
+			<div class="fls-preloader__counter"></div>
+			<img src="@img/preloader/kolo.gif" class="fls-preloader__gif" alt="">
+		</div>
+	</div>
+</body>
 <div id="fls-preloader">
 	<!-- Документація: https://template.fls.guru/template-docs/modul-preloader.html -->
 	<!-- Стилі для прелоадера -->
@@ -132,8 +140,8 @@
 				const preloaderTemplate =`
 					<div class="fls-preloader">
 						<div class="fls-preloader__body">
-							<div class="fls-preloader__counter"></div>
-							<img src="@img/preloader/kolo.gif" class="fls-preloader__gif" alt="">
+							<div class="fls-preloader__counter">0%</div>
+							<div class="fls-preloader__line"><span></span></div>
 						</div>
 					</div>`;
 				document.querySelector('html').insertAdjacentHTML("beforeend",preloaderTemplate);
@@ -143,6 +151,8 @@
 					showPecentLoad = document.querySelector('.fls-preloader__counter'),
 					showLineLoad = document.querySelector('.fls-preloader__line span'),
 					htmlDocument = document.documentElement;
+
+
 
 				let imagesLoadedCount = counter = progress = 0;
 				
@@ -159,8 +169,7 @@
 				});
 				function setValueProgress(progress) {
 					if(progress % 10) {
-						// showPecentLoad.style.backgroundPositionY = `${progress}%`;
-						// console.log(`${progress}%`);
+						showPecentLoad.style.backgroundPositionY = `${progress}%`;
 					}
 				}
 				showPecentLoad ? setValueProgress(progress) : null;
@@ -171,7 +180,7 @@
 					const intervalId = setInterval(() => {
 						counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
 						counter >= 100 ? addLoadedClass() : null;
-					}, 2500);//10
+					}, 1000);
 				}
 				function addLoadedClass() {
 					htmlDocument.classList.add('loaded');
@@ -180,12 +189,12 @@
 					setInterval(() => {
 						preloader.remove();
 						preloaderContainer.remove();
-					}, 10);
+					}, 500);
 				}
 			}else{
 				preloaderContainer.remove();
 			}
 		}
-		preloader();
+		// preloader();
 	</script>
 </div>
