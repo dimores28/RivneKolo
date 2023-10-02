@@ -436,5 +436,4 @@ if(document.querySelector('.about__bagel')) {
  
 
  }
-
 //end about animation ===================================================
