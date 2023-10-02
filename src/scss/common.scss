@@ -188,10 +188,10 @@ button.btn:active::before {
   border-radius: 60px;
   padding: 30px;
   z-index: 1;
-  // opacity: 0;
-  // visibility: hidden;
-  opacity: 1;
-  visibility: visible;
+  opacity: 0;
+  visibility: hidden;
+  // opacity: 1;
+  // visibility: visible;
 
   @media (max-width: $mobile) {
     padding: 20px;
