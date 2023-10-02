@@ -154,7 +154,8 @@
   line-height: 1.4;
 }
 
-.form_input {
+.form__placeholder,
+.form__input {
   font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 20, 16);
   font-size: 20px;
@@ -264,6 +265,23 @@
   text-transform: uppercase;
 }
 
+.form__success-msg {
+  font-family: Grotesk;
+  @include adaptiveValue("font-size", 96, 28);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.16;
+  text-transform: uppercase;
+}
+
+.marquee__text {
+  font-family: Montserrat;
+  @include adaptiveValue("font-size", 140, 46);
+  font-size: 140px;
+  font-style: normal;
+  font-weight: 900;
+  @include adaptiveValue("line-height", 84, 46);
+
 .scene-text {
   font-family: Grotesk, sans-serif;
   @include adaptiveValue("font-size", 52, 20);
@@ -271,5 +289,6 @@
   text-align: center;
   font-style: normal;
   font-weight: 800;
+
   text-transform: uppercase;
 }

@@ -1,0 +1,199 @@
+.feedback {
+  &__wrap {
+    width: 100%;
+    padding: 0 20px;
+    background: linear-gradient(
+      0deg,
+      rgba(255, 248, 224, 1) 50%,
+      rgba(255, 228, 86, 1) 50%
+    );
+  }
+  &__container {
+    position: relative;
+    width: 100%;
+    // max-height: 721px;
+    // height: 100%;
+    border-radius: 60px;
+    background: #7209b7;
+    padding: 69px 120px 80px 120px;
+    margin-top: 40px;
+    // margin-bottom: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: em(1350)) {
+      padding: 69px 80px 80px 80px;
+    }
+    @media (max-width: $tablet) {
+      padding: 59px 65px 65px 65px;
+    }
+    @media (max-width: $mobile) {
+      padding: 40px;
+    }
+  }
+
+  &__heading {
+    @include adaptiveValue("padding-bottom", 81, 40);
+    @include adaptiveValue("max-width", 1000, 260);
+    text-align: center;
+    color: #fff;
+  }
+  &__ticker {
+    @include adaptiveValue("padding-top", 130, 60);
+    @include adaptiveValue("height", 730, 250);
+    background-color: rgba(255, 248, 224, 1);
+    position: relative;
+    width: 100%;
+    // height: 730px;
+    .ticker__container {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      @media (max-width: $mobile) {
+        gap: 6px;
+      }
+    }
+    .marquee {
+      display: flex;
+    }
+    .marquee__row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      max-height: 200px;
+      @include adaptiveValue("padding-top", 58, 3);
+      @include adaptiveValue("padding-bottom", 58, 3);
+      white-space: nowrap;
+      animation: ticker 20s infinite linear;
+    }
+    .marquee__row-reverse {
+      animation-direction: reverse;
+    }
+    .outline {
+      text-shadow: 0 0 5px rgba(114, 9, 183, 1);
+      color: #fff8e0;
+    }
+    .color {
+      color: #7209b7;
+    }
+    .marquee__item {
+      // padding-left: 160px;
+      @include adaptiveValue("padding-left", 160, 56);
+    }
+  }
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  &__wrap {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-areas: "name phone email" "textarea textarea textarea";
+    column-gap: 30px;
+    row-gap: 72px;
+    padding-bottom: 90px;
+    @media (max-width: $tablet) {
+      row-gap: 50px;
+      padding-bottom: 60px;
+    }
+    @media (max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+  }
+  &__placeholder {
+    color: #fff;
+  }
+
+  &__lable {
+    display: flex;
+    flex-direction: column;
+  }
+  &__input,
+  &__textarea {
+    display: flex;
+    width: 100%;
+    background-color: transparent;
+    border-bottom: 2px solid #fff;
+    padding: 10px 0;
+    color: #fff;
+    @media (max-width: $mobile) {
+      padding: 6px 0;
+    }
+  }
+  &__btn {
+    z-index: 10;
+    @media (max-width: $mobile) {
+      // margin-bottom: 71px;
+      // width: 260px;
+    }
+  }
+
+  .label-name {
+    grid-area: name;
+  }
+  .label-phone {
+    grid-area: phone;
+  }
+  .label-email {
+    grid-area: email;
+  }
+  .label-textarea {
+    grid-area: textarea;
+  }
+}
+
+.img__sticker {
+  position: absolute;
+  z-index: 2;
+  &-1 {
+    left: 10%;
+    top: -40px;
+    max-width: 166px;
+    @media (max-width: em(1550)) {
+      left: 5%;
+    }
+    @media (max-width: em(1350)) {
+      left: 5%;
+      max-width: 120px;
+    }
+    @media (max-width: $mobile) {
+      max-width: 80px;
+    }
+  }
+  &-2 {
+    right: -50px;
+    top: 30%;
+    max-width: 237px;
+    z-index: 2;
+    @media (max-width: em(1660)) {
+      right: -20px;
+      top: 15%;
+      max-width: 180px;
+    }
+    @media (max-width: em(1350)) {
+      max-width: 150px;
+    }
+    @media (max-width: $tablet) {
+      max-width: 110px;
+    }
+    @media (max-width: $mobile) {
+      max-width: 87px;
+      top: 18%;
+    }
+  }
+}
+
+@keyframes ticker {
+  100% {
+    transform: translateX(-100%);
+  }
+}
