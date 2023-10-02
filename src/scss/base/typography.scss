@@ -9,6 +9,14 @@
   font-weight: 800;
   text-transform: uppercase;
 }
+.heading_1 {
+  font-family: Grotesk, sans-serif;
+  @include adaptiveValue("font-size", 64, 28);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
 .heading_2 {
   font-family: Grotesk, sans-serif;
   @include adaptiveValue("font-size", 60, 28);
@@ -211,15 +219,15 @@
   line-height: normal;
   text-transform: uppercase;
 
-  @media (max-width: em(1054)){
+  @media (max-width: em(1054)) {
     font-size: 18px;
   }
 
-  @media (max-width: em(850)){
-    font-size: 16px; 
+  @media (max-width: em(850)) {
+    font-size: 16px;
   }
 
-  @media (max-width:$mobile){
+  @media (max-width: $mobile) {
     font-size: 20px;
   }
 }
@@ -231,11 +239,10 @@
   line-height: normal;
   text-transform: uppercase;
 
-  @media (max-width:$mobile){
+  @media (max-width: $mobile) {
     font-size: 20px;
   }
 }
-
 
 .paragraph {
   color: #000;

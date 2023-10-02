@@ -1,0 +1,51 @@
+.cooperation {
+  padding: 0 20px;
+  &__container {
+    padding-top: 200px;
+    padding-bottom: 198px;
+    display: flex;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  &__heading {
+    max-width: 1100px;
+    @media (max-width: $mobile) {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    background-color: #fff;
+    padding: 40px 62px;
+    max-width: 851px;
+    transform: rotate(1.5deg);
+    border-radius: 52px;
+    @media (max-width: em(1200)) {
+      padding: 30px 52px;
+    }
+  }
+
+  &__img {
+    max-width: 487px;
+    img {
+      width: 100%;
+    }
+    @media (max-width: em(1200)) {
+      max-width: 400px;
+    }
+    @media (max-width: $mobile) {
+      max-width: 250px;
+    }
+  }
+}
