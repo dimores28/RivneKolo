@@ -165,8 +165,8 @@ if (document.querySelector(".header__lang")) {
   });
 }
 
-let ticker = document.querySelector(".ticker__container"),
-  list = document.querySelector(".ticker__row"),
-  clone = list.cloneNode(true);
+// let ticker = document.querySelector(".ticker__container"),
+//   list = document.querySelector(".ticker__row"),
+//   clone = list.cloneNode(true);
 
-ticker.append(clone);
+// ticker.append(clone);

@@ -146,21 +146,14 @@
   line-height: 1.4;
 }
 
-.form__placeholder {
+.form__placeholder,
+.form__input {
   font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 20, 16);
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: 120%; /* 120% */
-}
-
-.form__input {
-  font-family: Montserrat;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.2;
 }
 
 .price {
@@ -264,11 +257,21 @@
   text-transform: uppercase;
 }
 
-.ticker__text {
+.form__success-msg {
+  font-family: Grotesk;
+  @include adaptiveValue("font-size", 96, 28);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.16;
+  text-transform: uppercase;
+}
+
+.marquee__text {
   font-family: Montserrat;
+  @include adaptiveValue("font-size", 140, 46);
   font-size: 140px;
   font-style: normal;
   font-weight: 900;
-  line-height: 84px; /* 60% */
+  @include adaptiveValue("line-height", 84, 46);
   text-transform: uppercase;
 }
