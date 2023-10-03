@@ -1,6 +1,8 @@
 //===========================================================================//
 .offer {
+  position: relative;
   padding: 80px 0;
+  z-index: 2;
 
   // .offer__container
   &__container {
@@ -26,7 +28,7 @@
   &__slide {
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     transition: all 0.3s ease-in;
     transform: translate(0, 0) scale(0.95);
 
@@ -40,19 +42,19 @@
 
       .offer__slide-img_pink {
         .svg-bg {
-          fill: #FF82E3;
+          fill: #ff82e3;
         }
       }
 
       .offer__slide-img_blue {
         .svg-bg {
-          fill: #03D2FF;
+          fill: #03d2ff;
         }
       }
 
       .offer__slide-img_grean {
         .svg-bg {
-          fill: #00FF94;
+          fill: #00ff94;
         }
       }
     }
@@ -74,7 +76,7 @@
 
       .svg-bg {
         transition: all 0.2s ease-in;
-        fill: #FFFFFF;
+        fill: #ffffff;
       }
     }
   }
@@ -92,7 +94,7 @@
   // .offer__slide-text
   &__slide-text {
     border-radius: 20px;
-    background: #FFF;
+    background: #fff;
     padding: 30px;
     text-align: center;
     overflow: hidden;
@@ -103,7 +105,3 @@
     transition: all 0.3s ease-in;
   }
 }
-
-
-
-

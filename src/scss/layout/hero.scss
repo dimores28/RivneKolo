@@ -24,53 +24,17 @@
   }
 
   &__logo-img {
-    max-width: 428px;
-    max-height: 428px;
-    @media (max-width: em(1350)) {
-      max-width: 350px;
-      max-height: 350px;
-    }
-    @media (max-width: $mobile) {
-      max-width: 241px;
-      max-height: 241px;
-    }
+    @include adaptiveValue("max-width", 428, 241);
   }
 
-  &__back-animate {
+  &__bg-animate {
     position: absolute;
     top: 59px;
-    width: 1000%;
-    z-index: 0;
+    width: 100%;
+    @include adaptiveValue("height", 624, 300);
+    z-index: 1;
     @media (max-width: $mobile) {
       top: 0;
-    }
-
-    .background_1 {
-      background-image: url("../../img/hero/back_hero_1.png");
-      animation: moveLeft 300s linear infinite;
-    }
-    .background_2 {
-      background-image: url("../../img/hero/back_hero_2.png");
-      animation: moveLeft 300s linear infinite;
-      animation-direction: reverse;
-    }
-    .background_3 {
-      background-image: url("../../img/hero/back_hero_2.png");
-      animation: moveLeft 300s linear infinite;
-    }
-  }
-
-  &__back-img {
-    background-repeat: repeat;
-    background-size: contain;
-    height: 200px;
-    width: 100%;
-    @media (max-width: em(1350)) {
-      height: 160px;
-      margin-bottom: 6px;
-    }
-    @media (max-width: $mobile) {
-      height: 96px;
     }
   }
 
@@ -229,22 +193,11 @@
 
   &__text {
     z-index: 3;
+    @include adaptiveValue("max-width", 680, 260);
     max-width: 680px;
     margin-bottom: 67px;
-    @media (max-width: $pc) {
-      max-width: 600px;
-    }
-    @media (max-width: em(1350)) {
-      max-width: 550px;
-    }
-    @media (max-width: em(1150)) {
-      max-width: 500px;
-    }
-    @media (max-width: $tablet) {
-      max-width: 450px;
-    }
+
     @media (max-width: $mobile) {
-      max-width: 407px;
       z-index: 4;
     }
 
