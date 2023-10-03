@@ -280,11 +280,11 @@ function initSliders() {
 		  // modules: [Navigation, Autoplay],
 		  spaceBetween: 30,
 		  slidesPerView: 3,
-		//   centeredSlides: true,
+		  centeredSlides: true,
 		//   roundLengths: true,
 		  loop: true,
-		  loopedSlides: 1,
-		  initialSlide: 1,
+		//   loopedSlides: 1,
+		//   initialSlide: 1,
 		  slideToClickedSlide: true,
 		});
 	}
