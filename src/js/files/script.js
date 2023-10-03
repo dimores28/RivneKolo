@@ -91,7 +91,7 @@ if (document.querySelector(".menu")) {
             backgroundColor: "white",
             duration: 0.6,
           })
-          .to(".menu__link", { opacity: 1, duration: 0.4, delay: 0.3 });
+          .to(".menu__link", { opacity: 1, duration: 0.4 }, "-=0.6");
 
         closeTl.to(".menu__link", { opacity: 0, duration: 0.4 }).to(".menu", {
           width: "51px",
@@ -104,8 +104,8 @@ if (document.querySelector(".menu")) {
       if (isMobile) {
         openTl
           .to(".menu", { width: "300px", height: "auto", duration: 0.6 })
-          .to(".menu__link", { opacity: 1, duration: 0.4, delay: 0.3 })
-          .to(".header__lang", { opacity: 1, duration: 0.3, delay: 0.1 });
+          .to(".menu__link", { opacity: 1, duration: 0.4 })
+          .to(".header__lang", { opacity: 1, duration: 0.3 });
 
         closeTl
           .to(".header__lang", { opacity: 0, duration: 0.3 })
@@ -178,7 +178,7 @@ function initSliders() {
 
 			autoplay: {
 				// Пауза между прокруткой
-				delay: 900,
+				delay: 0,
 				// Закончить на последнем слайде
 				stopOnLastSlide: false,
 				// Отключить после ручного переключения
@@ -186,7 +186,7 @@ function initSliders() {
 			 },
 
 			 // швидкість
-  			speed: 800,
+  			speed: 3200,
 			 
 			// Брейкпоінти
 			breakpoints: {
@@ -229,7 +229,7 @@ function initSliders() {
   
 		  autoplay: {
 			 // Пауза между прокруткой
-			 delay: 800,
+			 delay: 0,
 			 // Закончить на последнем слайде
 			 stopOnLastSlide: false,
 			 // Отключить после ручного переключения
@@ -237,7 +237,7 @@ function initSliders() {
 		  },
   
 		  // швидкість
-		  speed: 800,
+		  speed: 3200,
   
 		  // Брейкпоінти
 		  breakpoints: {
@@ -280,10 +280,11 @@ function initSliders() {
 		  // modules: [Navigation, Autoplay],
 		  spaceBetween: 30,
 		  slidesPerView: 3,
-		  centeredSlides: true,
-		  roundLengths: true,
+		//   centeredSlides: true,
+		//   roundLengths: true,
 		  loop: true,
-		  loopAdditionalSlides: 30,
+		  loopedSlides: 1,
+		  initialSlide: 1,
 		  slideToClickedSlide: true,
 		});
 	}
@@ -455,3 +456,9 @@ if(document.querySelector('.about__bagel')) {
  }
 
 //end about animation ===================================================
+
+
+//====================Прокрутка до блоку==========================//
+document.querySelector('#btnScrollToAbout')?.addEventListener('click', function() {
+	gsap.to(window, {duration: 2, scrollTo: "#about"});
+});

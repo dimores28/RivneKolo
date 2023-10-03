@@ -12,6 +12,10 @@
    &__slider {
      margin-bottom: 30px;
    }
+
+   &__wrapper {
+    transition-timing-function: linear;
+   }
  
    &__slide {
      padding: 32px;
