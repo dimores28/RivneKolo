@@ -286,6 +286,30 @@ function initSliders() {
 		//   loopedSlides: 1,
 		//   initialSlide: 1,
 		  slideToClickedSlide: true,
+
+		  // Navigation arrows
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+
+		  breakpoints: {
+			340: {
+				spaceBetween: 16,
+				slidesPerView: "auto",
+				centeredSlides: true,
+			 },
+			 768: {
+				spaceBetween: 30,
+				slidesPerView: "2",
+				centeredSlides: true,
+			 },
+			 1268: {
+				spaceBetween: 30,
+				slidesPerView: "3",
+				centeredSlides: true,
+			 },
+		  }
 		});
 	}
 }
