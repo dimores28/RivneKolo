@@ -21,6 +21,70 @@
 			<div class="fls-preloader__counter"></div>
 			<img src="@img/preloader/kolo.gif" class="fls-preloader__gif" alt="">
 		</div>
+		<div class="fls-preloader__bg">
+			<div class="ticker-bg">
+				<div class="ticker-bg__content">
+				  <div class="ticker-bg__row">
+					 <img class="ticker-bg__item" src="@img/ticker/back_hero_1.svg" alt="ticker-bg" />
+					 <img class="ticker-bg__item" src="@img/ticker/back_hero_1.svg" alt="ticker-bg" />
+				  </div>
+				  <div class="ticker-bg__row">
+					 <img class="ticker-bg__item" src="@img/ticker/back_hero_1.svg" alt="ticker-bg" />
+					 <img class="ticker-bg__item" src="@img/ticker/back_hero_1.svg" alt="ticker-bg" />
+				  </div>
+				</div>
+				<div class="ticker-bg__content">
+				  <div class="ticker-bg__row ticker-bg__row-reverse">
+					 <img class="ticker-bg__item" src="@img/ticker/back_hero_2.svg" alt="ticker-bg" />
+					 <img class="ticker-bg__item" src="@img/ticker/back_hero_2.svg" alt="ticker-bg" />
+				  </div>
+				  <div class="ticker-bg__row ticker-bg__row-reverse">
+					 <img class="ticker-bg__item" src="@img/ticker/back_hero_2.svg" alt="ticker-bg" />
+					 <img class="ticker-bg__item" src="@img/ticker/back_hero_2.svg" alt="ticker-bg" />
+				  </div>
+				</div>
+				<div class="ticker-bg__content">
+				  <div class="ticker-bg__row">
+					 <img class="ticker-bg__item" src="@img/ticker/back_hero_3.svg" alt="ticker-bg" />
+					 <img class="ticker-bg__item" src="@img/ticker/back_hero_3.svg" alt="ticker-bg" />
+				  </div>
+				  <div class="ticker-bg__row">
+					 <img class="ticker-bg__item" src="@img/ticker/back_hero_3.svg" alt="ticker-bg" />
+					 <img class="ticker-bg__item" src="@img/ticker/back_hero_3.svg" alt="ticker-bg" />
+				  </div>
+				</div>
+				<div class="ticker-bg__content">
+					<div class="ticker-bg__row">
+					  <img class="ticker-bg__item" src="@img/ticker/back_hero_1.svg" alt="ticker-bg" />
+					  <img class="ticker-bg__item" src="@img/ticker/back_hero_1.svg" alt="ticker-bg" />
+					</div>
+					<div class="ticker-bg__row">
+					  <img class="ticker-bg__item" src="@img/ticker/back_hero_1.svg" alt="ticker-bg" />
+					  <img class="ticker-bg__item" src="@img/ticker/back_hero_1.svg" alt="ticker-bg" />
+					</div>
+				</div>
+				<div class="ticker-bg__content">
+					<div class="ticker-bg__row ticker-bg__row-reverse">
+					  <img class="ticker-bg__item" src="@img/ticker/back_hero_2.svg" alt="ticker-bg" />
+					  <img class="ticker-bg__item" src="@img/ticker/back_hero_2.svg" alt="ticker-bg" />
+					</div>
+					<div class="ticker-bg__row ticker-bg__row-reverse">
+					  <img class="ticker-bg__item" src="@img/ticker/back_hero_2.svg" alt="ticker-bg" />
+					  <img class="ticker-bg__item" src="@img/ticker/back_hero_2.svg" alt="ticker-bg" />
+					</div>
+				</div>
+				<div class="ticker-bg__content">
+					<div class="ticker-bg__row">
+					  <img class="ticker-bg__item" src="@img/ticker/back_hero_3.svg" alt="ticker-bg" />
+					  <img class="ticker-bg__item" src="@img/ticker/back_hero_3.svg" alt="ticker-bg" />
+					</div>
+					<div class="ticker-bg__row">
+					  <img class="ticker-bg__item" src="@img/ticker/back_hero_3.svg" alt="ticker-bg" />
+					  <img class="ticker-bg__item" src="@img/ticker/back_hero_3.svg" alt="ticker-bg" />
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 <div id="fls-preloader">
@@ -129,6 +193,93 @@
 		@keyframes play {
 				0% { background-position-y: 0%; }
 			100% { background-position-y: 100%; }
+		}
+
+		.fls-preloader__bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+    		z-index: -1;
+		}
+
+		.ticker-bg {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+					-ms-flex-direction: column;
+						flex-direction: column;
+		}
+
+		.ticker-bg__content {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+		}
+
+		.ticker-bg__row {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: horizontal;
+			-webkit-box-direction: normal;
+					-ms-flex-direction: row;
+						flex-direction: row;
+			-ms-flex-wrap: nowrap;
+					flex-wrap: nowrap;
+			max-height: 200px;
+			white-space: nowrap;
+			-webkit-animation: ticker 20s infinite linear;
+						animation: ticker 20s infinite linear;
+						padding: 6px 0;
+		}
+
+		.ticker-bg__row-reverse {
+			animation-direction: reverse;
+		}
+
+		.ticker-bg__item {
+			max-height: 188px;
+		}
+
+		@-webkit-keyframes ticker {
+			100% {
+				-webkit-transform: translateX(-100%);
+							transform: translateX(-100%);
+			}
+		}
+
+		@keyframes ticker {
+			100% {
+				-webkit-transform: translateX(-100%);
+							transform: translateX(-100%);
+			}
+		}
+
+		@media (max-width:767px){
+			.ticker-bg__item {
+				max-height: 140px;
+			} 
+
+			.ticker-bg__row {
+				padding: 5px 0;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.ticker-bg__item {
+				max-height: 89px;
+			}
+
+			.ticker-bg__row {
+				padding: 3px 0;
+			}
 		}
 	</style>
 	<!-- Скріпт прелоадера -->

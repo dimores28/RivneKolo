@@ -114,21 +114,18 @@
    }
 
    &__phones {
-      .footer__linck:first-child {
-         margin-bottom: 16px;
-      }
 
       .footer__linck {
          
-      @media (any-hover: hover) {
-         &:hover {
-            &::after {
-               left: 0;
-               width: 100%;
+         @media (any-hover: hover) {
+            &:hover {
+               &::after {
+                  left: 0;
+                  width: 100%;
+               }
+            
             }
-           
          }
-      }
       }
    }
 
