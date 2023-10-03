@@ -1,92 +1,94 @@
 .instagram {
-   padding: 0 20px;
- 
-   &__header {
-     width: 100%;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     margin-bottom: 60px;
-   }
- 
-   &__slider {
-     margin-bottom: 30px;
-   }
+  z-index: 2;
+  position: relative;
+  padding: 0 20px;
 
-   &__wrapper {
+  &__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+
+  &__slider {
+    margin-bottom: 30px;
+  }
+
+  &__wrapper {
     transition-timing-function: linear;
-   }
- 
-   &__slide {
-     padding: 32px;
-     max-width: 584px;
-     width: 100%;
-     max-height: 690px;
-     border-radius: 20px;
-     display: flex;
-     flex-direction: column;
-     gap: 30px;
-     background-color: #fff;
-     @media (max-width: $mobile) {
-       max-width: 242px;
-       max-height: 288px;
-       padding: 14px;
-       gap: 14px;
-     }
-   }
- }
- 
- .slide {
-   &__head {
-     width: 100%;
-     display: flex;
-     justify-content: space-between;
-   }
- 
-   &__head-wrap {
-     max-width: 252px;
-     display: grid;
-     grid-template-areas: "logo heading" "logo data";
-     grid-row: 44px 32px;
-     column-gap: 17px;
-     @media (max-width: $mobile) {
-       max-width: 128px;
-       column-gap: 6px;
-     }
-   }
-   &__logo {
-     grid-area: logo;
-     @media (max-width: $mobile) {
-       max-width: 32px;
-     }
-   }
-   &__heading {
-     grid-area: heading;
-     display: flex;
-     align-items: flex-end;
-     white-space: nowrap;
-   }
-   &__data {
-     grid-area: data;
-     padding: 6px 0;
-     @media (max-width: $mobile) {
-       padding: 0;
-     }
-   }
- 
-   &__icon {
-     margin-right: 12px;
-     @media (max-width: $mobile) {
-       max-width: 16px;
-     }
-   }
- 
-   &__img {
-     width: 100%;
-     height: 100%;
-     img {
-       width: 100%;
-       height: 100%;
-     }
-   }
- }
+  }
+
+  &__slide {
+    padding: 32px;
+    max-width: 584px;
+    width: 100%;
+    max-height: 690px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #fff;
+    @media (max-width: $mobile) {
+      max-width: 242px;
+      max-height: 288px;
+      padding: 14px;
+      gap: 14px;
+    }
+  }
+}
+
+.slide {
+  &__head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__head-wrap {
+    max-width: 252px;
+    display: grid;
+    grid-template-areas: "logo heading" "logo data";
+    grid-row: 44px 32px;
+    column-gap: 17px;
+    @media (max-width: $mobile) {
+      max-width: 128px;
+      column-gap: 6px;
+    }
+  }
+  &__logo {
+    grid-area: logo;
+    @media (max-width: $mobile) {
+      max-width: 32px;
+    }
+  }
+  &__heading {
+    grid-area: heading;
+    display: flex;
+    align-items: flex-end;
+    white-space: nowrap;
+  }
+  &__data {
+    grid-area: data;
+    padding: 6px 0;
+    @media (max-width: $mobile) {
+      padding: 0;
+    }
+  }
+
+  &__icon {
+    margin-right: 12px;
+    @media (max-width: $mobile) {
+      max-width: 16px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

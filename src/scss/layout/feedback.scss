@@ -1,12 +1,12 @@
 .feedback {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 248, 224, 1);
   &__wrap {
+    margin-top: 82px;
     width: 100%;
     padding: 0 20px;
-    background: linear-gradient(
-      0deg,
-      rgba(255, 248, 224, 1) 50%,
-      rgba(255, 228, 86, 1) 50%
-    );
+    background: linear-gradient(0deg, rgba(255, 248, 224, 1) 50%, #ffdf00 50%);
   }
   &__container {
     position: relative;
@@ -16,7 +16,7 @@
     border-radius: 60px;
     background: #7209b7;
     padding: 69px 120px 80px 120px;
-    margin-top: 40px;
+
     // margin-bottom: 130px;
     display: flex;
     flex-direction: column;
@@ -41,7 +41,7 @@
   &__ticker {
     @include adaptiveValue("padding-top", 130, 60);
     @include adaptiveValue("height", 730, 250);
-    background-color: rgba(255, 248, 224, 1);
+    background-color: #fff8e0;
     position: relative;
     width: 100%;
     // height: 730px;
@@ -71,8 +71,9 @@
       animation-direction: reverse;
     }
     .outline {
-      text-shadow: 0 0 5px rgba(114, 9, 183, 1);
+      // text-shadow: 0 0 5px rgba(114, 9, 183, 1);
       color: #fff8e0;
+      -webkit-text-stroke: 2px #7209b7;
     }
     .color {
       color: #7209b7;
@@ -131,7 +132,7 @@
   }
   &__btn {
     z-index: 10;
-    
+
     span {
       padding: 22px 42px;
     }
@@ -160,14 +161,14 @@
 .feedback .form {
   &__btn {
     z-index: 10;
-    
+
     span {
       padding: 22px 42px;
     }
 
     @media (max-width: $mobile) {
       height: 62px;
-      
+
       span {
         padding: 15px 76px;
       }
