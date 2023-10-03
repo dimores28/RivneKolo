@@ -322,7 +322,7 @@
 					const intervalId = setInterval(() => {
 						counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
 						counter >= 100 ? addLoadedClass() : null;
-					}, 2500);//10
+					}, 5500);//10
 				}
 				function addLoadedClass() {
 					htmlDocument.classList.add('loaded');
@@ -331,7 +331,7 @@
 					setInterval(() => {
 						preloader.remove();
 						preloaderContainer.remove();
-					}, 10);
+					}, 50);
 				}
 			}else{
 				preloaderContainer.remove();
