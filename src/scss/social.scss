@@ -30,6 +30,12 @@
    &__text {
       flex: 1 1 auto;
       max-width: 820px;
+
+      h2 {
+         @media (max-width:$mobile){
+             text-align: center; 
+         }
+      }
    }
 
    &__message {
@@ -51,6 +57,12 @@
          background-size: contain;
          top: -32px;
          left: 14%;
+
+         @media (max-width:$mobile){
+            width: 40px;
+            height: 24px; 
+            top: -20px;
+         }
       }
 
       @media (max-width:$mobile){
@@ -59,6 +71,10 @@
           max-width: 300px;
           padding: 30px 14px 20px 14px;
           border-radius: 20px;
+      }
+
+      @media (max-width:$mobileSmall){
+         margin-top: 28px; 
       }
    }
 
@@ -72,6 +88,11 @@
 
       @media (max-width:$mobile){
           width: 100%; 
+      }
+
+      @media (max-width:$mobileSmall){
+         margin-top: -36px;
+         margin-left: -8%; 
       }
 
       @media (max-width: em(360)){
@@ -211,6 +232,7 @@
    border-radius: 52px;
    position: relative;
    flex-shrink: 0;
+   box-sizing: border-box;
 
    @media (max-width: em(1024)) {
       border-radius: 36px;
@@ -223,6 +245,8 @@
    @media (max-width:$mobileSmall){
       border-radius: 23px; 
       padding: 6px;
+      width: 136px;
+      height: 136px;
    }
 
    &::before {
@@ -250,25 +274,28 @@
       }
 
       svg {
-         transform: rotate(12deg);
-         rect {
+         // transform: rotate(12deg);
+         .inst-rect,
+         .inst-circle {
             transition: all 0.4s ease-in;
             transition-delay: 0.2s;
             stroke: #000000;
          }
+
+         .border {
+            transition: all 0.4s ease-in;
+            transition-delay: 0.2s;
+            stroke: #000000;
+         }
+   
+         .inst-dot {
+            transition: all 0.4s ease-in;
+            transition-delay: 0.2s;
+            fill: #000000;
+         }
       }
 
-      .border {
-         transition: all 0.4s ease-in;
-         transition-delay: 0.2s;
-         stroke: #000000;
-      }
 
-      .dot {
-         transition: all 0.4s ease-in;
-         transition-delay: 0.2s;
-         fill: #000000;
-      }
 
       @media (any-hover: hover) {
          &:hover {
@@ -283,6 +310,27 @@
             svg {
                rect {
                   stroke: #FFFFFF;
+               }
+
+               .fb-path {
+                  fill: #FFFFFF; 
+               }
+            }
+
+            svg {
+               // transform: rotate(12deg);
+               .inst-rect,
+               .inst-circle {
+                  stroke: #FFFFFF;
+               }
+      
+               .border {
+
+                  stroke: #FFFFFF;
+               }
+         
+               .inst-dot {
+                  fill: #FFFFFF;
                }
             }
          }
@@ -299,8 +347,8 @@
       }
 
       svg {
-         transform: rotate(-17deg);
-         path {
+         // transform: rotate(-17deg);
+         .fb-path {
             transition: all 0.4s ease-in;
             transition-delay: 0.2s;
             fill: #000000;
@@ -338,27 +386,29 @@
       flex-direction: column;
       align-items: center;
       border: 2px solid #000;
-      padding: 40px 60px;
+      padding: 40px 60px 24px;
       border-radius: 46px;
       position: relative;
       z-index: 10;
       transition: all 0.4s ease-in;
       transition-delay: 0.2s;
+      box-sizing: border-box;
 
       span {
          display: block;
          color: #000;
          text-align: center;
          font-family: $fontFamily, sans-serif;
-         @include adaptiveValue("font-size", 24, 16);
+         @include adaptiveValue("font-size", 24, 8);
          font-weight: 700;
          text-transform: uppercase;
          transition: all 0.4s ease-in;
          transition-delay: 0.2s;
+         margin-top: 18px;
       }
       
       @media (max-width: em(1200)){
-          padding: 20px 30px; 
+          padding: 20px 40px; 
       }
 
       @media (max-width: em(1024)){
@@ -371,7 +421,7 @@
 
       @media (max-width: em(884)){
          border-radius: 22px;
-         padding: 20px 26px;
+         padding: 20px 36px;
            svg {
                width: 100px;
                height: 100px;
@@ -380,11 +430,16 @@
 
       @media (max-width:$mobileSmall){
          border-radius: 20px;
-         padding: 20px 12px;
+         padding: 16px 12px;
+         // width: 128px;
          svg {
             width: 68px;
             height: 68px;
-         }  
+         } 
+         
+         span {
+            margin-top: 10px;
+         }
       }
    }
 
@@ -412,6 +467,75 @@
           .glow-wrap{
             margin-top: 0;
           }
+      }
+   }
+
+   &._watcher-view {
+      @media (max-width:$mobile){
+         &::before {
+            transform: translate(0%, 0%);
+            border-radius: 25px;
+         }
+
+         .social-card__link {
+            border: 2px solid #fff;
+
+            span {
+               color:#fff;
+            }
+         }
+
+         .glow{
+            transform: rotate(45deg) translate(450%, 0);
+            transition: all 1s ease-in-out;
+            transition-delay: 1s;
+          }
+
+          .glow-wrap{
+            margin-top: 0;
+          } 
+          
+          .border {
+            stroke: #FFFFFF;
+         }
+   
+         .dot {
+            fill: #FFFFFF;
+         }
+
+         svg {
+            rect {
+               stroke: #FFFFFF;
+            }
+         }
+
+         svg {
+            // transform: rotate(12deg);
+            .inst-rect,
+            .inst-circle {
+               stroke: #FFFFFF;
+            }
+   
+            .border {
+
+               stroke: #FFFFFF;
+            }
+      
+            .inst-dot {
+               fill: #FFFFFF;
+            }
+
+            .fb-path {
+               fill: #FFFFFF; 
+            }
+         }
+      }
+
+      @media (max-width:$mobileSmall) {
+         &::before {
+            transform: translate(0%, 0%);
+            border-radius: 23px;
+         }
       }
    }
 

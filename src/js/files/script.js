@@ -10,6 +10,7 @@ import { flsModules } from "./modules.js";
 //GSAP====================================================================================================
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,6 +43,8 @@ madeinTL.from(".madein__sticker", {
   stagger: 1,
 });
 
+
+
 const madeinTlHero = gsap.timeline({
   scrollTrigger: {
     trigger: ".hero__wraper",
@@ -53,15 +56,64 @@ const madeinTlHero = gsap.timeline({
 madeinTlHero.from(".hero__heading", { opacity: 0, x: -400 });
 madeinTlHero.from(".hero__text", { opacity: 0, x: 400 });
 
-const hendTL = gsap.timeline({ repeat: -1, yoyo: true });
+//=========== Social lincks animation ================
+gsap.registerPlugin(MotionPathPlugin);
+
+const hendTL = gsap.timeline({ repeat: -1, repeatDelay: 1 });
 //  hendTL.yoyo( true );
-hendTL
-  .to(".social__hand", { x: "115%", y: "-19%", duration: 1 })
-  .to(
-    ".social__shadow",
-    { x: "180%", y: "235%", scale: 0.4, duration: 1 },
-    "-=1"
-  );
+// hendTL
+//   .to(".social__hand", { x: "115%", y: "-19%", duration: 2, ease: "elastic.out(1, 0.3)", delay: 1 })
+//   .to(
+//     ".social__shadow",
+//     { x: "180%", y: "235%", scale: 0.4, duration: 2 , ease: "elastic.out(1, 0.3)", delay: 1},
+//     "-=3"
+//   );
+
+	let path1 = [
+		//1
+		{x: "27%", y: "20%"},
+		//2
+		// {x: "56%", y: "45%"},
+		//3
+		{x: "115%", y: "-19%"},
+	];
+
+	let path2 = [
+		//1
+		{x: "49%", y: "456%"},
+		//2
+		// {x: "119%", y: "980%"},
+		//3
+		{x: "180%", y: "235%"},
+	];
+
+	const scaledPath1 = path1.map(({ x, y }) => {
+		return {
+			 x: x,
+			 y: y 
+		}
+   });
+	const scaledPath2 = path2.map(({ x, y }) => {
+		return {
+			 x: x,
+			 y: y 
+		}
+   });
+
+	hendTL.to(".social__hand", { 
+		motionPath: {path: scaledPath1, align: 'self', alignOrigin: [0.5, 0.5]},
+		duration: 3, 
+		ease: "elastic.out(1, 0.3)", 
+		delay: 1 })
+		.to(".social__shadow",{ 
+			motionPath: {path: scaledPath2, align: 'self', alignOrigin: [0.5, 0.5]}, 
+			scale: 0.4, 
+			duration: 3 , 
+			ease: "elastic.out(1, 0.3)", 
+			delay: 1},
+			"-=4"
+		);
+//=========== End Social lincks animation ================
 
 //Animate menu ===========================================
 
