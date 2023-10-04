@@ -19,7 +19,8 @@
 
       span:first-child {
          display: block;
-         margin-bottom: 32px;
+         // margin-bottom: 32px;
+         @include adaptiveValue("margin-bottom", 32, 16);
       }
 
       @media (max-width: em(1280)){
@@ -29,14 +30,15 @@
          max-width: 622px;
       }
 
-      @media (max-width: em(420)){
-         transform: translateY(-44%);   
+      @media (max-width: $mobileSmall){
+         transform: translateY(-42%);   
       }
    }
 
    // .madein__block
    &__block {
       display: flex;
+      justify-content: space-between;
       gap: 60px;
       position: relative;
       transform-style: preserve-3d;
@@ -45,7 +47,7 @@
 
       @media (max-width:$mobile){
           flex-direction: column; 
-          gap: 40px;
+          gap: 0px;
           margin-top: -30px;
       }
    }
@@ -55,12 +57,20 @@
       width: calc(50% - 30px);
       padding-top: 150px;
 
-      @media (max-width: em(1340)){
+      @media (max-width: em(1440)){
          padding-top: 130px;  
       }
 
+      @media (max-width: em(1280)) {
+         padding-top: 100px;
+      }
+
       @media (max-width: em(1180)) {
-         padding-top: 80px;
+         padding-top: 70px;
+      }
+
+      @media (max-width: em(1055)){
+         padding-top: 15px;
       }
 
       @media (max-width:$mobile){
@@ -69,14 +79,17 @@
       }
 
       p {
-         margin-bottom: 80px;
+         margin-bottom: 120px;
          max-width: 697px;
 
-         @media (max-width: em(1546)){
-           margin-bottom: 100px;
+         @media (max-width: em(1440)){
+           margin-bottom: 120px;
          }
          @media (max-width: em(1180)){
            margin-bottom: 130px;
+         }
+         @media (max-width: em(842)){
+            margin-bottom: 70px;
          }
 
          @media (max-width:$mobile){
@@ -90,8 +103,27 @@
       width: calc(50% - 30px);
       position: relative;
 
+      @media (max-width: em(1055)){
+         width: 40%;
+      }
+
       @media (max-width:$mobile){
-         width: 100%; 
+         width: 50%; 
+         margin-left: auto;
+      }
+
+      @media (max-width: em(498)){
+         width: 54%;
+      }
+
+      @media (max-width: em(446)) {
+         width: 60%;
+      }
+      @media (max-width: em(405)) {
+         width: 65%;
+      }
+      @media (max-width: em(372)) {
+         width: 67%;
       }
    }
 
@@ -106,38 +138,89 @@
       transform-style: preserve-3d;
       z-index: 2;
       top: 23%;
-      left: -32%;
+      left: -34%;
+      transform-origin: left center;
+      transform: translate(0%, 0%) rotateY(0deg);
 
       @media (max-width: em(1546)){
          left: -41%;
+         top: 21%;
       }
 
       @media (max-width: em(1368)){
-         top: 21%;
+         top: 19%;
          left: -50%;
       }
 
       @media (max-width: em(1180)){
            width: 275px;
            height: 160px;
-           top: 24%;
+           top: 22%;
+           left: -37%;
+      }
+
+      @media (max-width: em(1055)){
+         top: 18%;
+         left: -50%;
+      }
+
+      @media (max-width: em(989)){
+         top: 15%;
+         left: -56%; 
+      }
+
+      @media (max-width: em(920)){
+         top: 11%;
+         left: -61%;
+      }
+
+      @media (max-width: em(855)){
+         width: 220px;
+         height: 128px;
+         top: 17%;
+         left: -52%;
       }
 
       @media (max-width:$mobile){
-          top: 12%;
-          left: 10%; 
+         top: 19%;
+         left: -46%;
       }
 
-      @media (max-width: em(630)){
-         top: 6%;
-         left: 3%; 
+      @media (max-width: em(684)){
+         top: 17%;
+         left: -53%;
+      }
+      @media (max-width: em(620)){
+         width: 176px;
+         height: 102px;
+         top: 20%;
+         left: -45%;
+      }
+
+      @media (max-width: em(544)){
+         top: 17%;
+         left: -54%;
       }
 
       @media (max-width: em(480)){
-         width: 196px;
-         height: 114px;
-         top: 0%;
-         left: -1%;
+         top: 15%;
+         left: -59%;
+      }
+
+      @media (max-width: em(446)){
+         top: 15%;
+         left: -59%;
+      }
+
+      @media (max-width: em(372)) {
+         width: 140px;
+         height: 82px;
+         top: 19%;
+         left: -46%;
+      }
+      @media (max-width: em(347)) {
+         top: 18%;
+         left: -51%;
       }
 
    }

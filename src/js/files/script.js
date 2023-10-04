@@ -11,6 +11,7 @@ import { flsModules } from "./modules.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin.js";
+import { CustomEase } from "gsap/CustomEase.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,7 +26,7 @@ const productTl = gsap.timeline({
  productTl.fromTo(".heading__span-1", {opacity: 0, x: -300},{opacity: 1, x: 0, duration: 0.6});
  productTl.fromTo(".heading__span-2", {opacity: 0, x: 300}, {opacity: 1, x: 0, duration: 0.6});
 
-
+ gsap.registerPlugin(CustomEase);
 const madeinTL = gsap.timeline({
   scrollTrigger: {
     trigger: ".madein__illustration",
@@ -36,11 +37,15 @@ const madeinTL = gsap.timeline({
     //   markers: true
   },
 });
-
+//translate(-161%, -105%) rotateY(95deg)
 madeinTL.from(".madein__sticker", {
-  transformOrigin: "right center",
+  transformOrigin: "left center",
+  xPercent: -161,
+  yPercent: -105, 
   rotationY: 90,
   stagger: 1,
+  duration: 1,
+  ease: CustomEase.create("custom", "M0,0 C0.083,0.294 -0.04,1 0.286,1 0.49,1 0.752,1 1,1 ")
 });
 
 
@@ -247,11 +252,11 @@ function initSliders() {
 					spaceBetween: 8,
 				},
 				768: {
-					slidesPerView: 1.5,
+					slidesPerView: 2.5,
 					spaceBetween: 16,
 				},
 				1268: {
-					slidesPerView: 2.5,
+					slidesPerView: 3.5,
 					spaceBetween: 20,
 				},
 			},
