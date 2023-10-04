@@ -540,6 +540,6 @@ if(document.querySelector('.about__bagel')) {
 
 
 //====================Прокрутка до блоку==========================//
-document.querySelector('#btnScrollToAbout')?.addEventListener('click', function() {
-	gsap.to(window, {duration: 2, scrollTo: "#about"});
-});
+//.scroll-arrow
+const upBtnTl = gsap.timeline({ repeat: -1, repeatDelay: 0.6 });
+upBtnTl.to(".scroll-arrow", {y: "-18%", duration: 0.4, ease: "bounce.out", delay: 2});
