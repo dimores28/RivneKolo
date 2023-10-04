@@ -11,6 +11,7 @@ import { flsModules } from "./modules.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin.js";
+import { CustomEase } from "gsap/CustomEase.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,10 +23,10 @@ const productTl = gsap.timeline({
    }
  });
 
- productTl.fromTo(".heading__span-1", {opacity: 0, x: -300},{opacity: 1, x: 0, duration: 0.6});
- productTl.fromTo(".heading__span-2", {opacity: 0, x: 300}, {opacity: 1, x: 0, duration: 0.6});
+ productTl.fromTo(".heading__span-1", {opacity: 0, x: -300, rotate: 16},{opacity: 1, x: 0, rotate: 0, duration: 0.6});
+ productTl.fromTo(".heading__span-2", {opacity: 0, x: 300, rotate: -16}, {opacity: 1, x: 0, rotate: 0, duration: 0.6});
 
-
+ gsap.registerPlugin(CustomEase);
 const madeinTL = gsap.timeline({
   scrollTrigger: {
     trigger: ".madein__illustration",
@@ -36,11 +37,15 @@ const madeinTL = gsap.timeline({
     //   markers: true
   },
 });
-
+//translate(-161%, -105%) rotateY(95deg)
 madeinTL.from(".madein__sticker", {
-  transformOrigin: "right center",
+  transformOrigin: "left center",
+  xPercent: -161,
+  yPercent: -105, 
   rotationY: 90,
   stagger: 1,
+  duration: 1,
+  ease: CustomEase.create("custom", "M0,0 C0.083,0.294 -0.04,1 0.286,1 0.49,1 0.752,1 1,1 ")
 });
 
 
@@ -247,11 +252,11 @@ function initSliders() {
 					spaceBetween: 8,
 				},
 				768: {
-					slidesPerView: 1.5,
+					slidesPerView: 2.5,
 					spaceBetween: 16,
 				},
 				1268: {
-					slidesPerView: 2.5,
+					slidesPerView: 3.5,
 					spaceBetween: 20,
 				},
 			},
@@ -378,10 +383,10 @@ const Scene_1 = gsap.timeline({
 	},
 });
 
-Scene_1.from('.about__scene_1 .row_1', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		.from('.about__scene_1 .row_2', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
+Scene_1.from('.about__scene_1 .row_1', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "power3.out"})
+		.from('.about__scene_1 .row_2', {y: 200, opacity: 0, rotate: -16, duration: 0.4, ease: "power3.out"})
 		.from('.about__scene_1 .row_2 img', {y: 200, opacity: 0, duration: 0.4, ease: "back.out(1.7)"})
-		.from('.about__scene_1 .row_3', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"});
+		.from('.about__scene_1 .row_3', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "power3.out"});
 
 
 
@@ -394,13 +399,13 @@ const Scene_2 = gsap.timeline({
 	},
 });
 
-Scene_2.from('.about__scene_2 .row_1', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_2 .row_2', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_2 .row_3', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_2 .row_4', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
+Scene_2.from('.about__scene_2 .row_1', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "power3.out"})
+		 .from('.about__scene_2 .row_2', {y: 200, opacity: 0, rotate: -16, duration: 0.4, ease: "power3.out"})
+		 .from('.about__scene_2 .row_3', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "power3.out"})
+		 .from('.about__scene_2 .row_4', {y: 200, opacity: 0, rotate: -16, duration: 0.4, ease: "power3.out"})
 		 .from('.about__scene_2 .row_4 img', {y: 200, opacity: 0, duration: 0.4, ease: "back.out(1.7)"})
-		 .from('.about__scene_2 .row_5', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_2 .row_6', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
+		 .from('.about__scene_2 .row_5', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "power3.out"})
+		 .from('.about__scene_2 .row_6', {y: 200, opacity: 0, rotate: -16, duration: 0.4, ease: "power3.out"})
 		 .from('.about__scene_2 .row_6 img', {y: 200, opacity: 0, duration: 0.4, ease: "back.out(1.7)"});
 
 
@@ -414,8 +419,12 @@ const Scene_3 = gsap.timeline({
 	},
 });
 
-document.querySelectorAll(".about__scene_3 p").forEach((row) => {  
-	Scene_3.from(row, {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
+document.querySelectorAll(".about__scene_3 p").forEach((row, i) => {  
+	let deg = 16;
+	if (i % 2 == 0) {
+		deg = -16;
+	}
+	Scene_3.from(row, {y: 200, opacity: 0, rotate: deg, duration: 0.4, ease: "power3.out"})
 });
 
 
@@ -427,12 +436,12 @@ const Scene_4 = gsap.timeline({
 		// markers: true
 	},
 });
-Scene_4.from('.about__scene_4 .row_1', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
+Scene_4.from('.about__scene_4 .row_1', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "power3.out"})
 		 .from('.about__scene_4 .row_1 img', {y: 200, opacity: 0, duration: 0.4, ease: "back.out(1.7)"})
-		 .from('.about__scene_4 .row_2', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_4 .row_3', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_4 .row_4', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_4 .row_5', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"});
+		 .from('.about__scene_4 .row_2', {y: 200, opacity: 0, rotate: -16, duration: 0.4, ease: "power3.out"})
+		 .from('.about__scene_4 .row_3', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "power3.out"})
+		 .from('.about__scene_4 .row_4', {y: 200, opacity: 0, rotate: -16, duration: 0.4, ease: "power3.out"})
+		 .from('.about__scene_4 .row_5', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "power3.out"});
 
 
 const Scene_5 = gsap.timeline({
@@ -444,7 +453,7 @@ const Scene_5 = gsap.timeline({
 	},
 });
 
-Scene_5.from('.about__scene_5 .row_1', {y: 200, opacity: 0, duration: 0.4, ease: "back.out(1.7)"});
+Scene_5.from('.about__scene_5 .row_1', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "back.out(1.7)"});
 document.querySelectorAll(".advanteges__item").forEach((item) => {  
 	Scene_5.from(item, {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
 });
@@ -535,6 +544,6 @@ if(document.querySelector('.about__bagel')) {
 
 
 //====================Прокрутка до блоку==========================//
-document.querySelector('#btnScrollToAbout')?.addEventListener('click', function() {
-	gsap.to(window, {duration: 2, scrollTo: "#about"});
-});
+//.scroll-arrow
+const upBtnTl = gsap.timeline({ repeat: -1, repeatDelay: 0.6 });
+upBtnTl.to(".scroll-arrow", {y: "-18%", duration: 0.4, ease: "bounce.out", delay: 2});
