@@ -103,17 +103,17 @@ if (document.querySelector(".menu")) {
 
       if (isMobile) {
         openTl
-          .to(".menu", { width: "300px", height: "auto", duration: 0.6 })
-          .to(".menu__link", { opacity: 1, duration: 0.4 })
+          .to(".menu", { width: "300px", height: "auto", duration: 0.4 })
+          .to(".menu__link", { opacity: 1, duration: 0.3 }, "-=0.5")
           .to(".header__lang", { opacity: 1, duration: 0.3 });
 
         closeTl
           .to(".header__lang", { opacity: 0, duration: 0.3 })
-          .to(".menu__link", { opacity: 0, duration: 0.4 })
+          .to(".menu__link", { opacity: 0, duration: 0.3 }, "-=0.4")
           .to(".menu", {
             width: "51px",
             height: "45px",
-            duration: 0.6,
+            duration: 0.3,
             delay: 0.4,
           });
       }
