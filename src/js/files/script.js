@@ -144,23 +144,23 @@ if (document.querySelector(".menu")) {
       if (isDesktop) {
         openTl
           .to(".menu", {
-            width: "90%",
+            width: "100%",
             backgroundColor: "white",
-            duration: 0.6,
+            duration: 0.5,
+				ease: "elastic.out(1, 0.3)"
           })
-          .to(".menu__link", { opacity: 1, duration: 0.4 }, "-=0.6");
+          .to(".menu__link", { opacity: 1, duration: 0.3 }, "-=0.55");
 
-        closeTl.to(".menu__link", { opacity: 0, duration: 0.4 }).to(".menu", {
+        closeTl.to(".menu__link", { opacity: 0, duration: 0.3 }).to(".menu", {
           width: "51px",
           backgroundColor: "transparent",
-          duration: 0.6,
-          delay: 0.4,
+          duration: 0.3,
         });
       }
 
       if (isMobile) {
         openTl
-          .to(".menu", { width: "300px", height: "auto", duration: 0.4 })
+          .to(".menu", { width: "100%", height: "auto", duration: 0.4, ease: "elastic.out(1, 0.3)" })
           .to(".menu__link", { opacity: 1, duration: 0.3 }, "-=0.5")
           .to(".header__lang", { opacity: 1, duration: 0.3 });
 
@@ -168,10 +168,9 @@ if (document.querySelector(".menu")) {
           .to(".header__lang", { opacity: 0, duration: 0.3 })
           .to(".menu__link", { opacity: 0, duration: 0.3 }, "-=0.4")
           .to(".menu", {
-            width: "51px",
-            height: "45px",
+            width: "54px",
+            height: "46px",
             duration: 0.3,
-            delay: 0.4,
           });
       }
     }
