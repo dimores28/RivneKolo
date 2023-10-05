@@ -340,6 +340,7 @@ function initSliders() {
 		  centeredSlides: true,
 		//   roundLengths: true,
 		  loop: true,
+		 
 		//   loopedSlides: 1,
 		//   initialSlide: 1,
 		  slideToClickedSlide: true,
