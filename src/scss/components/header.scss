@@ -12,6 +12,7 @@
     align-items: center;
     padding-top: 32px;
     padding-bottom: 32px;
+
     @media (max-width: $mobile) {
       padding-top: 7px;
       padding-bottom: 0;
@@ -24,7 +25,7 @@
     position: relative;
     display: flex;
     justify-content: flex-end;
-    width: 10%;
+    width: 127px;
     height: 45px;
     
     @media (max-width:$mobile){
@@ -63,7 +64,9 @@
     gap: 0;
     flex-direction: column;
     align-items: flex-end;
-    padding: 14px 10px;
+    height: toRem(46);
+    width: toRem(54);
+    padding: 9px 11px;
   }
 
   &__body {
@@ -108,7 +111,7 @@
   display: block;
   position: relative;
   width: toRem(31);
-  height: toRem(18);
+  height: toRem(28);
   z-index: 5;
   flex-shrink: 0;
   @media (any-hover: none) {
@@ -121,7 +124,7 @@
     right: 0;
     position: absolute;
     width: 100%;
-    height: toRem(6);
+    height: toRem(10);
     background-color: #000;
   }
   &::before {
@@ -137,11 +140,11 @@
     &::after {
     }
     &::before {
-      top: calc(50% - toRem(3));
+      top: calc(50% - toRem(5));
       transform: rotate(-45deg);
     }
     &::after {
-      bottom: calc(50% - toRem(3));
+      bottom: calc(50% - toRem(5));
       transform: rotate(45deg);
     }
   }
@@ -196,7 +199,18 @@
         }
       }
     }
+
+    
   }
+}
+
+.active.lang__menu-link {
+ @media (max-width:$mobile){
+    &::after {
+      left: 0;
+      width: 100%;
+    } 
+ }
 }
 .active {
   .lang {

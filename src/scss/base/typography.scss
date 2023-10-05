@@ -286,11 +286,19 @@
 
 .scene-text {
   font-family: Grotesk, sans-serif;
-  @include adaptiveValue("font-size", 52, 20);
-  @include adaptiveValue("line-height", 72, 24);
+  @include adaptiveValue("font-size", 52, 26);
+  @include adaptiveValue("line-height", 72, 34);
   text-align: center;
   font-style: normal;
   font-weight: 800;
 
   text-transform: uppercase;
+}
+
+.adv-text {
+  font-family: $fontFamily, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  @include adaptiveValue("font-size", 20, 18);
+  @include adaptiveValue("line-height", 24, 22);
 }

@@ -1,7 +1,7 @@
 .cooperation {
   position: relative;
   z-index: 2;
-  padding: 0 20px;
+  
   &__container {
     padding-top: 200px;
     padding-bottom: 198px;
@@ -37,6 +37,11 @@
     border-radius: 52px;
     @media (max-width: em(1200)) {
       padding: 30px 52px;
+    }
+
+    @media (max-width:$mobile){
+      border-radius: 16px;
+      padding: 15px 20px;
     }
   }
 
