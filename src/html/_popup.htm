@@ -1,10 +1,149 @@
 <div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрити</button>
-			<div class="popup__text">
-				Text
-			</div>
-		</div>
-	</div>
+  <div class="popup__wrapper">
+    <div class="popup__content">
+      <div class="popup__container">
+        <button class="popup__close" data-close="popup">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            fill="none"
+            viewBox="0 0 40 40"
+          >
+            <circle cx="20" cy="20" r="20" fill="#000" />
+            <path
+              stroke="#59FAFF"
+              stroke-width="6"
+              d="m27.428 27.439-15.03-15.03m15.03.152-15.03 15.03"
+            />
+          </svg>
+        </button>
+        <div class="product bagels">
+          <div class="product__image-wrap assortment__image-wrap">
+            <img
+              src="@img/products/flow_pack.png"
+              class="assortment__product"
+              width="622"
+              height="651"
+              alt="product img"
+            />
+            <img
+              src="@img/products/Bagels1.png"
+              class="assortment__bagels assortment__bagels_1"
+              width="153"
+              height="102"
+              alt="Bagels"
+            />
+            <img
+              src="@img/products/Bagels2.png"
+              class="assortment__bagels assortment__bagels_2"
+              width="202"
+              height="200"
+              alt="Bagels"
+            />
+            <img
+              src="@img/products/Bagels3.png"
+              class="assortment__bagels assortment__bagels_3"
+              width="202"
+              height="200"
+              alt="Bagels"
+            />
+            <img
+              src="@img/products/Bagels4.png"
+              class="assortment__bagels assortment__bagels_4"
+              width="153"
+              height="102"
+              alt="Bagels"
+            />
+            <img
+              src="@img/products/Bagels5.png"
+              class="assortment__bagels assortment__bagels_5"
+              width="202"
+              height="200"
+              alt="Bagels"
+            />
+          </div>
+        </div>
+        <div class="product__info">
+          <h3 class="product__info-title heading_3">Малютки глазуровані</h3>
+
+          <p class="product__info-text body_5">
+            Бублики малютка - смачна та корисна страва навіть для найменших
+            гурманів. Мають нейтральний приємний смак. М'які, пухкі і легкі для
+            пережовування, зручно їсти. Можна зїсти їх окремо або посмакувати їх
+            з додатками, такими як пюре з фруктів чи йогурт, для
+            різноманітності.
+          </p>
+
+          <div class="product__info-wrap">
+            <div class="product__info-price price_2">
+              <!-- <img
+                class="price-mark"
+                src="@img/price-mark.svg"
+                alt="price-mark"
+              /> -->
+              <span> 36 грн</span>
+            </div>
+            <div class="product__info-weight weight_2">
+              <span>300 г</span>
+            </div>
+          </div>
+
+          <!-- <button class="product__info-btn btn button">
+            <span>Замовити</span>
+          </button> -->
+          <div class="product__info-order">
+            <div class="order">
+              <div class="order__wrap">
+                <h3 class="order__title">Замовити</h3>
+                <form class="order-form">
+                  <div class="form__loader">
+                    <span class="loader"></span>
+                  </div>
+
+                  <label class="order-form__lable name-lable" for="">
+                    <span class="order-form__placeholder">Ваше ім’я</span>
+                    <input
+                      class="order-form__input"
+                      name="yourName"
+                      type="text"
+                      aria-label="your name"
+                      id="userName"
+                    />
+                  </label>
+
+                  <label class="order-form__lable phone-lable" for="">
+                    <span class="order-form__placeholder">Номер телефону</span>
+                    <input
+                      class="order-form__input"
+                      name="yourPhone"
+                      type="text"
+                      aria-label="your phone"
+                      id="userPhone"
+                    />
+                  </label>
+                  <label class="order-form__lable amount-lable" for="">
+                    <input
+                      type="number"
+                      class="order-form__amount"
+                      name="amount"
+                      min="1"
+                      max="1000"
+                      placeholder="0"
+                    />
+                  </label>
+
+                  <div class="popup__alert"></div>
+                  <button type="submit" class="btn button order-form__btn">
+                    <span>Відправити</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup__products">@@include('./_products.htm',{})</div>
+    </div>
+  </div>
 </div>

@@ -14,16 +14,23 @@ import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 gsap.registerPlugin(ScrollTrigger);
 
 const productTl = gsap.timeline({
-   scrollTrigger: {
-     trigger: ".products__container",
-     start: "top center",
-     end: "+=25%",
-   }
- });
+  scrollTrigger: {
+    trigger: ".products__container",
+    start: "top center",
+    end: "+=25%",
+  },
+});
 
- productTl.fromTo(".heading__span-1", {opacity: 0, x: -300},{opacity: 1, x: 0, duration: 0.6});
- productTl.fromTo(".heading__span-2", {opacity: 0, x: 300}, {opacity: 1, x: 0, duration: 0.6});
-
+productTl.fromTo(
+  ".heading__span-1",
+  { opacity: 0, x: -300 },
+  { opacity: 1, x: 0, duration: 0.6 }
+);
+productTl.fromTo(
+  ".heading__span-2",
+  { opacity: 0, x: 300 },
+  { opacity: 1, x: 0, duration: 0.6 }
+);
 
 const madeinTL = gsap.timeline({
   scrollTrigger: {
@@ -168,150 +175,152 @@ if (document.querySelector(".header__lang")) {
 
 // Ініціалізація слайдерів
 function initSliders() {
-	// Список слайдерів
-	// Перевіряємо, чи є слайдер на сторінці
-	if (document.querySelector('.madein__slider')) { // Вказуємо склас потрібного слайдера
-		// Створюємо слайдер
-		new Swiper('.madein__slider', { // Вказуємо склас потрібного слайдера
-			// modules: [Navigation, Autoplay],
-			loop: true,
+  // Список слайдерів
+  // Перевіряємо, чи є слайдер на сторінці
+  if (document.querySelector(".madein__slider")) {
+    // Вказуємо склас потрібного слайдера
+    // Створюємо слайдер
+    new Swiper(".madein__slider", {
+      // Вказуємо склас потрібного слайдера
+      // modules: [Navigation, Autoplay],
+      loop: true,
 
-			autoplay: {
-				// Пауза между прокруткой
-				delay: 0,
-				// Закончить на последнем слайде
-				stopOnLastSlide: false,
-				// Отключить после ручного переключения
-				disableOnInteraction: true,
-			 },
+      autoplay: {
+        // Пауза между прокруткой
+        delay: 0,
+        // Закончить на последнем слайде
+        stopOnLastSlide: false,
+        // Отключить после ручного переключения
+        disableOnInteraction: true,
+      },
 
-			 // швидкість
-  			speed: 3200,
-			 
-			// Брейкпоінти
-			breakpoints: {
-				340: {
-					slidesPerView: 1.5,
-					spaceBetween: 8,
-				},
-				768: {
-					slidesPerView: 1.5,
-					spaceBetween: 16,
-				},
-				1268: {
-					slidesPerView: 2.5,
-					spaceBetween: 20,
-				},
-			},
-			
-			// Події
-			on: {
-				init() {
-					this.el.addEventListener("mouseenter", () => {
-					  this.autoplay.stop();
-					});
-			
-					this.el.addEventListener("mouseleave", () => {
-					  this.autoplay.start();
-					});
-				 },
-			}
-		});
-	}
+      // швидкість
+      speed: 3200,
 
-	if (document.querySelector(".instagram__slider")) {
-		// Вказуємо склас потрібного слайдера
-		// Створюємо слайдер
-		new Swiper(".instagram__slider", {
-		  // Вказуємо склас потрібного слайдера
-		  // modules: [Navigation, Autoplay],
-		  loop: true,
-  
-		  autoplay: {
-			 // Пауза между прокруткой
-			 delay: 0,
-			 // Закончить на последнем слайде
-			 stopOnLastSlide: false,
-			 // Отключить после ручного переключения
-			 disableOnInteraction: true,
-		  },
-  
-		  // швидкість
-		  speed: 3200,
-  
-		  // Брейкпоінти
-		  breakpoints: {
-			 340: {
-				spaceBetween: 16,
-				slidesPerView: "auto",
-				centeredSlides: true,
-			 },
-  
-			 768: {
-				spaceBetween: 30,
-				slidesPerView: "auto",
-				centeredSlides: true,
-			 },
-  
-			 1268: {
-				spaceBetween: 60,
-				slidesPerView: "3",
-				centeredSlides: true,
-			 },
-		  },
-  
-		  // Події
-		  on: {
-			 init() {
-				this.el.addEventListener("mouseenter", () => {
-				  this.autoplay.stop();
-				});
-  
-				this.el.addEventListener("mouseleave", () => {
-				  this.autoplay.start();
-				});
-			 },
-		  },
-		});
-	}
-  
-	if (document.querySelector(".offer__slider")) {
-		new Swiper(".offer__slider", {
-		  // modules: [Navigation, Autoplay],
-		  spaceBetween: 30,
-		  slidesPerView: 3,
-		  centeredSlides: true,
-		//   roundLengths: true,
-		  loop: true,
-		//   loopedSlides: 1,
-		//   initialSlide: 1,
-		  slideToClickedSlide: true,
+      // Брейкпоінти
+      breakpoints: {
+        340: {
+          slidesPerView: 1.5,
+          spaceBetween: 8,
+        },
+        768: {
+          slidesPerView: 1.5,
+          spaceBetween: 16,
+        },
+        1268: {
+          slidesPerView: 2.5,
+          spaceBetween: 20,
+        },
+      },
 
-		  // Navigation arrows
-			navigation: {
-				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev',
-			},
+      // Події
+      on: {
+        init() {
+          this.el.addEventListener("mouseenter", () => {
+            this.autoplay.stop();
+          });
 
-		  breakpoints: {
-			340: {
-				spaceBetween: 16,
-				slidesPerView: "auto",
-				centeredSlides: true,
-			 },
-			 768: {
-				spaceBetween: 30,
-				slidesPerView: "2",
-				centeredSlides: true,
-			 },
-			 1268: {
-				spaceBetween: 30,
-				slidesPerView: "3",
-				centeredSlides: true,
-			 },
-		  }
-		});
-	}
+          this.el.addEventListener("mouseleave", () => {
+            this.autoplay.start();
+          });
+        },
+      },
+    });
+  }
+
+  if (document.querySelector(".instagram__slider")) {
+    // Вказуємо склас потрібного слайдера
+    // Створюємо слайдер
+    new Swiper(".instagram__slider", {
+      // Вказуємо склас потрібного слайдера
+      // modules: [Navigation, Autoplay],
+      loop: true,
+
+      autoplay: {
+        // Пауза между прокруткой
+        delay: 0,
+        // Закончить на последнем слайде
+        stopOnLastSlide: false,
+        // Отключить после ручного переключения
+        disableOnInteraction: true,
+      },
+
+      // швидкість
+      speed: 3200,
+
+      // Брейкпоінти
+      breakpoints: {
+        340: {
+          spaceBetween: 16,
+          slidesPerView: "auto",
+          centeredSlides: true,
+        },
+
+        768: {
+          spaceBetween: 30,
+          slidesPerView: "auto",
+          centeredSlides: true,
+        },
+
+        1268: {
+          spaceBetween: 60,
+          slidesPerView: "3",
+          centeredSlides: true,
+        },
+      },
+
+      // Події
+      on: {
+        init() {
+          this.el.addEventListener("mouseenter", () => {
+            this.autoplay.stop();
+          });
+
+          this.el.addEventListener("mouseleave", () => {
+            this.autoplay.start();
+          });
+        },
+      },
+    });
+  }
+
+  if (document.querySelector(".offer__slider")) {
+    new Swiper(".offer__slider", {
+      // modules: [Navigation, Autoplay],
+      spaceBetween: 30,
+      slidesPerView: 3,
+      centeredSlides: true,
+      //   roundLengths: true,
+      loop: true,
+      //   loopedSlides: 1,
+      //   initialSlide: 1,
+      slideToClickedSlide: true,
+
+      // Navigation arrows
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      breakpoints: {
+        340: {
+          spaceBetween: 16,
+          slidesPerView: "auto",
+          centeredSlides: true,
+        },
+        768: {
+          spaceBetween: 30,
+          slidesPerView: "2",
+          centeredSlides: true,
+        },
+        1268: {
+          spaceBetween: 30,
+          slidesPerView: "3",
+          centeredSlides: true,
+        },
+      },
+    });
+  }
 }
 
 initSliders();
@@ -319,170 +328,294 @@ initSliders();
 //About animation ======================================================
 //about__scene_1
 const Scene_1 = gsap.timeline({
-	scrollTrigger: {
-		trigger: ".about__scene_1",
-		start: "center center",
-		end: "+=100%",
-	},
+  scrollTrigger: {
+    trigger: ".about__scene_1",
+    start: "center center",
+    end: "+=100%",
+  },
 });
 
-Scene_1.from('.about__scene_1 .row_1', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		.from('.about__scene_1 .row_2', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		.from('.about__scene_1 .row_2 img', {y: 200, opacity: 0, duration: 0.4, ease: "back.out(1.7)"})
-		.from('.about__scene_1 .row_3', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"});
-
-
+Scene_1.from(".about__scene_1 .row_1", {
+  y: 200,
+  opacity: 0,
+  duration: 0.4,
+  ease: "power3.out",
+})
+  .from(".about__scene_1 .row_2", {
+    y: 200,
+    opacity: 0,
+    duration: 0.4,
+    ease: "power3.out",
+  })
+  .from(".about__scene_1 .row_2 img", {
+    y: 200,
+    opacity: 0,
+    duration: 0.4,
+    ease: "back.out(1.7)",
+  })
+  .from(".about__scene_1 .row_3", {
+    y: 200,
+    opacity: 0,
+    duration: 0.4,
+    ease: "power3.out",
+  });
 
 const Scene_2 = gsap.timeline({
-	scrollTrigger: {
-		trigger: ".about__scene_2",
-		start: "top center",
-		end: "+=40%",
-		// markers: true
-	},
+  scrollTrigger: {
+    trigger: ".about__scene_2",
+    start: "top center",
+    end: "+=40%",
+    // markers: true
+  },
 });
 
-Scene_2.from('.about__scene_2 .row_1', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_2 .row_2', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_2 .row_3', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_2 .row_4', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_2 .row_4 img', {y: 200, opacity: 0, duration: 0.4, ease: "back.out(1.7)"})
-		 .from('.about__scene_2 .row_5', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_2 .row_6', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_2 .row_6 img', {y: 200, opacity: 0, duration: 0.4, ease: "back.out(1.7)"});
-
-
+Scene_2.from(".about__scene_2 .row_1", {
+  y: 200,
+  opacity: 0,
+  duration: 0.4,
+  ease: "power3.out",
+})
+  .from(".about__scene_2 .row_2", {
+    y: 200,
+    opacity: 0,
+    duration: 0.4,
+    ease: "power3.out",
+  })
+  .from(".about__scene_2 .row_3", {
+    y: 200,
+    opacity: 0,
+    duration: 0.4,
+    ease: "power3.out",
+  })
+  .from(".about__scene_2 .row_4", {
+    y: 200,
+    opacity: 0,
+    duration: 0.4,
+    ease: "power3.out",
+  })
+  .from(".about__scene_2 .row_4 img", {
+    y: 200,
+    opacity: 0,
+    duration: 0.4,
+    ease: "back.out(1.7)",
+  })
+  .from(".about__scene_2 .row_5", {
+    y: 200,
+    opacity: 0,
+    duration: 0.4,
+    ease: "power3.out",
+  })
+  .from(".about__scene_2 .row_6", {
+    y: 200,
+    opacity: 0,
+    duration: 0.4,
+    ease: "power3.out",
+  })
+  .from(".about__scene_2 .row_6 img", {
+    y: 200,
+    opacity: 0,
+    duration: 0.4,
+    ease: "back.out(1.7)",
+  });
 
 const Scene_3 = gsap.timeline({
-	scrollTrigger: {
-		trigger: ".about__scene_3",
-		start: "top center",
-		end: "+=30%",
-		// markers: true
-	},
+  scrollTrigger: {
+    trigger: ".about__scene_3",
+    start: "top center",
+    end: "+=30%",
+    // markers: true
+  },
 });
 
-document.querySelectorAll(".about__scene_3 p").forEach((row) => {  
-	Scene_3.from(row, {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
+document.querySelectorAll(".about__scene_3 p").forEach((row) => {
+  Scene_3.from(row, { y: 200, opacity: 0, duration: 0.4, ease: "power3.out" });
 });
-
 
 const Scene_4 = gsap.timeline({
-	scrollTrigger: {
-		trigger: ".about__scene_4",
-		start: "top center",
-		end: "+=50%",
-		// markers: true
-	},
+  scrollTrigger: {
+    trigger: ".about__scene_4",
+    start: "top center",
+    end: "+=50%",
+    // markers: true
+  },
 });
-Scene_4.from('.about__scene_4 .row_1', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_4 .row_1 img', {y: 200, opacity: 0, duration: 0.4, ease: "back.out(1.7)"})
-		 .from('.about__scene_4 .row_2', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_4 .row_3', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_4 .row_4', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_4 .row_5', {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"});
-
+Scene_4.from(".about__scene_4 .row_1", {
+  y: 200,
+  opacity: 0,
+  duration: 0.4,
+  ease: "power3.out",
+})
+  .from(".about__scene_4 .row_1 img", {
+    y: 200,
+    opacity: 0,
+    duration: 0.4,
+    ease: "back.out(1.7)",
+  })
+  .from(".about__scene_4 .row_2", {
+    y: 200,
+    opacity: 0,
+    duration: 0.4,
+    ease: "power3.out",
+  })
+  .from(".about__scene_4 .row_3", {
+    y: 200,
+    opacity: 0,
+    duration: 0.4,
+    ease: "power3.out",
+  })
+  .from(".about__scene_4 .row_4", {
+    y: 200,
+    opacity: 0,
+    duration: 0.4,
+    ease: "power3.out",
+  })
+  .from(".about__scene_4 .row_5", {
+    y: 200,
+    opacity: 0,
+    duration: 0.4,
+    ease: "power3.out",
+  });
 
 const Scene_5 = gsap.timeline({
-	scrollTrigger: {
-		trigger: ".about__scene_5",
-		start: "top center",
-		end: "+=60%",
-		// markers: true
-	},
+  scrollTrigger: {
+    trigger: ".about__scene_5",
+    start: "top center",
+    end: "+=60%",
+    // markers: true
+  },
 });
 
-Scene_5.from('.about__scene_5 .row_1', {y: 200, opacity: 0, duration: 0.4, ease: "back.out(1.7)"});
-document.querySelectorAll(".advanteges__item").forEach((item) => {  
-	Scene_5.from(item, {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
+Scene_5.from(".about__scene_5 .row_1", {
+  y: 200,
+  opacity: 0,
+  duration: 0.4,
+  ease: "back.out(1.7)",
 });
-
+document.querySelectorAll(".advanteges__item").forEach((item) => {
+  Scene_5.from(item, { y: 200, opacity: 0, duration: 0.4, ease: "power3.out" });
+});
 
 function changeImg(progress) {
-	const img = document.querySelector('.about__bagel .bagel');
-	let newImg = 'bagel';
+  const img = document.querySelector(".about__bagel .bagel");
+  let newImg = "bagel";
 
-	switch(progress) {
-		case 0:  newImg = 'bagel'; break;
-		case 1:  newImg = 'f2'; break;
-		case 2:  newImg = 'f3'; break;
-		case 3:  newImg = 'f4'; break;
-		case 4:  newImg = 'f5'; break;
-		case 5:  newImg = 'bagel'; break;
-		case 6:  newImg = 'f2'; break;
-		case 7:  newImg = 'f3'; break;
-		case 8:  newImg = 'f4'; break;
-		case 9:  newImg = 'f5'; break;
-		case 10:  newImg = 'bagel'; break;
+  switch (progress) {
+    case 0:
+      newImg = "bagel";
+      break;
+    case 1:
+      newImg = "f2";
+      break;
+    case 2:
+      newImg = "f3";
+      break;
+    case 3:
+      newImg = "f4";
+      break;
+    case 4:
+      newImg = "f5";
+      break;
+    case 5:
+      newImg = "bagel";
+      break;
+    case 6:
+      newImg = "f2";
+      break;
+    case 7:
+      newImg = "f3";
+      break;
+    case 8:
+      newImg = "f4";
+      break;
+    case 9:
+      newImg = "f5";
+      break;
+    case 10:
+      newImg = "bagel";
+      break;
 
-		default: newImg = 'bagel'; break;
-	}
+    default:
+      newImg = "bagel";
+      break;
+  }
 
-	img.style.backgroundImage = `url(../../img/about/${newImg}.png)`;
-
+  img.style.backgroundImage = `url(../../img/about/${newImg}.png)`;
 }
 
-if(document.querySelector('.about__bagel')) {
-	let mm = gsap.matchMedia(),
-	breakPoint = 768;
- 
-	mm.add({
- 
-	  isDesktop: `(min-width: ${breakPoint}px)`,
-	  isMobile: `(max-width: ${breakPoint - 1}px)`,
-	  reduceMotion: "(prefers-reduced-motion: reduce)"
- 
-	  }, (context) => {
- 
-	  let { isDesktop, isMobile } = context.conditions;
-	  const contentHeight = document.querySelector('.about__content').offsetHeight;
- 
-	  if(isDesktop) {
-			
-			const bagel =  gsap.timeline({
-				scrollTrigger: {
-					trigger: ".about__bagel",
-					start: "top 20%",
-					end: `+=${contentHeight * 0.7}`,
-					scrub: 1,
-					pin: true,
-					// onUpdate: (self) => {
-					// 	// Calculate the progress of the ScrollTrigger
-					// 	const progress = self.progress.toFixed(1) * 10;
-					// 	console.log(progress);
-					// 	changeImg(progress);
-					//  },
-					// markers: true
-				},
-			});
-			
-			bagel.to('.about__bagel img', {rotation: 360, duration: 3});
-	  }
- 
-	  if(isMobile) {
-			const bagel =  gsap.timeline({
-				scrollTrigger: {
-					trigger: ".about__bagel",
-					start: "top 10%",
-					end: `+=${contentHeight}`,
-					scrub: 1,
-					pin: false,
-					// markers: true
-				},
-			});
-			
-			bagel.to('.about__bagel img', {rotation: 360, duration: 3});
-	  }
- 
-	}); 
- 
+if (document.querySelector(".about__bagel")) {
+  let mm = gsap.matchMedia(),
+    breakPoint = 768;
 
- }
+  mm.add(
+    {
+      isDesktop: `(min-width: ${breakPoint}px)`,
+      isMobile: `(max-width: ${breakPoint - 1}px)`,
+      reduceMotion: "(prefers-reduced-motion: reduce)",
+    },
+    (context) => {
+      let { isDesktop, isMobile } = context.conditions;
+      const contentHeight =
+        document.querySelector(".about__content").offsetHeight;
+
+      if (isDesktop) {
+        const bagel = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".about__bagel",
+            start: "top 20%",
+            end: `+=${contentHeight * 0.7}`,
+            scrub: 1,
+            pin: true,
+            // onUpdate: (self) => {
+            // 	// Calculate the progress of the ScrollTrigger
+            // 	const progress = self.progress.toFixed(1) * 10;
+            // 	console.log(progress);
+            // 	changeImg(progress);
+            //  },
+            // markers: true
+          },
+        });
+
+        bagel.to(".about__bagel img", { rotation: 360, duration: 3 });
+      }
+
+      if (isMobile) {
+        const bagel = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".about__bagel",
+            start: "top 10%",
+            end: `+=${contentHeight}`,
+            scrub: 1,
+            pin: false,
+            // markers: true
+          },
+        });
+
+        bagel.to(".about__bagel img", { rotation: 360, duration: 3 });
+      }
+    }
+  );
+}
 
 //end about animation ===================================================
 
-
 //====================Прокрутка до блоку==========================//
-document.querySelector('#btnScrollToAbout')?.addEventListener('click', function() {
-	gsap.to(window, {duration: 2, scrollTo: "#about"});
+document
+  .querySelector("#btnScrollToAbout")
+  ?.addEventListener("click", function () {
+    gsap.to(window, { duration: 2, scrollTo: "#about" });
+  });
+
+const orderForm = document.querySelector(".order");
+
+document.addEventListener("click", (event) => {
+  if (!orderForm.contains(event.target)) {
+    orderForm.classList.remove("active-form");
+  } else {
+    orderForm.classList.add("active-form");
+  }
 });
+
+// orderForm.addEventListener("click", (event) => {
+//   // Prevent clicks inside the order form from triggering the document click event
+//   event.stopPropagation();
+// });
