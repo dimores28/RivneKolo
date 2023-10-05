@@ -23,8 +23,8 @@ const productTl = gsap.timeline({
    }
  });
 
- productTl.fromTo(".heading__span-1", {opacity: 0, x: -300, rotate: 16},{opacity: 1, x: 0, rotate: 0, duration: 0.6});
- productTl.fromTo(".heading__span-2", {opacity: 0, x: 300, rotate: -16}, {opacity: 1, x: 0, rotate: 0, duration: 0.6});
+ productTl.fromTo(".heading__span-1", {opacity: 0, y: 200, x: -300, rotate: 16},{opacity: 1, y: 0, x: 0, rotate: 0, duration: 0.6});
+ productTl.fromTo(".heading__span-2", {opacity: 0, y: 200, x: 300, rotate: -16}, {opacity: 1, y: 0, x: 0, rotate: 0, duration: 0.6});
 
  gsap.registerPlugin(CustomEase);
 const madeinTL = gsap.timeline({
