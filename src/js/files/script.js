@@ -373,7 +373,7 @@ function initSliders() {
 
 initSliders();
 
-//About animation ======================================================
+//==================About animation ======================================================
 //about__scene_1
 const Scene_1 = gsap.timeline({
 	scrollTrigger: {
@@ -385,7 +385,7 @@ const Scene_1 = gsap.timeline({
 
 Scene_1.from('.about__scene_1 .row_1', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "power3.out"})
 		.from('.about__scene_1 .row_2', {y: 200, opacity: 0, rotate: -16, duration: 0.4, ease: "power3.out"})
-		.from('.about__scene_1 .row_2 img', {y: 200, opacity: 0, duration: 0.4, ease: "back.out(1.7)"})
+		.from('.about__scene_1 .row_2 img', {y: 200, x: 100, opacity: 0, duration: 0.4, ease: "back.out(1.7)"})
 		.from('.about__scene_1 .row_3', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "power3.out"});
 
 
@@ -403,10 +403,10 @@ Scene_2.from('.about__scene_2 .row_1', {y: 200, opacity: 0, rotate: 16, duration
 		 .from('.about__scene_2 .row_2', {y: 200, opacity: 0, rotate: -16, duration: 0.4, ease: "power3.out"})
 		 .from('.about__scene_2 .row_3', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "power3.out"})
 		 .from('.about__scene_2 .row_4', {y: 200, opacity: 0, rotate: -16, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_2 .row_4 img', {y: 200, opacity: 0, duration: 0.4, ease: "back.out(1.7)"})
+		 .from('.about__scene_2 .row_4 img', {y: -200, x: -100, opacity: 0, duration: 0.4, ease: "back.out(1.7)"})
 		 .from('.about__scene_2 .row_5', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "power3.out"})
 		 .from('.about__scene_2 .row_6', {y: 200, opacity: 0, rotate: -16, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_2 .row_6 img', {y: 200, opacity: 0, duration: 0.4, ease: "back.out(1.7)"});
+		 .from('.about__scene_2 .row_6 img', {y: 200, x: -100, opacity: 0, duration: 0.4, ease: "back.out(1.7)"});
 
 
 
@@ -427,6 +427,8 @@ document.querySelectorAll(".about__scene_3 p").forEach((row, i) => {
 	Scene_3.from(row, {y: 200, opacity: 0, rotate: deg, duration: 0.4, ease: "power3.out"})
 });
 
+Scene_3.from('.row_5', {y: 200, opacity: 0, duration: 0.4, ease: "back.out(1.7)"});
+
 
 const Scene_4 = gsap.timeline({
 	scrollTrigger: {
@@ -437,7 +439,7 @@ const Scene_4 = gsap.timeline({
 	},
 });
 Scene_4.from('.about__scene_4 .row_1', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_4 .row_1 img', {y: 200, opacity: 0, duration: 0.4, ease: "back.out(1.7)"})
+		 .from('.about__scene_4 .row_1 img', {y: 200, x: 200, opacity: 0, duration: 0.4, ease: "back.out(1.7)"})
 		 .from('.about__scene_4 .row_2', {y: 200, opacity: 0, rotate: -16, duration: 0.4, ease: "power3.out"})
 		 .from('.about__scene_4 .row_3', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "power3.out"})
 		 .from('.about__scene_4 .row_4', {y: 200, opacity: 0, rotate: -16, duration: 0.4, ease: "power3.out"})
@@ -453,10 +455,21 @@ const Scene_5 = gsap.timeline({
 	},
 });
 
-Scene_5.from('.about__scene_5 .row_1', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "back.out(1.7)"});
-document.querySelectorAll(".advanteges__item").forEach((item) => {  
-	Scene_5.from(item, {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-});
+// Scene_5.from('.about__scene_5 .row_1', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "back.out(1.7)"});
+// document.querySelectorAll(".advanteges__item").forEach((item) => {  
+// 	Scene_5.from(item, {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
+// });
+
+const arrowsBtn = document.querySelector('.about__download-btn span i');
+const spanBtn = document.querySelector('.about__download-btn span');
+let animation = gsap.to(arrowsBtn, {
+	paused: true,
+	backgroundPosition: "50% -10%",
+	ease: "elastic.out(1, 0.3)",
+	duration: 1.5,
+	delay: 0.2
+ });
+
 
 
 function changeImg(progress) {
@@ -504,7 +517,7 @@ if(document.querySelector('.about__bagel')) {
 				scrollTrigger: {
 					trigger: ".about__bagel",
 					start: "top 20%",
-					end: `+=${contentHeight * 0.7}`,
+					end: `+=${contentHeight * 0.85}`,
 					scrub: 1,
 					pin: true,
 					// onUpdate: (self) => {
@@ -540,7 +553,9 @@ if(document.querySelector('.about__bagel')) {
 
  }
 
-//end about animation ===================================================
+ spanBtn.addEventListener("mouseenter", () => animation.play());
+ spanBtn.addEventListener("mouseleave", () => animation.reverse());
+ //==================End About animation ====================================================== 
 
 
 //====================Прокрутка до блоку==========================//
