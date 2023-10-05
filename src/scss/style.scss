@@ -66,11 +66,11 @@ body {
   font-family: $fontFamily, sans-serif;
   background: #ffdf00;
   // Скролл заблоковано
-  // .lock & {
-  //   overflow: hidden;
-  //   touch-action: none;
-  //   overscroll-behavior: none;
-  // }
+  .popup-show & {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+  }
   // Сайт завантажений
   .loaded & {
   }

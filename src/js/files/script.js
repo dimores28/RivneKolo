@@ -562,3 +562,13 @@ if(document.querySelector('.about__bagel')) {
 //.scroll-arrow
 const upBtnTl = gsap.timeline({ repeat: -1, repeatDelay: 0.6 });
 upBtnTl.to(".scroll-arrow", {y: "-18%", duration: 0.4, ease: "bounce.out", delay: 2});
+
+const orderForm = document.querySelector(".order");
+
+document.addEventListener("click", (event) => {
+  if (!orderForm.contains(event.target)) {
+    orderForm.classList.remove("active-form");
+  } else {
+    orderForm.classList.add("active-form");
+  }
+});
