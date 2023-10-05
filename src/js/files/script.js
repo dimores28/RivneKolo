@@ -455,10 +455,10 @@ const Scene_5 = gsap.timeline({
 	},
 });
 
-// Scene_5.from('.about__scene_5 .row_1', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "back.out(1.7)"});
-// document.querySelectorAll(".advanteges__item").forEach((item) => {  
-// 	Scene_5.from(item, {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
-// });
+Scene_5.from('.about__scene_5 .row_1', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "back.out(1.7)"});
+document.querySelectorAll(".advanteges__item").forEach((item) => {  
+	Scene_5.from(item, {y: 200, opacity: 0, duration: 0.4, ease: "power3.out"})
+});
 
 const arrowsBtn = document.querySelector('.about__download-btn span i');
 const spanBtn = document.querySelector('.about__download-btn span');
