@@ -86,6 +86,7 @@
    &__product {
       position: relative;
       z-index: 1;
+      transition: all 0.4s cubic-bezier(0.25, 0.4, 0.55, 1.5);
 
       @media (max-width: em(1720)){
            margin-left: -30px;
@@ -119,6 +120,7 @@
       position: absolute;
       top: 36%;
       left: 30%;
+      transition: all 0.4s cubic-bezier(0.25, 0.4, 0.55, 1.5);
 
       // .assortment__bagels_1
       &_1 {
@@ -146,6 +148,7 @@
       position: absolute;
       top: 36%;
       left: 30%;
+      transition: all 0.4s cubic-bezier(0.25, 0.4, 0.55, 1.5);
       // .assortment__nuts_1
       &_1 {
       }
@@ -259,10 +262,15 @@
 
          .assortment__info-title {
             margin-top: 0;
-            padding-left: 162px;
+            padding-left: 148px;
+            margin-bottom: 0;
 
             @media (max-width: em(1080)){
-                padding-left: 64px; 
+                padding-left: 86px; 
+            }
+
+            @media (max-width:$mobileSmall){
+               padding-left: 70px; 
             }
          }
 
@@ -272,10 +280,40 @@
             @media (max-width: em(1080)){
                padding-left: 104px; 
             }
+
+            @media (max-width:$mobileSmall){
+               padding-left: 96px; 
+            }
          }
 
          .assortment__info-weight {
             transform: rotate(4deg);
+            margin-right: -78px;
+
+            @media (max-width: em(1720)){
+               margin-right: -50px; 
+            }
+            @media (max-width: em(1646)){
+               margin-right: -26px; 
+            }
+            @media (max-width: em(1586)) {
+               margin-top: -14px;
+            }
+            @media (max-width: em(1440)){
+               margin-right: 0px; 
+            }
+            
+         }
+
+         .assortment__info-bg {
+            width: 456px;
+            height: 403px;
+            object-fit: contain;
+
+            @media (max-width: em(1080)){
+               width: 100%;
+               height: 100%; 
+            }
          }
 
          @media (max-width: em(1080)){
@@ -290,7 +328,7 @@
 
          @media (max-width:$mobileSmall){
             margin-bottom: -124px !important; 
-        }
+         }
       }
 
       @media (max-width: em(1462)) {
@@ -363,6 +401,12 @@
          width: 154px;
          height: 68px;
          border-radius: 77px / 34px;
+
+         @media (max-width:$mobileSmall){
+            width: 100px;
+            height: 40px; 
+            border-radius: 50px / 20px;
+         }
       }
 
       @media (max-width: em(1080)) {
@@ -371,6 +415,15 @@
          right: 0;
          z-index: 10;
       }
+
+      @media (max-width:$mobileSmall){
+         width: 112px;
+         height: 54px; 
+         border-radius: 56px / 27px;
+         top: 20px;
+      }
+
+  
    }
 
    // .assortment__info-price
@@ -394,12 +447,12 @@
       line-height: 20px; /* 111.111% */
       text-transform: uppercase;
       margin-top: 80px;
-      padding-left: 162px;
+      padding-left: 144px;
       max-width: 300px;
 
       
       @media (max-width: em(1080)){
-         padding-left: 64px; 
+         padding-left: 90px; 
          max-width: 280px;
          margin-top: 60px;
       }
@@ -408,22 +461,22 @@
           max-width: 320px; 
           margin-top: 80px;
       }
+
+      @media (max-width:$mobileSmall){
+         padding-left: 52px; 
+      }
    }
 }
 
 
 
 .bagels {
-   transition: all 0.3s ease-in;
-
-   // .assortment__product {
-   //    transform: rotate(9deg);
-   // }
+   transition: all 0.4s cubic-bezier(0.25, 0.4, 0.55, 1.5);
 
    @media (any-hover: hover) {
       &:hover {
          .assortment__product {
-            transform: rotate(1deg);
+            transform: rotate(-4deg);
          }
    
          .assortment__bagels_1 {
@@ -457,7 +510,7 @@
    &._watcher-view {
       @media (max-width:$mobileSmall){
          .assortment__product {
-            transform: rotate(1deg);
+            transform: rotate(-4deg);
          }
    
          .assortment__bagels_1 {
@@ -518,12 +571,46 @@
 }
 
 .nuts {
-   transition: all 0.3s ease-in;
+   margin-left: -46px;
+   transition: all 0.3s cubic-bezier(0.25, 0.4, 0.55, 1.5);
+
+   @media (max-width: em(1586)) {
+      .assortment__product {
+         width: 610px;
+      }
+
+      
+   }
+
+   @media (max-width: em(1462)) {
+      .assortment__info {
+         margin-bottom: -220px;
+     }
+   }
+
+   @media (max-width: em(940)){
+      .assortment__product {
+         margin-right: -57px;
+      } 
+   }
+
+   @media (max-width:$mobileSmall){
+      margin-left: -30px;
+
+      .assortment__product {
+         width: 390px;
+         margin-top: -12px;
+      }
+   }
+
+   @media (max-width: em(392)){
+      margin-left: -10px;
+   }
 
    @media (any-hover: hover) {
       &:hover {
          .assortment__product {
-            transform: rotate(15deg);
+            transform: rotate(-15deg);
          }
    
          .assortment__nuts_1 {
@@ -554,7 +641,7 @@
    &._watcher-view {
       @media (max-width:$mobileSmall){
          .assortment__product {
-            transform: rotate(15deg);
+            transform: rotate(-15deg);
          }
    
          .assortment__nuts_1 {
