@@ -3,7 +3,7 @@
   left: 0;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 100;
 
   &__container {
     width: 100%;
@@ -27,8 +27,8 @@
     justify-content: flex-end;
     width: 127px;
     height: 45px;
-    
-    @media (max-width:$mobile){
+
+    @media (max-width: $mobile) {
       width: 100%;
       justify-content: center;
     }
@@ -55,8 +55,8 @@
   overflow: hidden;
   background-color: transparent;
 
-  @media (max-width: em(1150)){
-    gap: 36px; 
+  @media (max-width: em(1150)) {
+    gap: 36px;
   }
 
   @media (max-width: $mobile) {
@@ -73,9 +73,9 @@
     display: flex;
     max-width: 1233px;
     width: 100%;
-    @media (max-width:$mobile){
-       margin-top: 26px; 
-       margin-bottom: 40px;
+    @media (max-width: $mobile) {
+      margin-top: 26px;
+      margin-bottom: 40px;
     }
   }
 
@@ -84,10 +84,9 @@
     justify-content: space-between;
     width: 100%;
 
-    
-    @media (max-width:$mobile){
-      flex-direction: column; 
-      text-align: center; 
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      text-align: center;
       gap: 20px;
     }
   }
@@ -98,8 +97,8 @@
     transition: all 0.3s ease-in;
     // transition-delay: 0.2s;
 
-    @media (max-width:$mobile){
-       text-align: center; 
+    @media (max-width: $mobile) {
+      text-align: center;
     }
   }
 }
@@ -163,7 +162,7 @@
   height: 45px;
   gap: 10px;
 
-  @media (max-width:$mobile){
+  @media (max-width: $mobile) {
     flex-direction: row;
     position: relative;
     width: auto;
@@ -182,20 +181,20 @@
 
     &::after {
       position: absolute;
-      content: '';
+      content: "";
       height: 2px;
       background-color: #000;
       bottom: 0;
       left: 50%;
       width: 0;
       transition: all 0.3s ease-in;
-   }
+    }
 
     @media (any-hover: hover) {
       &:hover {
         &::after {
-           left: 0;
-           width: 100%;
+          left: 0;
+          width: 100%;
         }
       }
     }

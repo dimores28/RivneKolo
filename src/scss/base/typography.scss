@@ -175,7 +175,6 @@
 .price_2 {
   font-family: $fontFamily, sans-serif;
   @include adaptiveValue("font-size", 51, 26);
-  font-size: 51.417px;
   font-style: normal;
   font-weight: 800;
   line-height: 72.727%; /* 72.727% */
