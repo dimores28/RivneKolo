@@ -67,13 +67,13 @@ gsap.registerPlugin(MotionPathPlugin);
 
 const hendTL = gsap.timeline({ repeat: -1, repeatDelay: 1 });
 //  hendTL.yoyo( true );
-// hendTL
-//   .to(".social__hand", { x: "115%", y: "-19%", duration: 2, ease: "elastic.out(1, 0.3)", delay: 1 })
-//   .to(
-//     ".social__shadow",
-//     { x: "180%", y: "235%", scale: 0.4, duration: 2 , ease: "elastic.out(1, 0.3)", delay: 1},
-//     "-=3"
-//   );
+hendTL
+	.to(".social__hand", { x: "115%", y: "-19%", duration: 2.5, ease: "bounce.out", delay: 1 })
+	.to(
+	".social__shadow",
+	{ x: "180%", y: "235%", scale: 0.4, duration: 2.5 , ease: "bounce.out", delay: 1},
+	"-=3.5"
+	);
 
 	let path1 = [
 		//1
@@ -106,19 +106,19 @@ const hendTL = gsap.timeline({ repeat: -1, repeatDelay: 1 });
 		}
    });
 
-	hendTL.to(".social__hand", { 
-		motionPath: {path: scaledPath1, align: 'self', alignOrigin: [0.5, 0.5]},
-		duration: 3, 
-		ease: "elastic.out(1, 0.3)", 
-		delay: 1 })
-		.to(".social__shadow",{ 
-			motionPath: {path: scaledPath2, align: 'self', alignOrigin: [0.5, 0.5]}, 
-			scale: 0.4, 
-			duration: 3 , 
-			ease: "elastic.out(1, 0.3)", 
-			delay: 1},
-			"-=4"
-		);
+	// hendTL.to(".social__hand", { 
+	// 	motionPath: {path: scaledPath1, align: 'self', alignOrigin: [0.5, 0.5]},
+	// 	duration: 3, 
+	// 	ease: "elastic.out(1, 0.3)", 
+	// 	delay: 1 })
+	// 	.to(".social__shadow",{ 
+	// 		motionPath: {path: scaledPath2, align: 'self', alignOrigin: [0.5, 0.5]}, 
+	// 		scale: 0.4, 
+	// 		duration: 3 , 
+	// 		ease: "elastic.out(1, 0.3)", 
+	// 		delay: 1},
+	// 		"-=4"
+	// 	);
 //=========== End Social lincks animation ================
 
 //Animate menu ===========================================
@@ -475,8 +475,7 @@ let animation = gsap.to(arrowsBtn, {
 	paused: true,
 	backgroundPosition: "50% -10%",
 	ease: "elastic.out(1, 0.3)",
-	duration: 1.5,
-	delay: 0.2
+	duration: 1.2,
  });
 
 
