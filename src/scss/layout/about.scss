@@ -81,9 +81,9 @@
     position: relative;
     margin-bottom: 350px;
 
-    // &:last-child {
-    //   margin-bottom: 160px;
-    // }
+    &:last-child {
+      margin-bottom: 160px;
+    }
 
     p {
       word-wrap: break-word;
