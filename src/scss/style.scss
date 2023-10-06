@@ -65,6 +65,7 @@ $responsiveType: 1;
 body {
   font-family: $fontFamily, sans-serif;
   background: #ffdf00;
+  padding-right: 0px !important;
   // Скролл заблоковано
   .popup-show & {
     overflow: hidden;

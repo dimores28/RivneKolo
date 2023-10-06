@@ -30,11 +30,11 @@ const productTl = gsap.timeline({
 const madeinTL = gsap.timeline({
   scrollTrigger: {
     trigger: ".madein__illustration",
-    start: "top top",
+    start: "top 20%",
     end: "+=30%",
     //   scrub: 1,
     //   pin: true,
-    //   markers: true
+      // markers: true
   },
 });
 //translate(-161%, -105%) rotateY(95deg)
