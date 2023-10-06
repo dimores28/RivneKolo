@@ -33,7 +33,7 @@
     transform: translate(0, 0) scale(0.95);
 
     &.swiper-slide-active {
-      transform: translate(0, -14%) scale(1.15) !important;
+      transform: translate3d(0, 0, -14%) scale(1.15) !important;
 
       .offer__slide-text {
         max-height: unset;

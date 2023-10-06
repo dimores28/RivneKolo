@@ -44,7 +44,7 @@ madeinTL.from(".madein__sticker", {
   yPercent: -105, 
   rotationY: 90,
   stagger: 1,
-  duration: 1,
+  duration: 1.8,
   ease: CustomEase.create("custom", "M0,0 C0.083,0.294 -0.04,1 0.286,1 0.49,1 0.752,1 1,1 ")
 });
 
@@ -53,8 +53,9 @@ madeinTL.from(".madein__sticker", {
 const madeinTlHero = gsap.timeline({
   scrollTrigger: {
     trigger: ".hero__wraper",
-    start: "center center",
-    end: "+=100%",
+    start: "top center",
+    end: "+=30%",
+	//  markers: true
   },
 });
 
@@ -146,8 +147,8 @@ if (document.querySelector(".menu")) {
           .to(".menu", {
             width: "100%",
             backgroundColor: "white",
-            duration: 0.5,
-				ease: "elastic.out(1, 0.3)"
+            duration: 1.3,
+				ease: "bounce.out"
           })
           .to(".menu__link", { opacity: 1, duration: 0.3 }, "-=0.55");
 
@@ -160,8 +161,8 @@ if (document.querySelector(".menu")) {
 
       if (isMobile) {
         openTl
-          .to(".menu", { width: "100%", height: "auto", duration: 0.4, ease: "elastic.out(1, 0.3)" })
-          .to(".menu__link", { opacity: 1, duration: 0.3 }, "-=0.5")
+          .to(".menu", { width: "100%", height: "auto", duration: 0.6, ease: "bounce.out" })
+          .to(".menu__link", { opacity: 1, duration: 0.3 }, "-=0.65")
           .to(".header__lang", { opacity: 1, duration: 0.3 });
 
         closeTl
@@ -339,6 +340,14 @@ function initSliders() {
 		  centeredSlides: true,
 		//   roundLengths: true,
 		  loop: true,
+		  effect: 'coverflow',
+		  coverflowEffect: {
+			rotate: 0,
+			stretch: 0,
+			depth: 100,
+			modifier: 1,
+			slideShadows : false,
+		 },
 		 
 		//   loopedSlides: 1,
 		//   initialSlide: 1,
@@ -434,7 +443,7 @@ const Scene_4 = gsap.timeline({
 	scrollTrigger: {
 		trigger: ".about__scene_4",
 		start: "top center",
-		end: "+=50%",
+		end: "+=30%",
 		// markers: true
 	},
 });
@@ -443,7 +452,7 @@ Scene_4.from('.about__scene_4 .row_1', {y: 200, opacity: 0, rotate: 16, duration
 		 .from('.about__scene_4 .row_2', {y: 200, opacity: 0, rotate: -16, duration: 0.4, ease: "power3.out"})
 		 .from('.about__scene_4 .row_3', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "power3.out"})
 		 .from('.about__scene_4 .row_4', {y: 200, opacity: 0, rotate: -16, duration: 0.4, ease: "power3.out"})
-		 .from('.about__scene_4 .row_5', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "power3.out"});
+		 .from('.about__scene_4 .row_6', {y: 200, opacity: 0, rotate: 16, duration: 0.4, ease: "power3.out"});
 
 
 const Scene_5 = gsap.timeline({
@@ -471,29 +480,15 @@ let animation = gsap.to(arrowsBtn, {
  });
 
 
-
+let bgPos = 0;
 function changeImg(progress) {
-	const img = document.querySelector('.about__bagel .bagel');
-	let newImg = 'bagel';
+	const img = document.querySelector('.about__bagel-sprite');
 
-	switch(progress) {
-		case 0:  newImg = 'bagel'; break;
-		case 1:  newImg = 'f2'; break;
-		case 2:  newImg = 'f3'; break;
-		case 3:  newImg = 'f4'; break;
-		case 4:  newImg = 'f5'; break;
-		case 5:  newImg = 'bagel'; break;
-		case 6:  newImg = 'f2'; break;
-		case 7:  newImg = 'f3'; break;
-		case 8:  newImg = 'f4'; break;
-		case 9:  newImg = 'f5'; break;
-		case 10:  newImg = 'bagel'; break;
-
-		default: newImg = 'bagel'; break;
+	if(progress % 2 === 0) {
+		bgPos = bgPos -564;
 	}
-
-	img.style.backgroundImage = `url(../../img/about/${newImg}.png)`;
-
+	console.log(bgPos);
+	img.style.backgroundPositionY = `${bgPos}px`;
 }
 
 if(document.querySelector('.about__bagel')) {
@@ -520,17 +515,17 @@ if(document.querySelector('.about__bagel')) {
 					end: `+=${contentHeight * 0.85}`,
 					scrub: 1,
 					pin: true,
-					// onUpdate: (self) => {
-					// 	// Calculate the progress of the ScrollTrigger
-					// 	const progress = self.progress.toFixed(1) * 10;
-					// 	console.log(progress);
-					// 	changeImg(progress);
-					//  },
+					onUpdate: (self) => {
+						// Calculate the progress of the ScrollTrigger
+						const progress = self.progress.toFixed(1) * 100;
+						console.log(progress);
+						changeImg(progress);
+					 },
 					// markers: true
 				},
 			});
 			
-			bagel.to('.about__bagel img', {rotation: 360, duration: 3});
+			// bagel.to('.about__bagel img', {rotation: 360, duration: 3});
 	  }
  
 	  if(isMobile) {

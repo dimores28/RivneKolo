@@ -538,7 +538,7 @@ export function menuOpen() {
 }
 export function menuClose() {
   bodyUnlock();
-  document.documentElement.classList.remove("menu-open");
+  // document.documentElement.classList.remove("menu-open");
 }
 // Модуль "показати ще" =======================================================================================================================================================================================================================
 export function showMore() {
