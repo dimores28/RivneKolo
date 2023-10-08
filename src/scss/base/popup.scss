@@ -55,13 +55,14 @@ body::after {
 
 .popup {
   &__close {
-    position: absolute;
-    right: 10px;
-    top: -100px;
-    z-index: 1;
-    @media (max-width: $mobile) {
-      top: -80px;
-    }
+    position: fixed;
+    right: 24px;
+    top: 50px;
+    z-index: 1000;
+    display: none;
+    // @media (max-width: $mobile) {
+    //   top: -80px;
+    // }
   }
   &__products {
     position: relative;
@@ -244,6 +245,12 @@ body::after {
         }
       }
     }
+  }
+}
+
+.popup-show {
+  .popup__close {
+    display: block;
   }
 }
 
