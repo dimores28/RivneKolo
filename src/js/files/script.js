@@ -788,3 +788,12 @@ document.addEventListener("mousemove", (e) => {
     }
   });
 });
+
+document.addEventListener("afterPopupOpen", function (e) {
+	// Попап
+	const currentPopup = e.detail.popup;
+
+  setTimeout(()=> {
+    document.querySelector('.popup__content').scrollIntoView({ block: "start", behavior: "smooth" });
+  }, 300);
+});
