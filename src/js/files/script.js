@@ -593,3 +593,7 @@ document.addEventListener("click", (event) => {
     orderForm.classList.add("active-form");
   }
 });
+
+document.querySelector('.products-show-btn')?.addEventListener('click', function() {
+	document.querySelector('.all-assortment').classList.toggle('_show-assortment')
+});
