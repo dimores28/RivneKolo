@@ -550,6 +550,38 @@
       }
    }
 
+   &._watcher-view-popup {
+      .assortment__product {
+         transform: rotate(-4deg);
+      }
+
+      .assortment__bagels_1 {
+         top: 0;
+         left: 20%;
+      }
+
+      .assortment__bagels_2 {
+         left: 0;
+         z-index: 10;
+      }
+
+      .assortment__bagels_3 {
+         top: 5%;
+         left: 64%;
+      }
+
+      .assortment__bagels_4 {
+         left: 62%;
+         top: 44%;
+      }
+
+      .assortment__bagels_5 {
+         left: 60%;
+         top: 61%;
+         z-index: 11;
+      }
+   }
+
 
    @media (max-width: em(564)){
       .assortment__bagels_1 {
@@ -675,6 +707,34 @@
             left: 26%;
          } 
       }
+   }
+
+   &._watcher-view-popup {
+      .assortment__product {
+         transform: rotate(-15deg);
+      }
+
+      .assortment__nuts_1 {
+         left: 0;
+         top: 40%;
+      }
+
+      .assortment__nuts_2 {
+         z-index: 10;
+         left: 66%;
+         top: 62%;
+      }
+
+      .assortment__nuts_3 {
+         top: -1%;
+         left: 56%;
+         z-index: 11;
+      }
+
+      .assortment__nuts_4 { 
+         top: 2%;
+         left: 26%;
+      } 
    }
 
    @media (max-width: em(564)){
