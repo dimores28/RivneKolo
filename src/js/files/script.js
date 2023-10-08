@@ -504,26 +504,33 @@ if(document.querySelector('.about__bagel')) {
  
 	  let { isDesktop, isMobile } = context.conditions;
 	  const contentHeight = document.querySelector('.about__content').offsetHeight;
- 
+	  let frameCount = 56;
+	  let sh = 27683;
+
 	  if(isDesktop) {
-			
+		
 			const bagel =  gsap.timeline({
 				scrollTrigger: {
 					trigger: ".about__bagel",
 					start: "top 20%",
 					end: `+=${contentHeight * 0.85}`,
-					scrub: 1,
+					scrub: true,
 					pin: true,
+					invalidateOnRefresh: true,
 					onUpdate: (self) => {
 						// Calculate the progress of the ScrollTrigger
 						const progress = self.progress.toFixed(1) * 100;
-						console.log(progress);
-						changeImg(progress);
+						//console.log(progress);
+						//changeImg(progress);
+					 },
+					 onRefresh: () => {
+						self.scroll(self.start);
 					 },
 					// markers: true
 				},
 			});
-			
+			bagel.to('.about__bagel-sprite', {backgroundPositionY: () => -31638, ease: "steps(" + frameCount + ")",});
+			//32768
 			// bagel.to('.about__bagel img', {rotation: 360, duration: 3});
 	  }
  
