@@ -100,43 +100,48 @@
                   <div class="form__loader">
                     <span class="loader"></span>
                   </div>
+                  <div class="order-form__wrap">
+                    <label class="order-form__lable name-lable" for="">
+                      <span class="order-form__placeholder">Ваше ім’я</span>
+                      <input
+                        class="order-form__input"
+                        name="yourName"
+                        type="text"
+                        aria-label="your name"
+                        id="userName"
+                      />
+                    </label>
 
-                  <label class="order-form__lable name-lable" for="">
-                    <span class="order-form__placeholder">Ваше ім’я</span>
-                    <input
-                      class="order-form__input"
-                      name="yourName"
-                      type="text"
-                      aria-label="your name"
-                      id="userName"
-                    />
-                  </label>
+                    <label class="order-form__lable phone-lable" for="">
+                      <span class="order-form__placeholder"
+                        >Номер телефону</span
+                      >
+                      <input
+                        class="order-form__input"
+                        name="yourPhone"
+                        type="text"
+                        aria-label="your phone"
+                        id="userPhone"
+                      />
+                    </label>
+                  </div>
+                  <div class="order-form__wrap">
+                    <label class="order-form__lable amount-lable" for="">
+                      <input
+                        type="number"
+                        class="order-form__amount"
+                        name="amount"
+                        min="1"
+                        max="1000"
+                        placeholder="0"
+                      />
+                    </label>
 
-                  <label class="order-form__lable phone-lable" for="">
-                    <span class="order-form__placeholder">Номер телефону</span>
-                    <input
-                      class="order-form__input"
-                      name="yourPhone"
-                      type="text"
-                      aria-label="your phone"
-                      id="userPhone"
-                    />
-                  </label>
-                  <label class="order-form__lable amount-lable" for="">
-                    <input
-                      type="number"
-                      class="order-form__amount"
-                      name="amount"
-                      min="1"
-                      max="1000"
-                      placeholder="0"
-                    />
-                  </label>
-
-                  <div class="popup__alert"></div>
-                  <button type="submit" class="btn button order-form__btn">
-                    <span>Відправити</span>
-                  </button>
+                    <div class="popup__alert"></div>
+                    <button type="submit" class="btn button order-form__btn">
+                      <span>Відправити</span>
+                    </button>
+                  </div>
                 </form>
               </div>
             </div>
