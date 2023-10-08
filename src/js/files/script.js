@@ -752,6 +752,11 @@ document.addEventListener("click", (event) => {
   }
 });
 
+
+document.querySelector('.products-show-btn')?.addEventListener('click', function() {
+	document.querySelector('.all-assortment').classList.toggle('_show-assortment')
+});
+
 const images = document.querySelectorAll(".parallax-image");
 
 document.addEventListener("mousemove", (e) => {

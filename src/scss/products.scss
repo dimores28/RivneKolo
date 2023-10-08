@@ -39,6 +39,15 @@
    display: flex;
    flex-wrap: wrap;
    gap: 62px;
+   transform: translateX(-40px);
+
+   @media (max-width: em(1720)){
+      transform: translateX(-10px);  
+   }
+
+   @media (max-width: em(1670)){
+      transform: translateX(0px);  
+   }
 
    @media (max-width: em(1586)){
       gap: 30px;
@@ -705,3 +714,15 @@
    // }
 }
 
+
+.all-assortment {
+   overflow: hidden;
+   max-height: 0px;
+   opacity: 0;
+   transition: all 0.6s ease-in;
+}
+
+._show-assortment.all-assortment {
+   max-height: unset;
+   opacity: 1;
+}
