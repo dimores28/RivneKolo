@@ -644,59 +644,89 @@ function changeImg(progress) {
   img.style.backgroundPositionY = `${bgPos}px`;
 }
 
-if (document.querySelector(".about__bagel")) {
-  let mm = gsap.matchMedia(),
-    breakPoint = 768;
+if(document.querySelector('.about__bagel')) {
+	let mm = gsap.matchMedia(),
+	breakPoint = 768;
+ 
+	mm.add({
+ 
+	  isDesktop: `(min-width: ${breakPoint}px)`,
+	  isMobile: `(max-width: ${breakPoint - 1}px)`,
+	  isLaptop: `(max-width: 1302px)`,
+	  isTablet: `(max-width: 960px)`,
+	  reduceMotion: "(prefers-reduced-motion: reduce)"
+ 
+	  }, (context) => {
+ 
+	  let { isDesktop, isMobile, isLaptop, isTablet} = context.conditions;
+	  const contentHeight = document.querySelector('.about__content').offsetHeight;
+	  let frameCount = 56;
+	  let sh = -31638;
+	  let coef = 0.85;
+	  let pin = true;
 
-  mm.add(
-    {
-      isDesktop: `(min-width: ${breakPoint}px)`,
-      isMobile: `(max-width: ${breakPoint - 1}px)`,
-      reduceMotion: "(prefers-reduced-motion: reduce)",
-    },
-    (context) => {
-      let { isDesktop, isMobile } = context.conditions;
-      const contentHeight =
-        document.querySelector(".about__content").offsetHeight;
 
-      if (isDesktop) {
-        const bagel = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".about__bagel",
-            start: "top 20%",
-            end: `+=${contentHeight * 0.85}`,
-            scrub: 1,
-            pin: true,
-            onUpdate: (self) => {
-              // Calculate the progress of the ScrollTrigger
-              const progress = self.progress.toFixed(1) * 100;
-              console.log(progress);
-              changeImg(progress);
-            },
-            // markers: true
-          },
-        });
 
-        // bagel.to('.about__bagel img', {rotation: 360, duration: 3});
-      }
+	  if(isDesktop) {
+			coef = 0.85;
+			sh = -31638;
+			//32768
+			// bagel.to('.about__bagel img', {rotation: 360, duration: 3});
+	  }
 
-      if (isMobile) {
-        const bagel = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".about__bagel",
-            start: "top 10%",
-            end: `+=${contentHeight}`,
-            scrub: 1,
-            pin: false,
-            // markers: true
-          },
-        });
+	  if (isLaptop) {
+			coef = 0.88;
+			sh = -20804;
+			// bagel.to('.about__bagel-sprite', {backgroundPositionY: () => -20804, ease: "steps(" + frameCount + ")",});
+	  }
 
-        bagel.to(".about__bagel img", { rotation: 360, duration: 3 });
-      }
-    }
-  );
-}
+	  if(isTablet) {
+			coef = 0.95;
+			sh = -16428;
+	  }
+
+	  if(isMobile) {
+			pin = false;
+			sh = -13142;
+			coef = 1;
+	  }
+
+	  const bagel =  gsap.timeline({
+		scrollTrigger: {
+			trigger: ".about__bagel",
+			start: "top 20%",
+			end: `+=${contentHeight * coef}`,
+			scrub: true,
+			pin: pin,
+			invalidateOnRefresh: true,
+			 onRefresh: () => {
+				self.scroll(self.start);
+			 },
+			// markers: true
+		},
+	});
+
+	bagel.to('.about__bagel-sprite', {backgroundPositionY: () => sh, ease: "steps(" + frameCount + ")",});
+ 
+	//   if(isMobile) {
+	// 		const bagel =  gsap.timeline({
+	// 			scrollTrigger: {
+	// 				trigger: ".about__bagel",
+	// 				start: "top 10%",
+	// 				end: `+=${contentHeight}`,
+	// 				scrub: 1,
+	// 				pin: false,
+	// 				// markers: true
+	// 			},
+	// 		});
+			
+	// 		bagel.to('.about__bagel img', {rotation: 360, duration: 3});
+	//   }
+ 
+	}); 
+ 
+
+ }
 
 spanBtn.addEventListener("mouseenter", () => animation.play());
 spanBtn.addEventListener("mouseleave", () => animation.reverse());

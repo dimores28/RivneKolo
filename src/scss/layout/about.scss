@@ -71,10 +71,27 @@
   &__bagel-sprite {
     width: 578px;
     height: 560px;
-    background: url(../img/about/buble_sprite.png) center no-repeat;
+    background: url(../img/about/buble_sprite2.png) center no-repeat;
     background-size: cover;
 		background-position-y: 0px;
     position: relative;
+
+    @media (max-width: em(1302)){
+      width: 380px;
+      height: 378px;
+      margin-left: auto;  
+    }
+
+    @media (max-width: em(960)){
+      width: 300px;
+      height: 296px;
+    }
+
+    @media (max-width:$mobile){
+      width: 240px;
+      height: 238px; 
+      margin: 16px auto 0 auto;
+    }
   }
 
   &__scene {
