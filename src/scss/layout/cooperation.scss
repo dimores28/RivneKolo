@@ -1,17 +1,25 @@
 .cooperation {
   position: relative;
   z-index: 2;
-  
+
   &__container {
     padding-top: 200px;
     padding-bottom: 198px;
     display: flex;
+    @media (max-width: em(1440)) {
+      padding-top: 150px;
+      padding-bottom: 100px;
+    }
+    @media (max-width: $tablet) {
+      padding-top: 100px;
+      padding-bottom: 50px;
+    }
     @media (max-width: $mobile) {
       flex-direction: column;
       align-items: center;
       gap: 30px;
-      padding-top: 100px;
-      padding-bottom: 100px;
+      padding-top: 60px;
+      padding-bottom: 30px;
     }
   }
   &__content {
@@ -39,7 +47,7 @@
       padding: 30px 52px;
     }
 
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       border-radius: 16px;
       padding: 15px 20px;
     }

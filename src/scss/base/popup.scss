@@ -47,22 +47,19 @@ body::after {
   width: 100%;
   height: 100%;
   // padding-top: 224px;
-  @include adaptiveValue("padding-top", 224, 74);
+  @include adaptiveValue("padding-top", 154, 74);
   .lock & {
     visibility: visible;
   }
 }
 
 .popup {
-  &__close {
-    position: absolute;
-    right: 10px;
-    top: -100px;
-    z-index: 1;
-    @media (max-width: $mobile) {
-      top: -80px;
-    }
-  }
+  // &__close {
+  //   position: fixed;
+  //   right: 20px;
+  //   top: 50px;
+  //   z-index: 200;
+  // }
   &__products {
     position: relative;
     padding-top: 124px;
@@ -81,9 +78,9 @@ body::after {
         display: none;
       }
     }
-    .bagels {
-      pointer-events: none;
-    }
+    // .bagels {
+    //   pointer-events: none;
+    // }
   }
 
   &__container {
@@ -102,11 +99,15 @@ body::after {
 
     .product {
       padding: 125px;
+      @media (max-width: em(1600)) {
+        padding: 100px;
+      }
       @media (max-width: em(1400)) {
         padding: 70px;
       }
-      @media (max-width: em(1250)) {
-        padding: 0;
+
+      @media (max-width: em(1300)) {
+        padding: 40px;
       }
 
       &__image-wrap {
@@ -117,10 +118,13 @@ body::after {
         .assortment__product {
           margin: 0;
         }
+        @media (max-width: em(1600)) {
+          transform: scale(1.3);
+        }
         @media (max-width: em(1400)) {
           transform: scale(1.2);
         }
-        @media (max-width: em(1250)) {
+        @media (max-width: em(1100)) {
           transform: scale(1);
         }
       }
@@ -250,11 +254,7 @@ body::after {
 .order {
   cursor: pointer;
   display: flex;
-  // margin-top: 43px;
-  // @include adaptiveValue("margin-top", 43, 27);
-  // position: absolute;
   height: 115px;
-  // height: 340px;
   max-width: 680px;
   width: 100%;
   padding: 10px;
@@ -291,6 +291,12 @@ body::after {
     font-style: normal;
     font-weight: 800;
     text-transform: capitalize;
+    @media (max-width: em(1400)) {
+      padding: 18px 100px;
+    }
+    @media (max-width: em(1200)) {
+      padding: 18px 80px;
+    }
     @media (max-width: $mobile) {
       font-size: 24px;
       padding: 13px 66px;
@@ -349,43 +355,36 @@ body::after {
 
 .order-form {
   width: 100%;
-  display: grid;
-  grid-template-areas: "name-lable phone-lable" "amount-lable btn";
-  row-gap: 30px;
-  grid-template-columns: minmax(100px, 1fr);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
   padding-left: 20px;
   padding-right: 20px;
-  // column-gap: 20px;
   margin-top: 40px;
-  @media (max-width: $mobile) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  &__wrap {
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .name-lable {
-    grid-area: name-lable;
-    max-width: 300px;
-  }
-  .phone-lable {
-    grid-area: phone-lable;
-    margin-left: 20px;
-    max-width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
     @media (max-width: $mobile) {
-      margin-left: 0;
+      flex-direction: column;
+      align-items: center;
     }
   }
-  .amount-lable {
-    grid-area: amount-lable;
-    align-items: center;
+  .name-lable {
+    max-width: 300px;
+    width: 100%;
+  }
+  .phone-lable {
+    max-width: 300px;
+    width: 100%;
   }
   &__btn {
-    grid-area: btn;
-    justify-self: flex-start;
+    margin-left: 40px;
     @media (max-width: $mobile) {
-      justify-self: center;
+      margin-left: 0;
     }
   }
   button.btn {
@@ -414,8 +413,7 @@ body::after {
   &__lable {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    justify-self: center;
+    // width: 100%;
   }
   &__input {
     padding: 10px 0;
