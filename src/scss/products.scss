@@ -49,14 +49,21 @@
       transform: translateX(0px);  
    }
 
+
    @media (max-width: em(1586)){
       gap: 30px;
       justify-content: center;
+      transform: translateX(-20px); 
+   }
+
+   @media (max-width: em(1480)){
+      transform: translateX(-20px); 
    }
 
    @media (max-width: em(862)){
       flex-direction: column;
       align-content: center;
+      transform: translateX(0px); 
    }
 
    // .assortment__item

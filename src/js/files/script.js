@@ -501,7 +501,7 @@ Scene_2.from(".about__scene_2 .row_1", {
     duration: 0.4,
     ease: "back.out(1.7)",
   })
-  .from(".about__scene_2 .row_5", {
+  .from(".about__scene_2 .row_8", {
     y: 200,
     opacity: 0,
     rotate: 16,
@@ -650,7 +650,7 @@ if(document.querySelector('.about__bagel')) {
  
 	mm.add({
  
-	  isDesktop: `(min-width: ${breakPoint}px)`,
+	  isDesktop: `(min-width: 1303px)`,
 	  isMobile: `(max-width: ${breakPoint - 1}px)`,
 	  isLaptop: `(max-width: 1302px)`,
 	  isTablet: `(max-width: 960px)`,
@@ -670,7 +670,7 @@ if(document.querySelector('.about__bagel')) {
 	  if(isDesktop) {
 			coef = 0.85;
 			sh = -31638;
-			//32768
+			//32768 -31670
 			// bagel.to('.about__bagel img', {rotation: 360, duration: 3});
 	  }
 
@@ -701,6 +701,7 @@ if(document.querySelector('.about__bagel')) {
 			invalidateOnRefresh: true,
 			 onRefresh: () => {
 				self.scroll(self.start);
+        console.log('refresh')
 			 },
 			// markers: true
 		},
@@ -742,6 +743,36 @@ upBtnTl.to(".scroll-arrow", {
   delay: 2,
 });
 
+const cooperationTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".cooperation",
+    start: "top center",
+    end: "+=30%",
+    // markers: true
+  },
+});
+
+cooperationTl.from(".cooperation__heading", {
+  y: 200,
+  opacity: 0,
+  rotate: 16,
+  duration: 0.4,
+  ease: "power3.out",
+});
+
+cooperationTl.from(".cooperation__text", {
+  transformOrigin: "left center",
+  xPercent: -161,
+  yPercent: -105,
+  rotationY: 90,
+  stagger: 1,
+  duration: 1.8,
+  ease: CustomEase.create(
+    "custom",
+    "M0,0 C0.083,0.294 -0.04,1 0.286,1 0.49,1 0.752,1 1,1 "
+  ),
+});
+
 const orderForm = document.querySelector(".order");
 
 document.addEventListener("click", (event) => {
@@ -752,10 +783,27 @@ document.addEventListener("click", (event) => {
   }
 });
 
+const showProdutsBtn = document.querySelector('.products-show-btn');
+if(showProdutsBtn) {
 
-document.querySelector('.products-show-btn')?.addEventListener('click', function() {
-	document.querySelector('.all-assortment').classList.toggle('_show-assortment')
-});
+  showProdutsBtn.addEventListener('click', function() {
+    document.querySelector('.all-assortment').classList.toggle('_show-assortment');
+    let show = parseInt(showProdutsBtn.getAttribute("data-showed"));
+    console.log(show);
+    
+    if(!show) {
+      showProdutsBtn.querySelector('span').innerText = 'Приховати';
+      showProdutsBtn.setAttribute("data-showed", "1");
+    } else {
+      showProdutsBtn.querySelector('span').innerText = 'Подивитись ще';
+      document.querySelector('.products__container').scrollIntoView({ block: "start", behavior: "smooth" });
+      showProdutsBtn.setAttribute("data-showed", "0");
+    }
+  });
+
+
+}
+
 
 const images = document.querySelectorAll(".parallax-image");
 
