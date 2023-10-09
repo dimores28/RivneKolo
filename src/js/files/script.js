@@ -170,7 +170,7 @@ if (document.querySelector(".menu")) {
             width: "100%",
             backgroundColor: "white",
             duration: 1.3,
-            ease: "bounce.out",
+            ease: CustomEase.create("custom", "M0,0 C0.14,0 0.242,0.438 0.272,0.561 0.313,0.728 0.354,0.963 0.362,1 0.37,0.985 0.43,0.914 0.514,0.914 0.63,0.914 0.626,0.92 0.644,0.93 0.723,0.974 0.719,0.981 0.726,0.998 0.788,0.914 0.84,0.936 0.859,0.95 0.878,0.964 0.897,0.985 0.911,0.998 0.922,0.994 0.939,0.984 0.954,0.984 0.969,0.984 1,1 1,1 "),
           })
           .to(".menu__link", { opacity: 1, duration: 0.3 }, "-=0.55");
 
@@ -187,7 +187,7 @@ if (document.querySelector(".menu")) {
             width: "100%",
             height: "auto",
             duration: 0.6,
-            ease: "bounce.out",
+            ease: CustomEase.create("custom", "M0,0 C0.14,0 0.242,0.438 0.272,0.561 0.313,0.728 0.354,0.963 0.362,1 0.37,0.985 0.43,0.914 0.514,0.914 0.63,0.914 0.626,0.92 0.644,0.93 0.723,0.974 0.719,0.981 0.726,0.998 0.788,0.914 0.84,0.936 0.859,0.95 0.878,0.964 0.897,0.985 0.911,0.998 0.922,0.994 0.939,0.984 0.954,0.984 0.969,0.984 1,1 1,1 "),
           })
           .to(".menu__link", { opacity: 1, duration: 0.3 }, "-=0.65")
           .to(".header__lang", { opacity: 1, duration: 0.3 });
@@ -292,15 +292,15 @@ function initSliders() {
 
       // Події
       on: {
-        init() {
-          this.el.addEventListener("mouseenter", () => {
-            this.autoplay.stop();
-          });
+        // init() {
+        //   this.el.addEventListener("mouseenter", () => {
+        //     this.autoplay.stop();
+        //   });
 
-          this.el.addEventListener("mouseleave", () => {
-            this.autoplay.start();
-          });
-        },
+        //   this.el.addEventListener("mouseleave", () => {
+        //     this.autoplay.start();
+        //   });
+        // },
       },
     });
   }
@@ -348,15 +348,15 @@ function initSliders() {
 
       // Події
       on: {
-        init() {
-          this.el.addEventListener("mouseenter", () => {
-            this.autoplay.stop();
-          });
+        // init() {
+        //   this.el.addEventListener("mouseenter", () => {
+        //     this.autoplay.stop();
+        //   });
 
-          this.el.addEventListener("mouseleave", () => {
-            this.autoplay.start();
-          });
-        },
+        //   this.el.addEventListener("mouseleave", () => {
+        //     this.autoplay.start();
+        //   });
+        // },
       },
     });
   }
