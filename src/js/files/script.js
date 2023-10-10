@@ -95,6 +95,21 @@ hendTL
       delay: 1,
     },
     "-=3.5"
+  ).to(".social__hand", {
+    x: "0",
+    y: "0",
+    duration: 1.5,
+    delay: 1,
+  }).to(
+    ".social__shadow",
+    {
+      x: "0",
+      y: "0",
+      scale: 1,
+      duration: 1.5,
+      delay: 1,
+    },
+    "-=2.5"
   );
 
 let path1 = [
