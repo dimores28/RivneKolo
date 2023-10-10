@@ -61,17 +61,18 @@
       background: #ffdf00;
       position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
+      left: -15px;
+      width: calc(100% + 30px);
+      margin: 0 -15px;
       height: 240px;
       z-index: 100;
     }
   }
 
   &__bagel-sprite {
-    width: 578px;
+    width: 560px;
     height: 560px;
-    background: url(../img/about/buble_sprite2.png) center no-repeat;
+    background: url(../img/about/buble_sprite.png) center no-repeat;
     background-size: cover;
 		background-position-y: 0px;
     position: relative;
@@ -79,18 +80,18 @@
 
     @media (max-width: em(1302)){
       width: 380px;
-      height: 378px;
+      height: 380px;
       margin-left: auto;  
     }
 
     @media (max-width: em(960)){
       width: 300px;
-      height: 296px;
+      height: 300px;
     }
 
     @media (max-width:$mobile){
       width: 240px;
-      height: 238px; 
+      height: 240px; 
       margin: 16px auto 0 auto;
     }
   }

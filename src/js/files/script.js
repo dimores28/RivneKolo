@@ -675,8 +675,8 @@ if(document.querySelector('.about__bagel')) {
  
 	  let { isDesktop, isMobile, isLaptop, isTablet} = context.conditions;
 	  const contentHeight = document.querySelector('.about__content').offsetHeight;
-	  let frameCount = 56;
-	  let sh = -31638;
+	  let frameCount = 57;
+	  let sh = -32170;
 	  let coef = 0.85;
 	  let pin = true;
 
@@ -684,25 +684,25 @@ if(document.querySelector('.about__bagel')) {
 
 	  if(isDesktop) {
 			coef = 0.85;
-			sh = -31638;
+			sh = -32170;
 			//32768 -31670
 			// bagel.to('.about__bagel img', {rotation: 360, duration: 3});
 	  }
 
 	  if (isLaptop) {
 			coef = 0.88;
-			sh = -20804;
+			sh = -21828;
 			// bagel.to('.about__bagel-sprite', {backgroundPositionY: () => -20804, ease: "steps(" + frameCount + ")",});
 	  }
 
 	  if(isTablet) {
 			coef = 0.95;
-			sh = -16428;
+			sh = -17232;
 	  }
 
 	  if(isMobile) {
 			pin = false;
-			sh = -13142;
+			sh = -13786;
 			coef = 1;
 	  }
 
