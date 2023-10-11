@@ -795,6 +795,13 @@
       }
         
    }
+
+   .assortment__image-wrap {
+      @media (max-width: em(391)){
+         margin-left: -34px; 
+      }
+      
+    }
 }
 
 .products-show-all {
