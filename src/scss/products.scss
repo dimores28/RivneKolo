@@ -7,7 +7,7 @@
 
    // .products__heading
    &__heading {
-      margin-bottom: 80px;
+      margin-bottom: 80px; 
    }
 
    // .products__assortment
@@ -31,6 +31,35 @@
       letter-spacing: -0.8px;
       text-transform: uppercase;
       text-align: center;
+   }
+
+   i {
+      font-style: normal;
+   }
+
+   &__span-1 {
+      i {
+         display: none;
+      }
+
+      @media (max-width:$mobileSmall){
+          i {
+            display: inline;
+            font-style: normal;
+          } 
+      }
+   }
+
+   &__span-2 {
+      i {
+         font-style: normal;
+      }
+
+      @media (max-width:$mobileSmall){
+          i {
+            display: none;
+          } 
+      }
    }
 }
 
@@ -530,12 +559,12 @@
          }
    
          .assortment__bagels_1 {
-            top: 0;
+            top: 1%;
             left: 20%;
          }
    
          .assortment__bagels_2 {
-            left: 0;
+            left: 2%;
             z-index: 10;
          }
    
@@ -545,13 +574,13 @@
          }
    
          .assortment__bagels_4 {
-            left: 62%;
+            left: 55%;
             top: 44%;
          }
    
          .assortment__bagels_5 {
-            left: 60%;
-            top: 61%;
+            left: 64%;
+            top: 66%;
             z-index: 11;
          }
       }
@@ -563,12 +592,12 @@
       }
 
       .assortment__bagels_1 {
-         top: 0;
+         top: 1%;
          left: 20%;
       }
 
       .assortment__bagels_2 {
-         left: 0;
+         left: 2%;
          z-index: 10;
       }
 
@@ -578,13 +607,13 @@
       }
 
       .assortment__bagels_4 {
-         left: 62%;
+         left: 55%;
          top: 44%;
       }
 
       .assortment__bagels_5 {
-         left: 60%;
-         top: 61%;
+         left: 64%;
+         top: 66%;
          z-index: 11;
       }
    }
@@ -592,28 +621,28 @@
 
    @media (max-width: em(564)){
       .assortment__bagels_1 {
-         width: 61px;
-         height: 51px;
+         width: 105px;
+         height: auto;
       }
 
       .assortment__bagels_2 {
-         width: 100px;
-         height: 100px;
+         width: 120px;
+         height: auto;
       }
 
       .assortment__bagels_3 {
-         width: 100px;
-         height: 100px;
+         width: 120px;
+         height: auto;
       }
 
       .assortment__bagels_4 {
-         width: 125px;
-         height: 51px;
+         width: 120px;
+         height: auto;
       }
 
       .assortment__bagels_5 {
-         width: 100px;
-         height: 100px;
+         width: 120px;
+         height: auto;
       }
    }
 }
@@ -693,25 +722,25 @@
          }
    
          .assortment__nuts_1 {
-            left: 0;
-            top: 40%;
+            left: 8%;
+            top: 53%;
          }
    
          .assortment__nuts_2 {
             z-index: 10;
-            left: 66%;
-            top: 62%;
+            left: 86%;
+            top: 58%;
          }
    
          .assortment__nuts_3 {
             top: -1%;
-            left: 56%;
+            left: 60%;
             z-index: 11;
          }
    
          .assortment__nuts_4 { 
-            top: 2%;
-            left: 26%;
+            top: 4%;
+            left: 15%;
          } 
       }
    }
@@ -722,47 +751,47 @@
       }
 
       .assortment__nuts_1 {
-         left: 0;
-         top: 40%;
+         left: 8%;
+         top: 53%;
       }
 
       .assortment__nuts_2 {
          z-index: 10;
-         left: 66%;
-         top: 62%;
+         left: 86%;
+         top: 58%;
       }
 
       .assortment__nuts_3 {
          top: -1%;
-         left: 56%;
+         left: 60%;
          z-index: 11;
       }
 
       .assortment__nuts_4 { 
-         top: 2%;
-         left: 26%;
+         top: 4%;
+         left: 15%;
       } 
    }
 
    @media (max-width: em(564)){
       .assortment__nuts_1 {
-         width: 132px;
-         height: 65px;
+         width: 87px;
+         height: auto;
       }
    
       .assortment__nuts_2 {
-         width: 85px;
-         height: 73px;
+         width: 90px;
+         height: auto;
       }
    
       .assortment__nuts_3 {
-         width: 103px;
-         height: 105px;
+         width: 90px;
+         height: auto;
       }
    
       .assortment__nuts_4 { 
-         width: 98px;
-         height: 70px;
+         width: 90px;
+         height: auto;
       }
         
    }
