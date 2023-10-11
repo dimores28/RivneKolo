@@ -12,8 +12,10 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin.js";
 import { CustomEase } from "gsap/CustomEase.js";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin.js";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, CustomEase);
+ScrollTrigger.config({ignoreMobileResize: true});
 
 const productTl = gsap.timeline({
   scrollTrigger: {
@@ -34,30 +36,69 @@ productTl.fromTo(
   { opacity: 1, y: 0, x: 0, rotate: 0, duration: 0.6 }
 );
 
-gsap.registerPlugin(CustomEase);
-const madeinTL = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".madein__illustration",
-    start: "top 20%",
-    end: "+=30%",
-    //   scrub: 1,
-    //   pin: true,
-    // markers: true
-  },
-});
-//translate(-161%, -105%) rotateY(95deg)
-madeinTL.from(".madein__sticker", {
-  transformOrigin: "left center",
-  xPercent: -161,
-  yPercent: -105,
-  rotationY: 90,
-  stagger: 1,
-  duration: 1.8,
-  ease: CustomEase.create(
-    "custom",
-    "M0,0 C0.083,0.294 -0.04,1 0.286,1 0.49,1 0.752,1 1,1 "
-  ),
-});
+if(document.querySelector('.madein__sticker')) {
+  let mm = gsap.matchMedia(),
+  breakPoint = 768;
+
+  mm.add(
+    {
+      isDesktop: `(min-width: ${breakPoint}px)`,
+      isMobile: `(max-width: ${breakPoint - 1}px)`,
+      reduceMotion: "(prefers-reduced-motion: reduce)",
+    },
+    (context) => {
+      let { isDesktop, isMobile } = context.conditions;
+
+      if (isDesktop) {
+        const madeinTL = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".madein__illustration",
+            start: "top 20%",
+            end: "+=30%",
+          },
+        });
+        madeinTL.from(".madein__sticker", {
+          transformOrigin: "left center",
+          xPercent: -161,
+          yPercent: -105,
+          rotationY: 90,
+          stagger: 1,
+          duration: 1.8,
+          ease: CustomEase.create(
+            "custom",
+            "M0,0 C0.083,0.294 -0.04,1 0.286,1 0.49,1 0.752,1 1,1 "
+          ),
+        });
+      }
+
+      if (isMobile) {
+        const madeinTL = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".madein__illustration",
+            start: "top 55%",
+            end: "+=30%",
+            // markers: true,
+          },
+        });
+        madeinTL.from(".madein__sticker", {
+          transformOrigin: "left center",
+          xPercent: -161,
+          yPercent: -105,
+          rotationY: 90,
+          stagger: 1,
+          duration: 1.8,
+          ease: CustomEase.create(
+            "custom",
+            "M0,0 C0.083,0.294 -0.04,1 0.286,1 0.49,1 0.752,1 1,1 "
+          ),
+        });
+
+      }
+    }
+  );
+}
+
+
 
 const madeinTlHero = gsap.timeline({
   scrollTrigger: {
@@ -114,50 +155,6 @@ hendTL
     "-=2.5"
   );
 
-let path1 = [
-  //1
-  { x: "27%", y: "20%" },
-  //2
-  // {x: "56%", y: "45%"},
-  //3
-  { x: "115%", y: "-19%" },
-];
-
-let path2 = [
-  //1
-  { x: "49%", y: "456%" },
-  //2
-  // {x: "119%", y: "980%"},
-  //3
-  { x: "180%", y: "235%" },
-];
-
-const scaledPath1 = path1.map(({ x, y }) => {
-  return {
-    x: x,
-    y: y,
-  };
-});
-const scaledPath2 = path2.map(({ x, y }) => {
-  return {
-    x: x,
-    y: y,
-  };
-});
-
-// hendTL.to(".social__hand", {
-// 	motionPath: {path: scaledPath1, align: 'self', alignOrigin: [0.5, 0.5]},
-// 	duration: 3,
-// 	ease: "elastic.out(1, 0.3)",
-// 	delay: 1 })
-// 	.to(".social__shadow",{
-// 		motionPath: {path: scaledPath2, align: 'self', alignOrigin: [0.5, 0.5]},
-// 		scale: 0.4,
-// 		duration: 3 ,
-// 		ease: "elastic.out(1, 0.3)",
-// 		delay: 1},
-// 		"-=4"
-// 	);
 //=========== End Social lincks animation ================
 
 //Animate menu ===========================================
@@ -439,6 +436,7 @@ Scene_2.from(".about__scene_2 .row_1", {
   rotate: 16,
   duration: 0.4,
   ease: "power3.out",
+  immediateRender: true,
 })
   .from(".about__scene_2 .row_2", {
     y: 200,
@@ -446,6 +444,7 @@ Scene_2.from(".about__scene_2 .row_1", {
     rotate: -16,
     duration: 0.4,
     ease: "power3.out",
+    immediateRender: true,
   })
   .from(".about__scene_2 .row_3", {
     y: 200,
@@ -453,6 +452,7 @@ Scene_2.from(".about__scene_2 .row_1", {
     rotate: 16,
     duration: 0.4,
     ease: "power3.out",
+    immediateRender: true,
   })
   .from(".about__scene_2 .row_4", {
     y: 200,
@@ -481,6 +481,7 @@ Scene_2.from(".about__scene_2 .row_1", {
     rotate: -16,
     duration: 0.4,
     ease: "power3.out",
+    immediateRender: true,
   })
   .from(".about__scene_2 .row_6 img", {
     y: 200,
@@ -488,6 +489,7 @@ Scene_2.from(".about__scene_2 .row_1", {
     opacity: 0,
     duration: 0.4,
     ease: "back.out(1.7)",
+    immediateRender: true,
   });
 
 const Scene_3 = gsap.timeline({
@@ -666,7 +668,6 @@ if (document.querySelector(".about__bagel")) {
           invalidateOnRefresh: true,
           onRefresh: () => {
             self.scroll(self.start);
-            console.log("refresh");
           },
           // markers: true
         },
@@ -675,22 +676,8 @@ if (document.querySelector(".about__bagel")) {
       bagel.to(".about__bagel-sprite", {
         backgroundPositionY: () => sh,
         ease: "steps(" + frameCount + ")",
+        immediateRender: true,
       });
-
-      //   if(isMobile) {
-      // 		const bagel =  gsap.timeline({
-      // 			scrollTrigger: {
-      // 				trigger: ".about__bagel",
-      // 				start: "top 10%",
-      // 				end: `+=${contentHeight}`,
-      // 				scrub: 1,
-      // 				pin: false,
-      // 				// markers: true
-      // 			},
-      // 		});
-
-      // 		bagel.to('.about__bagel img', {rotation: 360, duration: 3});
-      //   }
     }
   );
 }
@@ -763,9 +750,7 @@ if (showProdutsBtn) {
       showProdutsBtn.setAttribute("data-showed", "1");
     } else {
       showProdutsBtn.querySelector("span").innerText = "Подивитись ще";
-      document
-        .querySelector(".products__container")
-        .scrollIntoView({ block: "start", behavior: "smooth" });
+        gsap.to(window, {duration: 2, scrollTo: ".products__container"});
       showProdutsBtn.setAttribute("data-showed", "0");
     }
   });

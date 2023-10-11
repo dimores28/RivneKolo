@@ -116,21 +116,22 @@
          width: 54%;
       }
 
-      @media (max-width: em(446)) {
-         width: 60%;
+      @media (max-width:$mobileSmall){
+         margin-right: -25px; 
+         width: 78%;
       }
-      @media (max-width: em(405)) {
-         width: 65%;
-      }
-      @media (max-width: em(372)) {
-         width: 67%;
-      }
+
+ 
    }
 
    &__img {
       width: 100%;
       height: auto;
       max-width: 750px;
+
+      @media (max-width:$mobileSmall){
+          width: 110%; 
+      }
    }
 
    &__sticker {
@@ -191,36 +192,35 @@
          left: -53%;
       }
       @media (max-width: em(620)){
-         width: 176px;
-         height: 102px;
+         width: 140px;
+         height: auto;
          top: 20%;
-         left: -45%;
+         left: -32%;
       }
 
       @media (max-width: em(544)){
          top: 17%;
-         left: -54%;
+         left: -38%;
       }
 
-      @media (max-width: em(480)){
-         top: 15%;
-         left: -59%;
+      @media (max-width:$mobileSmall){
+         top: 26%;
+         left: -21%;
+      }
+      
+      @media (max-width: em(442)){
+         top: 25%;
+         left: -24%;
       }
 
-      @media (max-width: em(446)){
-         top: 15%;
-         left: -59%;
+      @media (max-width: em(415)){
+         top: 25%;
+         left: -27%;
       }
 
-      @media (max-width: em(372)) {
-         width: 140px;
-         height: 82px;
-         top: 19%;
-         left: -46%;
-      }
-      @media (max-width: em(347)) {
-         top: 18%;
-         left: -51%;
+      @media (max-width: em(414)){
+         top: 24%;
+         left: -31%;
       }
 
    }
@@ -236,6 +236,10 @@
 
       @media (max-width:$mobile){
          margin-top: -15%; 
+      }
+
+      @media (max-width:$mobileSmall){
+         margin-top: -10%;
       }
    }
 
