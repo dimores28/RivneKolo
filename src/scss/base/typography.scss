@@ -297,7 +297,8 @@
 .body_7 {
   font-family: $fontFamily, sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
+  color: #000;
   @include adaptiveValue("font-size", 20, 18);
   @include adaptiveValue("line-height", 24, 22);
 }

@@ -26,6 +26,8 @@ button.btn {
   border: 2px solid transparent;
   border-radius: 20px;
   transition: transform 0.15s;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   box-sizing: border-box;
 
