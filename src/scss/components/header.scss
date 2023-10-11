@@ -104,15 +104,21 @@
 }
 
 .icon-menu {
-  @media (max-width: $mobile) {
-    background-color: #fff;
-  }
   display: block;
   position: relative;
   width: toRem(31);
   height: toRem(28);
   z-index: 5;
   flex-shrink: 0;
+
+  @media (max-width:$mobile){
+    width: toRem(22);
+    height: toRem(20);
+    background-color: #fff;
+    margin-top: 4px;
+    margin-right: 5px;
+  }
+
   @media (any-hover: none) {
     cursor: default;
   }
@@ -125,6 +131,10 @@
     width: 100%;
     height: toRem(10);
     background-color: #000;
+
+    @media (max-width:$mobile){
+      height: toRem(7); 
+    }
   }
   &::before {
     top: 0;
@@ -141,10 +151,18 @@
     &::before {
       top: calc(50% - toRem(5));
       transform: rotate(-45deg);
+
+      @media (max-width:$mobile){
+        top: calc(50% - toRem(3.5));
+      }
     }
     &::after {
       bottom: calc(50% - toRem(5));
       transform: rotate(45deg);
+
+      @media (max-width:$mobile){
+        bottom: calc(50% - toRem(3.5));
+      }
     }
   }
 }
@@ -199,7 +217,13 @@
       }
     }
 
-    
+    &:focus,
+    &:focus-visible {
+      &::after {
+        left: 0;
+        width: 100%;
+      }
+    }
   }
 }
 

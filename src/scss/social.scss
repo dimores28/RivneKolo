@@ -212,12 +212,12 @@
    }
    @media (max-width:em(445)){
       &__hand {
-         left: 0%;
+         left: 10%;
          bottom: -44%;
       } 
 
       &__shadow {
-         left: 0%;
+         left: 10%;
          bottom: -50%;
       }
    }
@@ -346,7 +346,12 @@
       transform: rotate(16.787deg);
       &::before {
          background: #1B74E4;
+
+         @media (max-width:$mobileSmall){
+            transition: all 0.3s ease-in 1s;
+         }
       }
+
 
       svg {
          // transform: rotate(-17deg);
@@ -354,6 +359,10 @@
             transition: all 0.4s ease-in;
             transition-delay: 0.2s;
             fill: #000000;
+
+            @media (max-width:$mobileSmall){
+               transition: all 0.4s ease-in 1.2s; 
+            }
          }
       }
 
@@ -374,6 +383,22 @@
 
       @media (max-width:$mobile){
          margin-top: 20%; 
+      }
+
+      @media (max-width:$mobileSmall){
+         .social-card__link {
+            transition: all 0.4s ease-in 1.2s;
+
+            span {
+               transition: all 0.4s ease-in 1.2s;
+             }
+         }
+
+         .glow{
+            transition-delay: 1.5s !important;
+          }
+
+         
       }
 
       @media (max-width: em(455)){
