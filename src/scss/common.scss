@@ -236,8 +236,19 @@ button.btn:active::before {
     flex-direction: column;
     .ticker-bg:last-child {
       display: none;
-      @media (max-width: $mobile) {
+
+      @media (max-width: em(500)) {
         display: block;
+        .second-line,
+        .thrid-line {
+          display: none;
+        }
+      }
+      @media (max-width: em(400)) {
+        display: block;
+        .second-line {
+          display: flex;
+        }
         .thrid-line {
           display: none;
         }
