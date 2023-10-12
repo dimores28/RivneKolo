@@ -3,7 +3,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   z-index: 0;
 
   &__container {
@@ -254,16 +253,18 @@
         background: url(../../img/hero/left_hand.svg);
         background-size: contain;
         background-repeat: no-repeat;
+        background-position: center;
       }
 
       &::after {
         display: inline-block;
-        width: 30px;
+        width: 31px;
         height: 19px;
         content: "";
         background: url(../../img/hero/right_hand.svg);
         background-size: contain;
         background-repeat: no-repeat;
+        background-position: center;
       }
     }
   }
@@ -288,24 +289,50 @@
   }
 
   .mobile-bg__1 {
-    left: 0;
+    left: 40px;
     top: 300px;
+    transform: rotate(76.921deg);
+    max-height: 112px;
+    @media (max-width: em(500)) {
+      top: 260px;
+    }
   }
 
   .mobile-bg__2 {
     right: 0;
     top: 300px;
+    max-width: 106px;
+    transform: rotate(-16.314deg);
+    @media (max-width: em(500)) {
+      top: 280px;
+    }
   }
   .mobile-bg__3 {
-    right: 0;
-    top: 500px;
+    right: -4%;
+    top: 490px;
+    max-width: 128px;
+    transform: rotate(6.154deg);
+    @media (max-width: em(600)) {
+      right: -8%;
+    }
   }
   .mobile-bg__5 {
     right: 0;
-    top: 600px;
+    top: 630px;
+    max-width: 108px;
+    transform: rotate(-40.018deg);
   }
   .mobile-bg__4 {
-    left: 0;
-    top: 510px;
+    left: -8%;
+    top: 460px;
+    max-width: 119px;
+    @media (max-width: em(600)) {
+      left: -13%;
+    }
+    @media (max-width: em(450)) {
+      left: -18%;
+    }
+
+    // transform: rotate(-51.412deg);
   }
 }
