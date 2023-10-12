@@ -57,7 +57,7 @@ button.btn {
   }
 }
 
-button.btn::before {
+button.btn strong{
   position: absolute;
   content: "";
   width: 100%;
@@ -82,7 +82,7 @@ button.btn:hover {
   transform: translate(0, 0.25em);
 }
 
-button.btn:hover::before {
+button.btn:hover strong {
   box-shadow:
     0 0 0 2px #00000036,
     0 0.25em 0 0 #00000028;
@@ -93,7 +93,7 @@ button.btn:active {
   transform: translate(0em, 0.75em);
 }
 
-button.btn:active::before {
+button.btn:active strong{
   box-shadow:
     0 0 0 2px #00000036,
     0 0 0 0 #00000028;
