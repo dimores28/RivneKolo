@@ -81,13 +81,13 @@ form?.addEventListener("submit", async function (e) {
       let result = await response.json();
       let alertMsg = document.querySelector(".form__success");
       alertMsg.innerHTML =
-        '<p class="alert__msg" >Дякуємо! ваша заявка прийнята<p/>';
+        ' <p class="form__success-msg">Дякуємо! ваша заявка прийнята</p><img class="form__success-mark" src="@img/feedback/ok_mark.png" alt="ok-mark"/>';
       alertMsg.classList.add("_show__success");
       form.reset();
       form.classList.remove("_sending");
     } else {
       let alertMsg = document.querySelector(".popup__alert");
-      alertMsg.innerHTML = '<p class="alert__msg" >Error!!!<p/>';
+      alertMsg.innerHTML = '<p class="alert__msg" >Error!!!</p>';
       alertMsg.classList.add("_show");
       console.log(response.data);
       form.classList.remove("_sending");
@@ -95,7 +95,7 @@ form?.addEventListener("submit", async function (e) {
   } else {
     let alertMsg = document.querySelector(".popup__alert");
     alertMsg.innerHTML =
-      '<p class="alert__msg" >Fill in required fields!!!<p/>';
+      '<p class="alert__msg" >Fill in required fields!!!</p>';
     alertMsg.classList.add("_show");
     // alert("Fill in required fields!");
   }
