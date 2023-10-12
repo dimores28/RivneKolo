@@ -57,7 +57,7 @@
       padding-bottom: 0;
     }
     @media (max-width: $mobileSmall) {
-      height: 390px;
+      height: 420px;
     }
   }
 
@@ -128,23 +128,22 @@
 
   // .offer__slide-img
   &__slide-img {
-    width: 410px;
     height: 350px;
 
     @media (max-width: em(1250)) {
-      width: 340px;
       height: 280px;
     }
 
     @media (max-width: $mobile) {
-      width: 328px;
-      height: 280px;
+      height: 240px;
     }
-
-    @media (max-width: $mobileSmall) {
-      width: 200px;
+    @media (max-width: em(370)) {
       height: 200px;
     }
+
+    // @media (max-width: $mobileSmall) {
+    //   width: 210px;
+    // }
 
     svg {
       width: 100%;
@@ -206,9 +205,9 @@
     display: none;
     top: 35%;
 
-    @media (max-width: $mobileSmall) {
-      top: 42%;
-    }
+    // @media (max-width: $mobileSmall) {
+    //   top: 42%;
+    // }
 
     &::after {
       content: "";

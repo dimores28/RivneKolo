@@ -71,7 +71,7 @@ button.btn::before {
   box-shadow:
     0 0 0 2px #00000036,
     0 0.4em 0 0 #00000028;
-    -webkit-transform: translate3d(0, 0.75em, -1em);
+  -webkit-transform: translate3d(0, 0.75em, -1em);
   transform: translate3d(0, 0.75em, -1em);
   transition:
     transform 0.15s,
@@ -236,5 +236,25 @@ button.btn:active::before {
     position: absolute;
     display: flex;
     flex-direction: column;
+    .ticker-bg:last-child {
+      display: none;
+
+      @media (max-width: em(500)) {
+        display: block;
+        .second-line,
+        .thrid-line {
+          display: none;
+        }
+      }
+      @media (max-width: em(400)) {
+        display: block;
+        .second-line {
+          display: flex;
+        }
+        .thrid-line {
+          display: none;
+        }
+      }
+    }
   }
 }
