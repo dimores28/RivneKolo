@@ -158,6 +158,26 @@
     }
   }
 
+  &__scene_2 .row_1 {
+    i {
+      display: none;
+    }
+
+    @media (max-width: em(376)){
+      i {
+        display: inline;
+      }
+    }
+  }
+
+  &__scene_2 .row_2 {
+    @media (max-width: em(376)){
+      i {
+        display: none;
+      }
+    }
+  }
+
   &__scene_2 .row_4 {
     span {
       position: relative;
