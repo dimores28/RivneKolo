@@ -74,6 +74,9 @@
       // text-shadow: 0 0 5px rgba(114, 9, 183, 1);
       color: #fff8e0;
       -webkit-text-stroke: 2px #7209b7;
+      @media (max-width: $mobile) {
+        -webkit-text-stroke: 1px #7209b7;
+      }
     }
     .color {
       color: #7209b7;
@@ -127,6 +130,8 @@
     padding: 10px 0;
     color: #fff;
     resize: none;
+    -webkit-appearance: none;
+    border-radius: 0;
     @media (max-width: $mobile) {
       padding: 6px 0;
     }

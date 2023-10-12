@@ -28,7 +28,8 @@ body::after {
 .popup_show {
   z-index: 150;
   visibility: visible;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   pointer-events: auto;
 }
 .popup_show .popup__content {
@@ -67,14 +68,22 @@ body::after {
   &__products {
     position: relative;
     padding-top: 124px;
-
     padding-bottom: 117px;
     border-radius: 60px 60px 0px 0px;
     background: #fff8e1;
     height: auto;
     z-index: 0;
+    @media (max-width: $tablet) {
+      padding-top: 84px;
+      padding-bottom: 87px;
+    }
+    @media (max-width: $mobile) {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
     .products {
       height: 100%;
+      width: 100%;
       &__heading {
         display: none;
       }
@@ -112,6 +121,9 @@ body::after {
 
       @media (max-width: em(1300)) {
         padding: 40px;
+      }
+      @media (max-width: $mobile) {
+        padding: 0;
       }
 
       &__image-wrap {
@@ -266,7 +278,7 @@ body::after {
   display: flex;
   height: 115px;
   max-width: 680px;
-  width: 100%;
+  // width: 100%;
   padding: 10px;
   background-color: #fff;
   border-radius: 20px;
@@ -310,6 +322,9 @@ body::after {
     @media (max-width: $mobile) {
       font-size: 24px;
       padding: 13px 66px;
+    }
+    @media (max-width: $mobileSmall) {
+      padding: 13px 30px;
     }
   }
 
