@@ -190,6 +190,10 @@
       left: 13.6%;
       bottom: -40px;
     }
+
+    @media (max-width: em(385)){
+      left: 10%;
+    }
   }
 
   &__sticker {
