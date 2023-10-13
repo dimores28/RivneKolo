@@ -387,13 +387,13 @@ initSliders();
 const Scene_1 = gsap.timeline({
   scrollTrigger: {
     trigger: ".about__scene_1",
-    start: "center center",
+    start: "center 60%",
     end: "+=100%",
     // markers: true
   },
 });
 
-Scene_1.to('body', {overflow: 'hidden', duration: 0.1})
+Scene_1.to('body', {overflow: 'hidden', duration: 0})
 .from(".about__scene_1 .row_1", {
   y: 200,
   opacity: 0,
@@ -427,13 +427,13 @@ Scene_1.to('body', {overflow: 'hidden', duration: 0.1})
 const Scene_2 = gsap.timeline({
   scrollTrigger: {
     trigger: ".about__scene_2",
-    start: "top center",
+    start: "top 55%",
     end: "+=40%",
     // markers: true
   },
 });
 
-Scene_2.to('body', {overflow: 'hidden', duration: 0.1})
+Scene_2.to('body', {overflow: 'hidden', duration: 0})
 .from(".about__scene_2 .row_1", {
   y: 200,
   opacity: 0,
@@ -500,12 +500,12 @@ Scene_2.to('body', {overflow: 'hidden', duration: 0.1})
 const Scene_3 = gsap.timeline({
   scrollTrigger: {
     trigger: ".about__scene_3",
-    start: "top center",
+    start: "top 60%",
     end: "+=30%",
     // markers: true
   },
 });
-Scene_3.to('body', {overflow: 'hidden', duration: 0.1});
+Scene_3.to('body', {overflow: 'hidden', duration: 0});
 document.querySelectorAll(".about__scene_3 p").forEach((row, i) => {
   let deg = 16;
   if (i % 2 == 0) {
@@ -520,7 +520,7 @@ document.querySelectorAll(".about__scene_3 p").forEach((row, i) => {
     ease: "power3.out",
   });
 });
-Scene_3.to('body', {overflow: 'auto', duration: 0.1})
+Scene_3.to('body', {overflow: 'auto', duration: 0})
 Scene_3.from(".row_5", {
   y: 200,
   opacity: 0,
@@ -531,12 +531,12 @@ Scene_3.from(".row_5", {
 const Scene_4 = gsap.timeline({
   scrollTrigger: {
     trigger: ".about__scene_4",
-    start: "top center",
+    start: "top 55%",
     end: "+=30%",
     // markers: true
   },
 });
-Scene_4.to('body', {overflow: 'hidden', duration: 0.1})
+Scene_4.to('body', {overflow: 'hidden', duration: 0})
 .from(".about__scene_4 .row_1", {
   y: 200,
   opacity: 0,
@@ -584,24 +584,28 @@ Scene_4.to('body', {overflow: 'hidden', duration: 0.1})
 const Scene_5 = gsap.timeline({
   scrollTrigger: {
     trigger: ".about__scene_5",
-    start: "top center",
+    start: "top 55%",
     end: "+=60%",
     // markers: true
   },
 });
 
-Scene_5.from(".about__scene_5 .row_1", {
+Scene_5.to('body', {overflow: 'hidden', duration: 0})
+.from(".about__scene_5 .row_1", {
   y: 200,
   opacity: 0,
   rotate: 16,
   duration: 0.4,
   ease: "back.out(1.7)",
 });
-Scene_5.to('body', {overflow: 'hidden', duration: 0.1})
-document.querySelectorAll(".advanteges__item").forEach((item) => {
+document.querySelectorAll(".advanteges__item").forEach((item, i) => {
+  if( i == 1) {
+    Scene_5.to('body', {overflow: 'auto', duration: 0.1})
+  }
+
   Scene_5.from(item, { y: 200, opacity: 0, duration: 0.4, ease: "power3.out" });
 });
-Scene_5.to('body', {overflow: 'auto', duration: 0.1})
+
 
 const arrowsBtn = document.querySelector(".about__download-btn span i");
 const spanBtn = document.querySelector(".about__download-btn span");
