@@ -401,7 +401,6 @@ Scene_1.to('body', {overflow: 'hidden', duration: 0.1})
   duration: 0.4,
   ease: "power3.out",
 })
- .to('body', {overflow: 'auto', duration: 0.1})
   .from(".about__scene_1 .row_2", {
     y: 200,
     opacity: 0,
@@ -409,6 +408,7 @@ Scene_1.to('body', {overflow: 'hidden', duration: 0.1})
     duration: 0.4,
     ease: "power3.out",
   })
+  .to('body', {overflow: 'auto', duration: 0.1})
   .from(".about__scene_1 .row_2 img", {
     y: 200,
     x: 100,
@@ -442,7 +442,6 @@ Scene_2.to('body', {overflow: 'hidden', duration: 0.1})
   ease: "power3.out",
   immediateRender: true,
 })
-  .to('body', {overflow: 'auto', duration: 0.1})
   .from(".about__scene_2 .row_2", {
     y: 200,
     opacity: 0,
@@ -451,6 +450,7 @@ Scene_2.to('body', {overflow: 'hidden', duration: 0.1})
     ease: "power3.out",
     immediateRender: true,
   })
+  .to('body', {overflow: 'auto', duration: 0.1})
   .from(".about__scene_2 .row_3", {
     y: 200,
     opacity: 0,
@@ -544,7 +544,6 @@ Scene_4.to('body', {overflow: 'hidden', duration: 0.1})
   duration: 0.4,
   ease: "power3.out",
 })
-.to('body', {overflow: 'auto', duration: 0.1})
   .from(".about__scene_4 .row_1 img", {
     y: 200,
     x: 200,
@@ -559,6 +558,7 @@ Scene_4.to('body', {overflow: 'hidden', duration: 0.1})
     duration: 0.4,
     ease: "power3.out",
   })
+  .to('body', {overflow: 'auto', duration: 0.1})
   .from(".about__scene_4 .row_3", {
     y: 200,
     opacity: 0,
@@ -598,10 +598,10 @@ Scene_5.from(".about__scene_5 .row_1", {
   ease: "back.out(1.7)",
 });
 Scene_5.to('body', {overflow: 'hidden', duration: 0.1})
-.to('body', {overflow: 'auto', duration: 0.1}, "+=0.4")
 document.querySelectorAll(".advanteges__item").forEach((item) => {
   Scene_5.from(item, { y: 200, opacity: 0, duration: 0.4, ease: "power3.out" });
 });
+Scene_5.to('body', {overflow: 'auto', duration: 0.1})
 
 const arrowsBtn = document.querySelector(".about__download-btn span i");
 const spanBtn = document.querySelector(".about__download-btn span");
