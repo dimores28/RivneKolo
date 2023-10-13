@@ -389,16 +389,19 @@ const Scene_1 = gsap.timeline({
     trigger: ".about__scene_1",
     start: "center center",
     end: "+=100%",
+    // markers: true
   },
 });
 
-Scene_1.from(".about__scene_1 .row_1", {
+Scene_1.to('body', {overflow: 'hidden', duration: 0.1})
+.from(".about__scene_1 .row_1", {
   y: 200,
   opacity: 0,
   rotate: 16,
   duration: 0.4,
   ease: "power3.out",
 })
+ .to('body', {overflow: 'auto', duration: 0.1})
   .from(".about__scene_1 .row_2", {
     y: 200,
     opacity: 0,
@@ -430,7 +433,8 @@ const Scene_2 = gsap.timeline({
   },
 });
 
-Scene_2.from(".about__scene_2 .row_1", {
+Scene_2.to('body', {overflow: 'hidden', duration: 0.1})
+.from(".about__scene_2 .row_1", {
   y: 200,
   opacity: 0,
   rotate: 16,
@@ -438,6 +442,7 @@ Scene_2.from(".about__scene_2 .row_1", {
   ease: "power3.out",
   immediateRender: true,
 })
+  .to('body', {overflow: 'auto', duration: 0.1})
   .from(".about__scene_2 .row_2", {
     y: 200,
     opacity: 0,
@@ -500,12 +505,13 @@ const Scene_3 = gsap.timeline({
     // markers: true
   },
 });
-
+Scene_3.to('body', {overflow: 'hidden', duration: 0.1});
 document.querySelectorAll(".about__scene_3 p").forEach((row, i) => {
   let deg = 16;
   if (i % 2 == 0) {
     deg = -16;
   }
+  
   Scene_3.from(row, {
     y: 200,
     opacity: 0,
@@ -514,7 +520,7 @@ document.querySelectorAll(".about__scene_3 p").forEach((row, i) => {
     ease: "power3.out",
   });
 });
-
+Scene_3.to('body', {overflow: 'auto', duration: 0.1})
 Scene_3.from(".row_5", {
   y: 200,
   opacity: 0,
@@ -530,13 +536,15 @@ const Scene_4 = gsap.timeline({
     // markers: true
   },
 });
-Scene_4.from(".about__scene_4 .row_1", {
+Scene_4.to('body', {overflow: 'hidden', duration: 0.1})
+.from(".about__scene_4 .row_1", {
   y: 200,
   opacity: 0,
   rotate: 16,
   duration: 0.4,
   ease: "power3.out",
 })
+.to('body', {overflow: 'auto', duration: 0.1})
   .from(".about__scene_4 .row_1 img", {
     y: 200,
     x: 200,
@@ -589,6 +597,8 @@ Scene_5.from(".about__scene_5 .row_1", {
   duration: 0.4,
   ease: "back.out(1.7)",
 });
+Scene_5.to('body', {overflow: 'hidden', duration: 0.1})
+.to('body', {overflow: 'auto', duration: 0.1}, "+=0.4")
 document.querySelectorAll(".advanteges__item").forEach((item) => {
   Scene_5.from(item, { y: 200, opacity: 0, duration: 0.4, ease: "power3.out" });
 });
