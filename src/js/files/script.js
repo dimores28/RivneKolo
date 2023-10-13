@@ -384,227 +384,547 @@ initSliders();
 
 //==================About animation ======================================================
 //about__scene_1
-const Scene_1 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".about__scene_1",
-    start: "center 60%",
-    end: "+=100%",
-    // markers: true
-  },
-});
+if (document.querySelector(".about__scene_1")) {
+  let mm = gsap.matchMedia(),
+  breakPoint = 768;
 
-Scene_1.to('body', {overflow: 'hidden', duration: 0})
-.from(".about__scene_1 .row_1", {
-  y: 200,
-  opacity: 0,
-  rotate: 16,
-  duration: 0.4,
-  ease: "power3.out",
-})
-  .from(".about__scene_1 .row_2", {
-    y: 200,
-    opacity: 0,
-    rotate: -16,
-    duration: 0.4,
-    ease: "power3.out",
-  })
-  .to('body', {overflow: 'auto', duration: 0.1})
-  .from(".about__scene_1 .row_2 img", {
-    y: 200,
-    x: 100,
-    opacity: 0,
-    duration: 0.4,
-    ease: "back.out(1.7)",
-  })
-  .from(".about__scene_1 .row_3", {
-    y: 200,
-    opacity: 0,
-    rotate: 16,
-    duration: 0.4,
-    ease: "power3.out",
-  });
+  mm.add(
+    {
+      isDesktop: `(min-width: ${breakPoint}px)`,
+      isMobile: `(max-width: ${breakPoint - 1}px)`,
+      reduceMotion: "(prefers-reduced-motion: reduce)",
+    },
+    (context) => {
+      let { isDesktop, isMobile } = context.conditions;
 
-const Scene_2 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".about__scene_2",
-    start: "top 55%",
-    end: "+=40%",
-    // markers: true
-  },
-});
+      if (isDesktop) {
+        const Scene_1 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".about__scene_1",
+            start: "center center",
+            end: "+=100%",
+            // markers: true
+          },
+        });
+        
+        Scene_1.from(".about__scene_1 .row_1", {
+          y: 200,
+          opacity: 0,
+          rotate: 16,
+          duration: 0.4,
+          ease: "power3.out",
+        })
+          .from(".about__scene_1 .row_2", {
+            y: 200,
+            opacity: 0,
+            rotate: -16,
+            duration: 0.4,
+            ease: "power3.out",
+          })
+          .from(".about__scene_1 .row_2 img", {
+            y: 200,
+            x: 100,
+            opacity: 0,
+            duration: 0.4,
+            ease: "back.out(1.7)",
+          })
+          .from(".about__scene_1 .row_3", {
+            y: 200,
+            opacity: 0,
+            rotate: 16,
+            duration: 0.4,
+            ease: "power3.out",
+          });
+      }
 
-Scene_2.to('body', {overflow: 'hidden', duration: 0})
-.from(".about__scene_2 .row_1", {
-  y: 200,
-  opacity: 0,
-  rotate: 16,
-  duration: 0.4,
-  ease: "power3.out",
-  immediateRender: true,
-})
-  .from(".about__scene_2 .row_2", {
-    y: 200,
-    opacity: 0,
-    rotate: -16,
-    duration: 0.4,
-    ease: "power3.out",
-    immediateRender: true,
-  })
-  .to('body', {overflow: 'auto', duration: 0.1})
-  .from(".about__scene_2 .row_3", {
-    y: 200,
-    opacity: 0,
-    rotate: 16,
-    duration: 0.4,
-    ease: "power3.out",
-    immediateRender: true,
-  })
-  .from(".about__scene_2 .row_4", {
-    y: 200,
-    opacity: 0,
-    rotate: -16,
-    duration: 0.4,
-    ease: "power3.out",
-  })
-  .from(".about__scene_2 .row_4 img", {
-    y: -200,
-    x: -100,
-    opacity: 0,
-    duration: 0.4,
-    ease: "back.out(1.7)",
-  })
-  .from(".about__scene_2 .row_8", {
-    y: 200,
-    opacity: 0,
-    rotate: 16,
-    duration: 0.4,
-    ease: "power3.out",
-  })
-  .from(".about__scene_2 .row_6", {
-    y: 200,
-    opacity: 0,
-    rotate: -16,
-    duration: 0.4,
-    ease: "power3.out",
-    immediateRender: true,
-  })
-  .from(".about__scene_2 .row_6 img", {
-    y: 200,
-    x: -100,
-    opacity: 0,
-    duration: 0.4,
-    ease: "back.out(1.7)",
-    immediateRender: true,
-  });
+      if (isMobile) {
+        const Scene_1 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".about__scene_1",
+            start: "center 60%",
+            end: "+=100%",
+            // markers: true
+          },
+        });
+        
+        Scene_1.to('body', {overflow: 'hidden', duration: 0})
+        .from(".about__scene_1 .row_1", {
+          y: 200,
+          opacity: 0,
+          rotate: 16,
+          duration: 0.4,
+          ease: "power3.out",
+        })
+          .from(".about__scene_1 .row_2", {
+            y: 200,
+            opacity: 0,
+            rotate: -16,
+            duration: 0.4,
+            ease: "power3.out",
+          })
+          .to('body', {overflow: 'auto', duration: 0.1})
+          .from(".about__scene_1 .row_2 img", {
+            y: 200,
+            x: 100,
+            opacity: 0,
+            duration: 0.4,
+            ease: "back.out(1.7)",
+          })
+          .from(".about__scene_1 .row_3", {
+            y: 200,
+            opacity: 0,
+            rotate: 16,
+            duration: 0.4,
+            ease: "power3.out",
+          });
+      }
+    }
+  );
+}
 
-const Scene_3 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".about__scene_3",
-    start: "top 60%",
-    end: "+=30%",
-    // markers: true
-  },
-});
-Scene_3.to('body', {overflow: 'hidden', duration: 0});
-document.querySelectorAll(".about__scene_3 p").forEach((row, i) => {
-  let deg = 16;
-  if (i % 2 == 0) {
-    deg = -16;
-  }
-  
-  Scene_3.from(row, {
-    y: 200,
-    opacity: 0,
-    rotate: deg,
-    duration: 0.4,
-    ease: "power3.out",
-  });
-});
-Scene_3.to('body', {overflow: 'auto', duration: 0})
-Scene_3.from(".row_5", {
-  y: 200,
-  opacity: 0,
-  duration: 0.4,
-  ease: "back.out(1.7)",
-});
 
-const Scene_4 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".about__scene_4",
-    start: "top 55%",
-    end: "+=30%",
-    // markers: true
-  },
-});
-Scene_4.to('body', {overflow: 'hidden', duration: 0})
-.from(".about__scene_4 .row_1", {
-  y: 200,
-  opacity: 0,
-  rotate: 16,
-  duration: 0.4,
-  ease: "power3.out",
-})
-  .from(".about__scene_4 .row_1 img", {
-    y: 200,
-    x: 200,
-    opacity: 0,
-    duration: 0.4,
-    ease: "back.out(1.7)",
-  })
-  .from(".about__scene_4 .row_2", {
-    y: 200,
-    opacity: 0,
-    rotate: -16,
-    duration: 0.4,
-    ease: "power3.out",
-  })
-  .to('body', {overflow: 'auto', duration: 0.1})
-  .from(".about__scene_4 .row_3", {
-    y: 200,
-    opacity: 0,
-    rotate: 16,
-    duration: 0.4,
-    ease: "power3.out",
-  })
-  .from(".about__scene_4 .row_4", {
-    y: 200,
-    opacity: 0,
-    rotate: -16,
-    duration: 0.4,
-    ease: "power3.out",
-  })
-  .from(".about__scene_4 .row_6", {
-    y: 200,
-    opacity: 0,
-    rotate: 16,
-    duration: 0.4,
-    ease: "power3.out",
-  });
 
-const Scene_5 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".about__scene_5",
-    start: "top 55%",
-    end: "+=60%",
-    // markers: true
-  },
-});
+//about__scene_2
+if (document.querySelector(".about__scene_2")) {
+  let mm = gsap.matchMedia(),
+  breakPoint = 768;
 
-Scene_5.to('body', {overflow: 'hidden', duration: 0})
-.from(".about__scene_5 .row_1", {
-  y: 200,
-  opacity: 0,
-  rotate: 16,
-  duration: 0.4,
-  ease: "back.out(1.7)",
-});
-document.querySelectorAll(".advanteges__item").forEach((item, i) => {
-  if( i == 1) {
-    Scene_5.to('body', {overflow: 'auto', duration: 0.1})
-  }
+  mm.add(
+    {
+      isDesktop: `(min-width: ${breakPoint}px)`,
+      isMobile: `(max-width: ${breakPoint - 1}px)`,
+      reduceMotion: "(prefers-reduced-motion: reduce)",
+    },
+    (context) => {
+      let { isDesktop, isMobile } = context.conditions;
 
-  Scene_5.from(item, { y: 200, opacity: 0, duration: 0.4, ease: "power3.out" });
-});
+      if (isDesktop) {
+        const Scene_2 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".about__scene_2",
+            start: "top center",
+            end: "+=40%",
+            // markers: true
+          },
+        });
+        
+        Scene_2.from(".about__scene_2 .row_1", {
+          y: 200,
+          opacity: 0,
+          rotate: 16,
+          duration: 0.4,
+          ease: "power3.out",
+          immediateRender: true,
+        })
+          .from(".about__scene_2 .row_2", {
+            y: 200,
+            opacity: 0,
+            rotate: -16,
+            duration: 0.4,
+            ease: "power3.out",
+            immediateRender: true,
+          })
+          .from(".about__scene_2 .row_3", {
+            y: 200,
+            opacity: 0,
+            rotate: 16,
+            duration: 0.4,
+            ease: "power3.out",
+            immediateRender: true,
+          })
+          .from(".about__scene_2 .row_4", {
+            y: 200,
+            opacity: 0,
+            rotate: -16,
+            duration: 0.4,
+            ease: "power3.out",
+          })
+          .from(".about__scene_2 .row_4 img", {
+            y: -200,
+            x: -100,
+            opacity: 0,
+            duration: 0.4,
+            ease: "back.out(1.7)",
+          })
+          .from(".about__scene_2 .row_8", {
+            y: 200,
+            opacity: 0,
+            rotate: 16,
+            duration: 0.4,
+            ease: "power3.out",
+          })
+          .from(".about__scene_2 .row_6", {
+            y: 200,
+            opacity: 0,
+            rotate: -16,
+            duration: 0.4,
+            ease: "power3.out",
+            immediateRender: true,
+          })
+          .from(".about__scene_2 .row_6 img", {
+            y: 200,
+            x: -100,
+            opacity: 0,
+            duration: 0.4,
+            ease: "back.out(1.7)",
+            immediateRender: true,
+          });
+      }
+
+      if (isMobile) {
+        const Scene_2 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".about__scene_2",
+            start: "top 55%",
+            end: "+=40%",
+            // markers: true
+          },
+        });
+        
+        Scene_2.to('body', {overflow: 'hidden', duration: 0})
+        .from(".about__scene_2 .row_1", {
+          y: 200,
+          opacity: 0,
+          rotate: 16,
+          duration: 0.4,
+          ease: "power3.out",
+          immediateRender: true,
+        })
+          .from(".about__scene_2 .row_2", {
+            y: 200,
+            opacity: 0,
+            rotate: -16,
+            duration: 0.4,
+            ease: "power3.out",
+            immediateRender: true,
+          })
+          .to('body', {overflow: 'auto', duration: 0.1})
+          .from(".about__scene_2 .row_3", {
+            y: 200,
+            opacity: 0,
+            rotate: 16,
+            duration: 0.4,
+            ease: "power3.out",
+            immediateRender: true,
+          })
+          .from(".about__scene_2 .row_4", {
+            y: 200,
+            opacity: 0,
+            rotate: -16,
+            duration: 0.4,
+            ease: "power3.out",
+          })
+          .from(".about__scene_2 .row_4 img", {
+            y: -200,
+            x: -100,
+            opacity: 0,
+            duration: 0.4,
+            ease: "back.out(1.7)",
+          })
+          .from(".about__scene_2 .row_8", {
+            y: 200,
+            opacity: 0,
+            rotate: 16,
+            duration: 0.4,
+            ease: "power3.out",
+          })
+          .from(".about__scene_2 .row_6", {
+            y: 200,
+            opacity: 0,
+            rotate: -16,
+            duration: 0.4,
+            ease: "power3.out",
+            immediateRender: true,
+          })
+          .from(".about__scene_2 .row_6 img", {
+            y: 200,
+            x: -100,
+            opacity: 0,
+            duration: 0.4,
+            ease: "back.out(1.7)",
+            immediateRender: true,
+          });
+      }
+    }
+  );
+}
+
+
+//about__scene_3
+if (document.querySelector(".about__scene_3")) {
+  let mm = gsap.matchMedia(),
+  breakPoint = 768;
+
+  mm.add(
+    {
+      isDesktop: `(min-width: ${breakPoint}px)`,
+      isMobile: `(max-width: ${breakPoint - 1}px)`,
+      reduceMotion: "(prefers-reduced-motion: reduce)",
+    },
+    (context) => {
+      let { isDesktop, isMobile } = context.conditions;
+
+      if (isDesktop) {
+        const Scene_3 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".about__scene_3",
+            start: "top center",
+            end: "+=30%",
+            // markers: true
+          },
+        });
+        document.querySelectorAll(".about__scene_3 p").forEach((row, i) => {
+          let deg = 16;
+          if (i % 2 == 0) {
+            deg = -16;
+          }
+          
+          Scene_3.from(row, {
+            y: 200,
+            opacity: 0,
+            rotate: deg,
+            duration: 0.4,
+            ease: "power3.out",
+          });
+        });
+        Scene_3.from(".row_5", {
+          y: 200,
+          opacity: 0,
+          duration: 0.4,
+          ease: "back.out(1.7)",
+        });
+      }
+
+      if (isMobile) {
+        const Scene_3 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".about__scene_3",
+            start: "top 60%",
+            end: "+=30%",
+            // markers: true
+          },
+        });
+        Scene_3.to('body', {overflow: 'hidden', duration: 0});
+        document.querySelectorAll(".about__scene_3 p").forEach((row, i) => {
+          let deg = 16;
+          if (i % 2 == 0) {
+            deg = -16;
+          }
+          
+          Scene_3.from(row, {
+            y: 200,
+            opacity: 0,
+            rotate: deg,
+            duration: 0.4,
+            ease: "power3.out",
+          });
+        });
+        Scene_3.to('body', {overflow: 'auto', duration: 0})
+        Scene_3.from(".row_5", {
+          y: 200,
+          opacity: 0,
+          duration: 0.4,
+          ease: "back.out(1.7)",
+        });
+      }
+    }
+  );
+}
+
+
+//about__scene_4
+if (document.querySelector(".about__scene_4")) {
+  let mm = gsap.matchMedia(),
+  breakPoint = 768;
+
+  mm.add(
+    {
+      isDesktop: `(min-width: ${breakPoint}px)`,
+      isMobile: `(max-width: ${breakPoint - 1}px)`,
+      reduceMotion: "(prefers-reduced-motion: reduce)",
+    },
+    (context) => {
+      let { isDesktop, isMobile } = context.conditions;
+
+      if (isDesktop) {
+        const Scene_4 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".about__scene_4",
+            start: "top center",
+            end: "+=30%",
+            // markers: true
+          },
+        });
+        Scene_4.from(".about__scene_4 .row_1", {
+          y: 200,
+          opacity: 0,
+          rotate: 16,
+          duration: 0.4,
+          ease: "power3.out",
+        })
+          .from(".about__scene_4 .row_1 img", {
+            y: 200,
+            x: 200,
+            opacity: 0,
+            duration: 0.4,
+            ease: "back.out(1.7)",
+          })
+          .from(".about__scene_4 .row_2", {
+            y: 200,
+            opacity: 0,
+            rotate: -16,
+            duration: 0.4,
+            ease: "power3.out",
+          })
+          .from(".about__scene_4 .row_3", {
+            y: 200,
+            opacity: 0,
+            rotate: 16,
+            duration: 0.4,
+            ease: "power3.out",
+          })
+          .from(".about__scene_4 .row_4", {
+            y: 200,
+            opacity: 0,
+            rotate: -16,
+            duration: 0.4,
+            ease: "power3.out",
+          })
+          .from(".about__scene_4 .row_6", {
+            y: 200,
+            opacity: 0,
+            rotate: 16,
+            duration: 0.4,
+            ease: "power3.out",
+          });
+      }
+
+      if (isMobile) {
+        const Scene_4 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".about__scene_4",
+            start: "top 55%",
+            end: "+=30%",
+            // markers: true
+          },
+        });
+        Scene_4.to('body', {overflow: 'hidden', duration: 0})
+        .from(".about__scene_4 .row_1", {
+          y: 200,
+          opacity: 0,
+          rotate: 16,
+          duration: 0.4,
+          ease: "power3.out",
+        })
+          .from(".about__scene_4 .row_1 img", {
+            y: 200,
+            x: 200,
+            opacity: 0,
+            duration: 0.4,
+            ease: "back.out(1.7)",
+          })
+          .from(".about__scene_4 .row_2", {
+            y: 200,
+            opacity: 0,
+            rotate: -16,
+            duration: 0.4,
+            ease: "power3.out",
+          })
+          .to('body', {overflow: 'auto', duration: 0.1})
+          .from(".about__scene_4 .row_3", {
+            y: 200,
+            opacity: 0,
+            rotate: 16,
+            duration: 0.4,
+            ease: "power3.out",
+          })
+          .from(".about__scene_4 .row_4", {
+            y: 200,
+            opacity: 0,
+            rotate: -16,
+            duration: 0.4,
+            ease: "power3.out",
+          })
+          .from(".about__scene_4 .row_6", {
+            y: 200,
+            opacity: 0,
+            rotate: 16,
+            duration: 0.4,
+            ease: "power3.out",
+          });
+      }
+    }
+  );
+}
+
+
+//about__scene_5
+if (document.querySelector(".about__scene_5")) {
+  let mm = gsap.matchMedia(),
+  breakPoint = 768;
+
+  mm.add(
+    {
+      isDesktop: `(min-width: ${breakPoint}px)`,
+      isMobile: `(max-width: ${breakPoint - 1}px)`,
+      reduceMotion: "(prefers-reduced-motion: reduce)",
+    },
+    (context) => {
+      let { isDesktop, isMobile } = context.conditions;
+
+      if (isDesktop) {
+        const Scene_5 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".about__scene_5",
+            start: "top center",
+            end: "+=60%",
+            // markers: true
+          },
+        });
+        
+        Scene_5.from(".about__scene_5 .row_1", {
+          y: 200,
+          opacity: 0,
+          rotate: 16,
+          duration: 0.4,
+          ease: "back.out(1.7)",
+        });
+        document.querySelectorAll(".advanteges__item").forEach((item) => {       
+          Scene_5.from(item, { y: 200, opacity: 0, duration: 0.4, ease: "power3.out" });
+        });
+      }
+
+      if (isMobile) {
+        const Scene_5 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".about__scene_5",
+            start: "top 55%",
+            end: "+=60%",
+            // markers: true
+          },
+        });
+        
+        Scene_5.to('body', {overflow: 'hidden', duration: 0})
+        .from(".about__scene_5 .row_1", {
+          y: 200,
+          opacity: 0,
+          rotate: 16,
+          duration: 0.4,
+          ease: "back.out(1.7)",
+        });
+        document.querySelectorAll(".advanteges__item").forEach((item, i) => {
+          if( i == 1) {
+            Scene_5.to('body', {overflow: 'auto', duration: 0.1})
+          }
+        
+          Scene_5.from(item, { y: 200, opacity: 0, duration: 0.4, ease: "power3.out" });
+        });
+      }
+    }
+  );
+}
+
+
 
 
 const arrowsBtn = document.querySelector(".about__download-btn span i");
