@@ -21,10 +21,10 @@ button.btn {
   text-transform: uppercase;
   text-align: center;
   padding: 6px;
-  height: 96px;
+  height: 90px;
   background: #fff;
   border: 2px solid transparent;
-  border-radius: 20px;
+  border-radius: 18px;
   transition: transform 0.15s;
   transform-style: preserve-3d;
   backface-visibility: hidden;
@@ -34,27 +34,31 @@ button.btn {
   box-sizing: border-box;
 
   span {
-    padding: 24px 47px;
-    border-radius: 20px;
+    padding: 21px 42px;
+    border-radius: 14px;
     border: 2px solid #000;
   }
 
-  @media (max-width: $mobile) {
-    height: 66px;
-    font-size: 14px;
-    border-radius: 10px;
-
+  @media (max-width: $smallLaptop){
+    border-radius: 13px;
+    height: 68px;
     span {
-      padding: 18px 30px;
+      font-size: 16px;
+      padding: 16px 32px;
       border-radius: 10px;
+      display: block;
     }
   }
 
-  @media (max-width: $mobile) {
-    height: 56px;
-
+  @media (max-width: $bigTablet){
+    border-radius: 10px;
+    height: 52px;
+    padding: 3px;
     span {
-      padding: 12px 26px;
+      font-size: 14px;
+      padding: 12px 22px;
+      border-radius: 8px;
+      display: block;
     }
   }
 }
@@ -78,6 +82,11 @@ button.btn strong {
   transition:
     transform 0.15s,
     box-shadow 0.15s;
+
+    @media (max-width: $smallLaptop) {
+      -webkit-transform: translate3d(0, 0.5em, -1em);
+      transform: translate3d(0, 0.5em, -1em);
+    }
 }
 
 button.btn:hover {
