@@ -115,45 +115,88 @@ madeinTlHero.from(".hero__text", { opacity: 0, x: 400 });
 //=========== Social lincks animation ================
 gsap.registerPlugin(MotionPathPlugin);
 
-const hendTL = gsap.timeline({ repeat: -1, repeatDelay: 1 });
-//  hendTL.yoyo( true );
-hendTL
-  .to(".social__hand", {
-    x: "115%",
-    y: "-19%",
-    duration: 2.5,
-    ease: "bounce.out",
-    delay: 1,
-  })
-  .to(
-    ".social__shadow",
+if(document.querySelector('.social__hand')) {
+  let mm = gsap.matchMedia(),
+  breakPoint = 768;
+
+  mm.add(
     {
-      x: "180%",
-      y: "235%",
-      scale: 0.4,
-      duration: 2.5,
-      ease: "bounce.out",
-      delay: 1,
+      isDesktop: `(min-width: ${breakPoint}px)`,
+      smallLaptop: `(max-width: 1460px)`,
+      bigTablet: `(max-width: 1130px)`,
+      isMobile: `(max-width: ${breakPoint - 1}px)`,
+      reduceMotion: "(prefers-reduced-motion: reduce)",
     },
-    "-=3.5"
-  )
-  .to(".social__hand", {
-    x: "0",
-    y: "0",
-    duration: 1.5,
-    delay: 1,
-  })
-  .to(
-    ".social__shadow",
-    {
-      x: "0",
-      y: "0",
-      scale: 1,
-      duration: 1.5,
-      delay: 1,
-    },
-    "-=2.5"
+    (context) => {
+      let { smallLaptop, bigTablet, isMobile } = context.conditions;
+
+      const hendTL = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+      let hend_x = 210;
+      let hend_y = -134;
+      let shadow_x = 298;
+      let shadow_y = 128;
+      
+
+      if (smallLaptop) {
+         shadow_x = 278;
+         shadow_y = -110;
+      }
+
+      if (bigTablet) {
+        hend_x = 191;
+        hend_y = -142;
+        shadow_x = 268;
+        shadow_y = -417;
+      }
+
+      if (isMobile) {
+        hend_x = 158;
+        hend_y = -152;
+        shadow_x = 206;
+        shadow_y = -440;
+      }
+
+       hendTL
+        .to(".social__hand", {
+          x: `${hend_x}%`,
+          y: `${hend_y}%`,
+          duration: 2.5,
+          ease: "bounce.out",
+          delay: 1,
+        })
+        .to(
+          ".social__shadow",
+          {
+            x: `${shadow_x}%`,
+            y: `${shadow_y}%`,
+            scale: 0.4,
+            duration: 2.5,
+            ease: "bounce.out",
+            delay: 1,
+          },
+          "-=3.5"
+        )
+        .to(".social__hand", {
+          x: "0",
+          y: "0",
+          duration: 1.5,
+          delay: 1,
+        })
+        .to(
+          ".social__shadow",
+          {
+            x: "0",
+            y: "0",
+            scale: 1,
+            duration: 1.5,
+            delay: 1,
+          },
+          "-=2.5"
+        );
+    }
   );
+}
+
 
 //=========== End Social lincks animation ================
 
