@@ -343,8 +343,12 @@ function initSliders() {
           slidesPerView: 1.5,
           spaceBetween: 7,
         },
-        768: {
+        480: {
           slidesPerView: 2.5,
+          spaceBetween: 7,
+        },
+        768: {
+          slidesPerView: 3.5,
           spaceBetween: 16,
         },
         1268: {
