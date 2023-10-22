@@ -19,7 +19,7 @@
 }
 .heading_2 {
   font-family: Grotesk, sans-serif;
-  @include adaptiveValue("font-size", 60, 28);
+  @include adaptiveValue("font-size", 54, 26);
   @include adaptiveValue("line-height", 84, 30);
   font-style: normal;
   text-transform: uppercase;
@@ -257,11 +257,21 @@
   color: #000;
   text-align: center;
   font-family: $fontFamily, sans-serif;
-  @include adaptiveValue("font-size", 36, 18);
+  font-size: 32px;
   font-style: normal;
   font-weight: 700;
-  @include adaptiveValue("line-height", 44, 22);
+  line-height: 40px;
   text-transform: uppercase;
+
+  @media (max-width: $smallLaptop) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  @media (max-width: $bigTablet) {
+    font-size: 16px;
+    line-height: 19px;
+  }
 }
 
 .form__success-msg {
