@@ -22,6 +22,17 @@
   }
 
   &__item {
-    @include adaptiveValue("max-height", 188, 89);
+    max-height: 200px;
+    @media (max-width: em(1650)) {
+      max-height: 150px;
+    }
+    @media (max-width: $smallLaptop) {
+      max-height: 125px;
+    }
+    @media (max-width: $bigTablet) {
+      max-height: 84px;
+    }
+
+    // @include adaptiveValue("max-height", 177, 0);
   }
 }

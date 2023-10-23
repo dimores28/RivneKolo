@@ -1,13 +1,28 @@
 .heading {
   font-family: Grotesk, sans-serif;
-  @include adaptiveValue("font-size", 80, 24);
-  @media (max-width: $tablet) {
-    line-height: 1.07;
-  }
-  line-height: 1.05;
+  font-size: 71px;
+  line-height: 1.1;
   font-style: normal;
   font-weight: 800;
   text-transform: uppercase;
+  @media (max-width: em(1850)) {
+    font-size: 62px;
+  }
+  @media (max-width: em(1650)) {
+    font-size: 57px;
+  }
+  @media (max-width: $smallLaptop) {
+    font-size: 53px;
+  }
+  @media (max-width: em(1400)) {
+    font-size: 44px;
+  }
+  @media (max-width: $bigTablet) {
+    font-size: 35px;
+  }
+  @media (max-width: em(950)) {
+    font-size: 28px;
+  }
 }
 .heading_1 {
   font-family: Grotesk, sans-serif;
@@ -115,13 +130,25 @@
 
 .body_3 {
   font-family: $fontFamily, sans-serif;
-  @include adaptiveValue("font-size", 36, 18);
-  @media (max-width: $tablet) {
-    line-height: 1.22;
-  }
+  font-size: 32px;
   line-height: 1.33;
   font-style: normal;
   font-weight: 500;
+  @media (max-width: em(1850)) {
+    font-size: 28px;
+  }
+  @media (max-width: em(1650)) {
+    font-size: 26px;
+  }
+  @media (max-width: $smallLaptop) {
+    font-size: 24px;
+  }
+  @media (max-width: em(1400)) {
+    font-size: 20px;
+  }
+  @media (max-width: $bigTablet) {
+    font-size: 16px;
+  }
 }
 
 .body_4 {
