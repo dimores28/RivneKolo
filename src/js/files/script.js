@@ -976,12 +976,7 @@ if (document.querySelector(".about__scene_5")) {
 
 const arrowsBtn = document.querySelector(".about__download-btn span i");
 const spanBtn = document.querySelector(".about__download-btn span");
-let animation = gsap.to(arrowsBtn, {
-  paused: true,
-  backgroundPosition: "50% -10%",
-  ease: "elastic.out(1, 0.3)",
-  duration: 1.2,
-});
+let arrowPos = -10;
 
 let bgPos = 0;
 function changeImg(progress) {
@@ -1000,10 +995,10 @@ if (document.querySelector(".about__bagel")) {
 
   mm.add(
     {
-      isDesktop: `(min-width: 1303px)`,
-      isMobile: `(max-width: ${breakPoint - 1}px)`,
-      isLaptop: `(max-width: 1302px)`,
-      isTablet: `(max-width: 960px)`,
+      isDesktop: `(min-width: 1461px)`,
+      isMobile: `(max-width: ${breakPoint}px)`,
+      isLaptop: `(max-width: 1460px)`,
+      isTablet: `(max-width: 1130px)`,
       reduceMotion: "(prefers-reduced-motion: reduce)",
     },
     (context) => {
@@ -1017,20 +1012,19 @@ if (document.querySelector(".about__bagel")) {
 
       if (isDesktop) {
         coef = 0.85;
-        sh = -32170;
-        //32768 -31670
-        // bagel.to('.about__bagel img', {rotation: 360, duration: 3});
+        sh = -26424;
       }
 
       if (isLaptop) {
         coef = 0.88;
-        sh = -21828;
-        // bagel.to('.about__bagel-sprite', {backgroundPositionY: () => -20804, ease: "steps(" + frameCount + ")",});
+        sh = -19528;
       }
 
       if (isTablet) {
-        coef = 0.95;
-        sh = -17232;
+        coef = 0.88;
+        sh = -12867;
+
+        arrowPos = -24;
       }
 
       if (isMobile) {
@@ -1062,6 +1056,13 @@ if (document.querySelector(".about__bagel")) {
     }
   );
 }
+
+let animation = gsap.to(arrowsBtn, {
+  paused: true,
+  backgroundPosition: `50% ${arrowPos}%`,
+  ease: "elastic.out(1, 0.3)",
+  duration: 1.2,
+});
 
 spanBtn.addEventListener("mouseenter", () => animation.play());
 spanBtn.addEventListener("mouseleave", () => animation.reverse());
