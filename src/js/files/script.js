@@ -400,14 +400,26 @@ function initSliders() {
         },
 
         768: {
-          spaceBetween: 30,
-          slidesPerView: "auto",
+          spaceBetween: 20,
+          slidesPerView: "3",
           centeredSlides: true,
         },
 
-        1268: {
+        960: {
+          spaceBetween: 26,
+          slidesPerView: "3.5",
+          centeredSlides: true,
+        },
+
+        1130: {
+          spaceBetween: 40,
+          slidesPerView: "3.5",
+          centeredSlides: true,
+        },
+
+        1466: {
           spaceBetween: 60,
-          slidesPerView: "3",
+          slidesPerView: "3.5",
           centeredSlides: true,
         },
       },
