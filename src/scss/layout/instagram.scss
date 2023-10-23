@@ -38,6 +38,19 @@
     flex-direction: column;
     gap: 30px;
     background-color: #fff;
+
+    @media (max-width: $smallLaptop){
+       padding: 20px; 
+       border-radius: 13px;
+       gap: 20px;
+    }
+
+    @media (max-width: $bigTablet){
+        padding: 14px;
+        border-radius: 8px;
+        gap: 13px;
+    }
+
     @media (max-width: $mobile) {
       max-width: 242px;
       max-height: 288px;
@@ -67,6 +80,16 @@
   }
   &__logo {
     grid-area: logo;
+    
+    @media (max-width: $smallLaptop){
+      width: 50px;
+      height: auto; 
+    }
+
+    @media (max-width: $bigTablet){
+      width: 34px;
+    }
+
     @media (max-width: $mobile) {
       max-width: 32px;
     }
@@ -76,10 +99,23 @@
     display: flex;
     align-items: flex-end;
     white-space: nowrap;
+
+    @media (max-width: $smallLaptop){
+      font-size: 16px;
+    }
+
+    @media (max-width: $bigTablet){
+      font-size: 13px; 
+    }
   }
   &__data {
     grid-area: data;
     padding: 6px 0;
+
+    @media (max-width: $smallLaptop){
+      font-size: 10px;
+    }
+
     @media (max-width: $mobile) {
       padding: 0;
     }
@@ -87,8 +123,12 @@
 
   &__icon {
     margin-right: 12px;
-    @media (max-width: $mobile) {
-      max-width: 16px;
+    @media (max-width: $smallLaptop){
+      width: 24px;
+      height: auto;
+    }
+    @media (max-width: $bigTablet){
+      width: 16px;  
     }
   }
 
