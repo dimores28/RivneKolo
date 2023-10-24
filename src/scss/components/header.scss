@@ -13,6 +13,14 @@
     padding-top: 32px;
     padding-bottom: 32px;
 
+    @media (max-width: $smallLaptop){
+      max-width: 1100px;
+    }
+
+    @media (max-width: $bigTablet){
+       max-width: 740px; 
+    }
+
     @media (max-width: $mobile) {
       padding-top: 7px;
       padding-bottom: 0;
@@ -192,6 +200,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: $smallLaptop){
+        &:first-child {
+          padding-top: 12px;
+        }
+    }
+
+    @media (max-width:$mobile){
+      &:first-child {
+        padding-top: 8px;
+      } 
+    }
   }
 
   &__menu-link {
