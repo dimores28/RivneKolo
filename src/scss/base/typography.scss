@@ -43,14 +43,22 @@
 
 .heading_3 {
   font-family: Grotesk, sans-serif;
-  @include adaptiveValue("font-size", 52, 28);
-  @media (max-width: $tablet) {
-    line-height: 1.14;
-  }
+  font-size: 52px;
   line-height: 1.07;
   font-style: normal;
   font-weight: 800;
   text-transform: uppercase;
+  @media (max-width: em(1650)) {
+  }
+  @media (max-width: $smallLaptop) {
+    font-size: 34px;
+  }
+  @media (max-width: em(1400)) {
+  }
+  @media (max-width: $bigTablet) {
+    font-size: 23px;
+    line-height: 1.16;
+  }
 }
 
 .title {
@@ -162,13 +170,23 @@
 
 .body_5 {
   font-family: $fontFamily, sans-serif;
-  @include adaptiveValue("font-size", 24, 18);
-  @media (max-width: $tablet) {
-    line-height: 1.22;
-  }
+  font-size: 24px;
   line-height: 1.16;
   font-style: normal;
   font-weight: 400;
+  @media (max-width: em(1800)) {
+  }
+  @media (max-width: em(1650)) {
+  }
+  @media (max-width: $smallLaptop) {
+    font-size: 16px;
+  }
+  @media (max-width: em(1400)) {
+  }
+  @media (max-width: $bigTablet) {
+    font-size: 10px;
+    line-height: 1.16;
+  }
 }
 
 .body_6 {
@@ -202,10 +220,20 @@
 
 .price_2 {
   font-family: Grotesk, sans-serif;
-  @include adaptiveValue("font-size", 51, 26);
+  font-size: 51px;
   font-style: normal;
   font-weight: 800;
-  line-height: 72.727%; /* 72.727% */
+  line-height: 72.727%;
+  @media (max-width: em(1650)) {
+  }
+  @media (max-width: $smallLaptop) {
+    font-size: 34px;
+  }
+  @media (max-width: em(1400)) {
+  }
+  @media (max-width: $bigTablet) {
+    font-size: 22px;
+  }
 }
 
 .weight {
@@ -218,10 +246,24 @@
 
 .weight_2 {
   font-family: $fontFamily, sans-serif;
-  @include adaptiveValue("font-size", 59, 28);
+  font-size: 59px;
   font-style: normal;
   font-weight: 800;
-  line-height: 125%; /* 125% */
+  line-height: 125%;
+  // @media (max-width: em(1800)) {
+  //   font-size: 52px;
+  // }
+  @media (max-width: em(1650)) {
+    font-size: 46px;
+  }
+  @media (max-width: $smallLaptop) {
+    font-size: 39px;
+  }
+  @media (max-width: em(1400)) {
+  }
+  @media (max-width: $bigTablet) {
+    font-size: 26px;
+  }
 }
 .number {
   font-family: $fontFamily, sans-serif;
@@ -344,7 +386,7 @@
     line-height: 48px;
   }
 
-  @media (max-width: $bigTablet){
+  @media (max-width: $bigTablet) {
     font-size: 24px;
     line-height: 32px;
   }

@@ -48,7 +48,7 @@ body::after {
   width: 100%;
   height: 100%;
   // padding-top: 224px;
-  @include adaptiveValue("padding-top", 154, 74);
+  @include adaptiveValue("padding-top", 104, 50);
   .lock & {
     visibility: visible;
   }
@@ -63,6 +63,7 @@ body::after {
     display: none;
     @media (max-width: $mobile) {
       right: 24px;
+      top: 24px;
     }
   }
   &__products {
@@ -73,11 +74,16 @@ body::after {
     background: #fff8e1;
     height: auto;
     z-index: 0;
-    @media (max-width: $tablet) {
-      padding-top: 84px;
-      padding-bottom: 87px;
-      border-radius: 16px 16px 0px 0px;
+    @media (max-width: $smallLaptop) {
+      padding-top: 82px;
+      border-radius: 40px 40px 0px 0px;
     }
+
+    @media (max-width: $bigTablet) {
+      padding-top: 55px;
+      border-radius: 26px 26px 0px 0px;
+    }
+
     @media (max-width: $mobile) {
       padding-top: 60px;
       padding-bottom: 60px;
@@ -106,26 +112,46 @@ body::after {
     width: 100%;
     height: 100%;
     padding-bottom: 45px;
-    @media (max-width: em(1100)) {
+    gap: 112px;
+    @media (max-width: em(2100)) {
+      max-width: 1660px;
+    }
+    @media (max-width: em(1920)) {
+      max-width: 1480px;
+      justify-content: space-between;
+    }
+    @media (max-width: $smallLaptop) {
+      max-width: 1100px;
+      gap: 0;
+    }
+
+    @media (max-width: $bigTablet) {
+      max-width: 740px;
+    }
+    @media (max-width: $mobile) {
       flex-direction: column;
       align-items: center;
+      gap: 0;
     }
 
     .product {
-      padding: 125px;
-      @media (max-width: em(1600)) {
-        padding: 100px;
+      // width: 868px;
+      // height: 955px;
+      // width: 100%;
+      // height: 100%;
+      // padding-top: 150px;
+      padding: 150px 125px 0 125px;
+      @media (max-width: em(1920)) {
+        padding: 150px 100px 0 100px;
       }
-      @media (max-width: em(1400)) {
-        padding: 70px;
+      @media (max-width: $smallLaptop) {
+        padding: 80px 100px 0 100px;
       }
 
-      @media (max-width: em(1300)) {
-        padding: 40px;
+      @media (max-width: $bigTablet) {
+        padding: 50px 50px 0 50px;
       }
-      @media (max-width: em(1200)) {
-        padding: 0;
-      }
+
       @media (max-width: $mobile) {
         padding: 0;
       }
@@ -134,26 +160,47 @@ body::after {
         max-width: 868px;
         max-height: 955px;
 
-        transform: scale(1.46);
+        transform: scale(1.65);
         .assortment__product {
           margin: 0;
         }
-        @media (max-width: em(1600)) {
-          transform: scale(1.3);
+        @media (max-width: em(1920)) {
+          transform: scale(1.55);
         }
-        @media (max-width: em(1400)) {
+        @media (max-width: em(950)) {
+          transform: scale(1.46);
+        }
+        @media (max-width: $mobile) {
           transform: scale(1);
         }
-        @media (max-width: em(1100)) {
+        @media (max-width: $mobileSmall) {
           transform: scale(1);
         }
       }
 
       &__info {
+        max-width: 680px;
         position: relative;
         margin-bottom: 154px;
+        padding-top: 10px;
+        @media (max-width: em(1920)) {
+          max-width: 568px;
+        }
+        @media (max-width: $smallLaptop) {
+          max-width: 453px;
+          margin-bottom: 88px;
+        }
+
+        @media (max-width: $bigTablet) {
+          max-width: 302px;
+          margin-bottom: 44px;
+        }
+
         @media (max-width: $mobile) {
           margin-bottom: 15px;
+        }
+        @media (max-width: em(950)) {
+          padding-top: 0;
         }
       }
       &__info-wrap {
@@ -166,9 +213,15 @@ body::after {
         position: relative;
         // height: 115px;
         max-width: 680px;
+        @media (max-width: $smallLaptop) {
+          margin-top: 20px;
+        }
         @media (max-width: em(1350)) {
           display: flex;
           justify-content: center;
+        }
+        @media (max-width: $bigTablet) {
+          margin-top: 13px;
         }
         @media (max-width: $mobile) {
           display: flex;
@@ -178,15 +231,27 @@ body::after {
       }
 
       &__info-title {
-        // margin-bottom: 30px;
-        @include adaptiveValue("margin-bottom", 30, 27);
+        margin-bottom: 30px;
         padding-left: 10px;
-        @include adaptiveValue("max-width", 680, 340);
+        max-width: 680px;
+
+        @media (max-width: $smallLaptop) {
+          margin-bottom: 19px;
+        }
+        @media (max-width: $bigTablet) {
+          margin-bottom: 13px;
+        }
+        @media (max-width: $mobile) {
+          margin-bottom: 27px;
+        }
       }
       &__info-text {
         max-width: 680px;
         padding-left: 10px;
         // margin-bottom: 18px;
+        @media (max-width: $mobile) {
+          margin-bottom: 20px;
+        }
       }
       &__info-wrap {
         position: relative;
@@ -196,16 +261,11 @@ body::after {
         }
       }
       &__info-weight {
-        // margin-top: 120px;
+        margin-top: 120px;
         margin-left: -50px;
-        // width: 308px;
-        // height: 146px;
-        @include adaptiveValue("margin-top", 120, 80);
-        @include adaptiveValue("width", 308, 158);
-        @include adaptiveValue("height", 146, 75);
-        // border-radius: 154px / 73px;
+        width: 308px;
+        height: 146px;
         transform: rotate(-11.905deg);
-        // background-color: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -213,17 +273,26 @@ body::after {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        @media (max-width: em(1920)) {
+          // margin-top: 80px;
+          // margin-left: -35px;
+          width: 256px;
+          height: 121px;
+        }
+        @media (max-width: $smallLaptop) {
+          margin-top: 80px;
+          margin-left: -35px;
+          width: 204px;
+          height: 97px;
+        }
+        @media (max-width: $bigTablet) {
+          margin-top: 50px;
+          margin-left: -20px;
+          width: 136.452px;
+          height: 64.938px;
+        }
         @media (max-width: $mobile) {
           margin-left: -30px;
-        }
-        span {
-          // display: flex;
-          // justify-content: center;
-          // align-items: center;
-          // border-radius: 142px / 62px;
-          // border: 1.85px solid #000;
-          // width: 284px;
-          // height: 124px;
         }
       }
       &__info-price {
@@ -233,14 +302,27 @@ body::after {
         align-items: center;
         transform: rotate(8.224deg);
         position: relative;
-        // width: 367px;
-        @include adaptiveValue("height", 133, 68);
-        @include adaptiveValue("width", 367, 189);
+        width: 367px;
+        height: 133px;
         background-image: url(../../img/price-mark.svg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         z-index: 0;
+        @media (max-width: em(1920)) {
+          width: 305px;
+          height: 111px;
+        }
+        @media (max-width: $smallLaptop) {
+          width: 244px;
+          height: 89px;
+          margin-top: 28px;
+        }
+        @media (max-width: $bigTablet) {
+          margin-top: 18px;
+          width: 163px;
+          height: 59px;
+        }
         .price-mark {
           position: absolute;
           object-fit: cover;
@@ -298,12 +380,21 @@ body::after {
   box-sizing: border-box;
   z-index: 1;
   transition: all 0.6s ease-in;
-  @media (max-width: em(1350)) {
-    max-width: 500px;
+
+  @media (max-width: $smallLaptop) {
+    max-width: 453px;
+    height: 83px;
+    padding: 6px;
+    border-radius: 13px;
   }
-  @media (max-width: em(1100)) {
-    height: 100px;
+
+  @media (max-width: $bigTablet) {
+    max-width: 302px;
+    height: 56px;
+    padding: 4px;
+    border-radius: 9px;
   }
+
   @media (max-width: $mobile) {
     width: 100%;
     max-width: 380px;
@@ -322,20 +413,40 @@ body::after {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
+    @media (max-width: $smallLaptop) {
+      border-radius: 8px;
+    }
+
+    @media (max-width: $bigTablet) {
+      border-radius: 5px;
+    }
+
+    @media (max-width: $mobile) {
+      // border-radius: 10px;
+    }
   }
 
   &__title {
     padding: 18px 133px;
     font-family: Grotesk;
-    @include adaptiveValue("font-size", 51, 24);
+    font-size: 51px;
     font-style: normal;
     font-weight: 800;
     text-transform: capitalize;
-    @media (max-width: em(1400)) {
-      padding: 18px 100px;
+    @media (max-width: em(1920)) {
+      padding: 18px 110px;
+      font-size: 42px;
     }
-    @media (max-width: em(1200)) {
-      padding: 18px 80px;
+
+    @media (max-width: $smallLaptop) {
+      font-size: 34px;
+      padding: 18px 88px;
+    }
+
+    @media (max-width: $bigTablet) {
+      font-size: 22px;
+      padding: 12px 59px;
     }
     @media (max-width: $mobile) {
       font-size: 24px;
@@ -391,7 +502,7 @@ body::after {
 
 .active-form.order {
   height: 360px;
-  @media (max-width: em(1350)) {
+  @media (max-width: $smallLaptop) {
     height: 460px;
   }
   @media (max-width: $mobile) {
@@ -420,7 +531,7 @@ body::after {
     justify-content: center;
     gap: 20px;
 
-    @media (max-width: em(1350)) {
+    @media (max-width: $smallLaptop) {
       flex-direction: column;
       align-items: center;
       &:last-child {
@@ -442,19 +553,19 @@ body::after {
   .name-lable {
     max-width: 300px;
     width: 100%;
-    @media (max-width: em(1350)) {
+    @media (max-width: $smallLaptop) {
       max-width: 100%;
     }
   }
   .phone-lable {
     max-width: 300px;
     width: 100%;
-    @media (max-width: em(1350)) {
+    @media (max-width: $smallLaptop) {
       max-width: 100%;
     }
   }
   &__btn {
-    margin-left: 40px;
+    margin-left: 30px;
     @media (max-width: $mobile) {
       margin-left: 0;
     }
@@ -463,6 +574,10 @@ body::after {
     height: 73px;
     padding: 4px;
 
+    @media (max-width: $smallLaptop) {
+      height: 69px;
+    }
+
     @media (max-width: $mobile) {
       padding: 3px;
       height: 42px;
@@ -470,8 +585,8 @@ body::after {
 
     span {
       padding: 15px 37px;
-      @media (max-width: em(1350)) {
-        padding: 12px 27px;
+      @media (max-width: $smallLaptop) {
+        padding: 18px 27px;
       }
       @media (max-width: $mobile) {
         padding: 8px 32px;
@@ -515,7 +630,8 @@ body::after {
     width: 100%;
   }
   &__amount {
-    @media (max-width: em(1350)) {
+    @media (max-width: $smallLaptop) {
+      margin-top: 10px;
       width: 120px;
       height: 65px;
       margin-bottom: 0;
