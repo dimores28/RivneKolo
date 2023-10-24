@@ -35,7 +35,8 @@
 .heading_2 {
   font-family: Grotesk, sans-serif;
   @include adaptiveValue("font-size", 54, 26);
-  @include adaptiveValue("line-height", 84, 30);
+  // @include adaptiveValue("line-height", 84, 30);
+  line-height: 1.05;
   font-style: normal;
   text-transform: uppercase;
 }
@@ -240,18 +241,18 @@
 
 .menu__link {
   font-family: Grotesk, sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 800;
   line-height: normal;
   text-transform: uppercase;
 
-  @media (max-width: em(1054)) {
-    font-size: 18px;
+  @media (max-width: $smallLaptop) {
+    font-size: 16px;
   }
 
-  @media (max-width: em(850)) {
-    font-size: 16px;
+  @media (max-width: $bigTablet) {
+    font-size: 14px;
   }
 
   @media (max-width: $mobile) {
@@ -260,11 +261,19 @@
 }
 .lang__menu-link {
   font-family: Grotesk, sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 800;
   line-height: normal;
   text-transform: uppercase;
+
+  @media (max-width: $smallLaptop){
+    font-size: 16px;
+  }
+
+  @media (max-width: $bigTablet){
+    font-size: 14px;
+  }
 
   @media (max-width: $mobile) {
     font-size: 20px;
