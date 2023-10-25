@@ -44,11 +44,22 @@
 }
 .heading_2 {
   font-family: Grotesk, sans-serif;
-  @include adaptiveValue("font-size", 54, 26);
-  // @include adaptiveValue("line-height", 84, 30);
+  font-size: 71px;
   line-height: 1.05;
   font-style: normal;
   text-transform: uppercase;
+
+  @media (max-width: $smallLaptop){
+    font-size: 53px;
+  }
+
+  @media (max-width: $bigTablet){
+      font-size: 35px;
+  }
+
+  @media (max-width:$mobile){
+    font-size: 28px; 
+  }
 }
 
 .heading_3 {
@@ -371,10 +382,26 @@
 .paragraph {
   color: #000;
   font-family: $fontFamily, sans-serif;
-  @include adaptiveValue("font-size", 44, 18);
+  font-size: 40px;
   font-style: normal;
   font-weight: 500;
-  @include adaptiveValue("line-height", 52, 22);
+  line-height: 52px;
+
+  
+  @media (max-width: $smallLaptop){
+    font-size: 29px;
+    line-height: 34px;
+  }
+
+  @media (max-width: $bigTablet){
+    font-size: 19px;
+    line-height: 23px;
+  }
+
+  @media (max-width:$mobile){
+    font-size: 18px;
+    line-height: 22px;
+  }
 }
 
 .message {
@@ -419,8 +446,8 @@
 
 .scene-text {
   font-family: Grotesk, sans-serif;
-  @include adaptiveValue("font-size", 52, 26);
-  @include adaptiveValue("line-height", 72, 34);
+  font-size: 52px;
+  line-height: 72px;
   text-align: center;
   font-style: normal;
   font-weight: 800;
@@ -443,6 +470,26 @@
   font-style: normal;
   font-weight: 500;
   color: #000;
-  @include adaptiveValue("font-size", 20, 18);
-  @include adaptiveValue("line-height", 24, 22);
+  font-size: 20px;
+  line-height: 24px;
+
+  @media (max-width: $smallLaptop){
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  @media (max-width: $bigTablet){
+    font-size: 10px;
+    line-height: 13px;
+  }
+
+  @media (max-width:$mobile){
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  @media (max-width:$mobileSmall){
+    font-size: 16px;
+    line-height: 20px;
+  }
 }

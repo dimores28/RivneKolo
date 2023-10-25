@@ -38,6 +38,12 @@
    }
 
    &__heading {
+      font-family: Grotesk, sans-serif;
+      font-size: 54px;
+      line-height: 1.05;
+      font-style: normal;
+      text-transform: uppercase;
+
       @media (max-width: $smallLaptop) {
          font-size: 40px;
          line-height: 53px;
@@ -440,7 +446,7 @@
          color: #000;
          text-align: center;
          font-family: $fontFamily, sans-serif;
-         @include adaptiveValue("font-size", 21, 8);
+         font-size: 21px;
          font-weight: 700;
          text-transform: uppercase;
          transition: all 0.4s ease-in;

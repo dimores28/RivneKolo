@@ -53,26 +53,6 @@
   &__bagel {
     flex: 1 1 40%;
 
-    // .bagel {
-    //   background-image: url(../../img/about/bagel.png);
-    //   background-repeat: no-repeat;
-    //   background-size: contain;
-    //   width: 100%;
-    //   height: 600px;
-    // }
-
-    // img {
-    //   width: 100%;
-    //   height: 100%;
-    //   object-fit: contain;
-    //   @media (max-width: $mobile) {
-    //     width: 240px;
-    //     height: 240px;
-    //     display: block;
-    //     margin: 0 auto;
-    //   }
-    // }
-
     @media (max-width: $mobile) {
       background: #ffdf00;
       position: sticky;
@@ -214,7 +194,7 @@
     span {
       position: relative;
       display: inline-block;
-      @include adaptiveValue("height", 52, 28);
+      height: 52px;
       width: 64px;
 
       @media (max-width: $smallLaptop) {
@@ -276,7 +256,7 @@
     span {
       position: relative;
       display: inline-block;
-      @include adaptiveValue("height", 52, 28);
+      height: 52px;
       width: 45px;
 
       @media (max-width: $smallLaptop){ 
@@ -440,7 +420,7 @@
     span {
       position: relative;
       display: inline-block;
-      @include adaptiveValue("height", 52, 28);
+      height: 52px;
       width: 45px;
 
       @media (max-width: $smallLaptop) {
@@ -739,9 +719,6 @@
 
   // .advanteges__img
   &__img {
-    // width: 100%;
-    // height: 100%;
-    // object-fit: contain;
     animation: trembling 0.2s infinite;
     animation-play-state: paused;
 
@@ -767,25 +744,19 @@
     max-width: 292px;
 
     @media (max-width: $smallLaptop){
-      font-size: 14px;
       max-width: 200px;
     }
 
     @media (max-width: $bigTablet){
-        font-size: 10px;
-        line-height: 13px;
-        max-width: 154px;
+      max-width: 154px;
     }
 
     @media (max-width:$mobile){
-      font-size: 18px;
-      line-height: 22px;
+
       max-width: 238px; 
     }
 
     @media (max-width:$mobileSmall){
-      font-size: 16px;
-      line-height: 20px;
       max-width: 238px; 
     }
   }
