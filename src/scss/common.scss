@@ -39,7 +39,7 @@ button.btn {
     border: 2px solid #000;
   }
 
-  @media (max-width: $smallLaptop){
+  @media (max-width: $smallLaptop) {
     border-radius: 13px;
     height: 68px;
     span {
@@ -50,7 +50,7 @@ button.btn {
     }
   }
 
-  @media (max-width: $bigTablet){
+  @media (max-width: $bigTablet) {
     border-radius: 10px;
     height: 52px;
     padding: 3px;
@@ -83,10 +83,10 @@ button.btn strong {
     transform 0.15s,
     box-shadow 0.15s;
 
-    @media (max-width: $smallLaptop) {
-      -webkit-transform: translate3d(0, 0.5em, -1em);
-      transform: translate3d(0, 0.5em, -1em);
-    }
+  @media (max-width: $smallLaptop) {
+    -webkit-transform: translate3d(0, 0.5em, -1em);
+    transform: translate3d(0, 0.5em, -1em);
+  }
 }
 
 button.btn:hover {
@@ -247,6 +247,13 @@ button.btn:active strong {
     position: absolute;
     display: flex;
     flex-direction: column;
+    .ticker-bg:nth-child(5) {
+      @media (max-width: $smallLaptop) {
+        .thrid-line {
+          display: none;
+        }
+      }
+    }
     .ticker-bg:last-child {
       display: none;
 
