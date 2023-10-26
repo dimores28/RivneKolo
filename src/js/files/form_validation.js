@@ -81,7 +81,7 @@ form?.addEventListener("submit", async function (e) {
       let result = await response.json();
       let alertMsg = document.querySelector(".form__success");
       alertMsg.innerHTML =
-        ' <p class="form__success-msg">Дякуємо! ваша заявка прийнята</p><img class="form__success-mark" src="@img/feedback/ok_mark.png" alt="ok-mark"/>';
+        ' <p class="form__success-msg">Дякуємо! ваша заявка прийнята</p>';
       alertMsg.classList.add("_show__success");
       form.reset();
       form.classList.remove("_sending");
