@@ -466,7 +466,7 @@ if (document.querySelector(".about__scene_1")) {
           },
         });
         
-        Scene_1.from(".about__scene_1 .row_1", {
+        Scene_1.to('body', {overflow: 'hidden', duration: 0}).from(".about__scene_1 .row_1", {
           y: 200,
           opacity: 0,
           rotate: 16,
@@ -487,6 +487,7 @@ if (document.querySelector(".about__scene_1")) {
             duration: 0.4,
             ease: "back.out(1.7)",
           })
+          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_1 .row_3", {
             y: 200,
             opacity: 0,
@@ -542,7 +543,6 @@ if (document.querySelector(".about__scene_1")) {
 }
 
 
-
 //about__scene_2
 if (document.querySelector(".about__scene_2")) {
   let mm = gsap.matchMedia(),
@@ -567,7 +567,7 @@ if (document.querySelector(".about__scene_2")) {
           },
         });
         
-        Scene_2.from(".about__scene_2 .row_1", {
+        Scene_2.to('body', {overflow: 'hidden', duration: 0}).from(".about__scene_2 .row_1", {
           y: 200,
           opacity: 0,
           rotate: 16,
@@ -583,6 +583,7 @@ if (document.querySelector(".about__scene_2")) {
             ease: "power3.out",
             immediateRender: true,
           })
+          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_2 .row_3", {
             y: 200,
             opacity: 0,
@@ -732,10 +733,16 @@ if (document.querySelector(".about__scene_3")) {
             // markers: true
           },
         });
+
+        Scene_3.to('body', {overflow: 'hidden', duration: 0})
         document.querySelectorAll(".about__scene_3 p").forEach((row, i) => {
           let deg = 16;
           if (i % 2 == 0) {
             deg = -16;
+          }
+
+          if(i == 2) {
+            Scene_3.to('body', {overflow: 'auto', duration: 0.2})
           }
           
           Scene_3.from(row, {
@@ -814,7 +821,7 @@ if (document.querySelector(".about__scene_4")) {
             // markers: true
           },
         });
-        Scene_4.from(".about__scene_4 .row_1", {
+        Scene_4.to('body', {overflow: 'hidden', duration: 0}).from(".about__scene_4 .row_1", {
           y: 200,
           opacity: 0,
           rotate: 16,
@@ -835,6 +842,7 @@ if (document.querySelector(".about__scene_4")) {
             duration: 0.4,
             ease: "power3.out",
           })
+          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_4 .row_3", {
             y: 200,
             opacity: 0,
@@ -941,14 +949,18 @@ if (document.querySelector(".about__scene_5")) {
           },
         });
         
-        Scene_5.from(".about__scene_5 .row_1", {
+        Scene_5.to('body', {overflow: 'hidden', duration: 0}).from(".about__scene_5 .row_1", {
           y: 200,
           opacity: 0,
           rotate: 16,
           duration: 0.4,
           ease: "back.out(1.7)",
         });
-        document.querySelectorAll(".advanteges__item").forEach((item) => {       
+        document.querySelectorAll(".advanteges__item").forEach((item, i) => { 
+          if(i == 2) 
+          {
+            Scene_5.to('body', {overflow: 'auto', duration: 0.1})
+          }     
           Scene_5.from(item, { y: 200, opacity: 0, duration: 0.4, ease: "power3.out" });
         });
       }
@@ -1073,7 +1085,7 @@ let animation = gsap.to(arrowsBtn, {
   paused: true,
   backgroundPosition: `50% ${arrowPos}%`,
   ease: "elastic.out(1, 0.3)",
-  duration: 1.2,
+  duration: 2,
 });
 
 spanBtn.addEventListener("mouseenter", () => animation.play());

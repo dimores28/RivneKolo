@@ -8,6 +8,10 @@
       margin-bottom: 440px; 
    }
 
+   @media (max-width:$mobile){
+      margin-bottom: 280px; 
+   }
+
    // .social__container
    &__container {
       position: relative;
