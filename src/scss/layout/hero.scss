@@ -56,16 +56,16 @@
 
   &__bg-animate {
     position: absolute;
-    top: 59px;
+    top: 50px;
     width: 100%;
     max-height: 624px;
     z-index: 1;
-    @media (max-width: $tablet) {
-      top: 0;
-    }
-    @media (max-width: $mobile) {
-      top: 0;
-    }
+    // @media (max-width: $tablet) {
+    //   top: 0;
+    // }
+    // @media (max-width: $mobile) {
+    //   top: 0;
+    // }
   }
 
   &__paralax {
@@ -93,7 +93,7 @@
     }
 
     @media (max-width: $smallLaptop) {
-      top: 314px;
+      top: 325px;
       max-width: 724px;
       max-height: 662px;
       // background-image: url(../../img/hero/hero1440.png);
@@ -108,7 +108,7 @@
       // background-image: url(../../img/hero/hero960.png);
       max-width: 483px;
       max-height: 442px;
-      top: 193px;
+      top: 220px;
     }
 
     &-wrap {
