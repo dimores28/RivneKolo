@@ -10,9 +10,9 @@
   &__row {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    // flex-wrap: nowrap;
     max-height: 200px;
-    white-space: nowrap;
+    // white-space: nowrap;
     animation: ticker 20s infinite linear;
     @include adaptiveValue("padding-top", 6, 3);
     @include adaptiveValue("padding-bottom", 6, 3);
@@ -22,7 +22,10 @@
   }
 
   &__item {
-    max-height: 200px;
+    max-height: 177px;
+    @media (max-width: em(1920)) {
+      max-height: 165px;
+    }
     @media (max-width: em(1650)) {
       max-height: 150px;
     }
@@ -30,9 +33,9 @@
       max-height: 125px;
     }
     @media (max-width: $bigTablet) {
-      max-height: 84px;
+      max-height: 82px;
     }
 
-    // @include adaptiveValue("max-height", 177, 0);
+    // @include adaptiveValue("max-height", 177, 74);
   }
 }
