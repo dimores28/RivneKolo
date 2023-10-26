@@ -482,7 +482,7 @@
             margin-right: 0%;
 
             .assortment__info-desc {
-               margin-top: 100px;
+               margin-top: 76px;
                padding-left: 78px;
                max-width: 200px;
                font-size: 14px;
@@ -491,6 +491,7 @@
             .assortment__info-title {
                padding-left: 78px;
                margin-top: 4px;
+               max-width: 000px;
             }
 
             .assortment__info-price {
@@ -531,7 +532,7 @@
       @media (max-width: $smallLaptop) {
          margin-top: 62px;
          padding-left: 55px;
-          margin-bottom: 10px;
+         margin-bottom: 10px;
       }
 
       @media (max-width: $bigTablet) {
@@ -546,7 +547,7 @@
       }
 
       @media (max-width:$mobileSmall){
-          font-size: 18px;
+          font-size: 22px;
           max-width: 200px; 
           margin-top: 58px;
           padding-left: 72px;
@@ -580,10 +581,15 @@
          padding: 3px;
       }
 
-      @media (max-width:$mobileSmall){    
+      @media (max-width:$mobileSmall){
+         width: 102px;
+         height: 48px;
+         border-radius: 51px / 24px;
+         padding: 4px;
+
          position: absolute;
          right: 18px;
-         top: 41px; 
+         top: 18px; 
       }
 
       span {
@@ -613,6 +619,13 @@
             height: 30px;
             border-radius: 34px / 15px;
          }
+
+         @media (max-width:$mobileSmall){
+             font-size: 20px;
+             width: 94px;
+             height: 40px;
+             border-radius: 47px / 20px; 
+         }
       }
   
    }
@@ -639,7 +652,7 @@
       }
 
       @media (max-width:$mobileSmall){
-         font-size: 18px;
+         font-size: 22px;
          padding-left: 88px; 
       }
    }
@@ -883,6 +896,7 @@
    .assortment__product {
       max-width: 590px;
       margin-left: -52px;
+      transform-origin: 80% 50%;
    } 
 
    @media (max-width: $smallLaptop){
@@ -914,7 +928,7 @@
    @media (any-hover: hover) {
       &:hover {
          .assortment__product {
-            transform: rotate(-8deg);
+            transform: rotate(-10deg);
          }
    
          .assortment__nuts_1 {
@@ -924,8 +938,8 @@
    
          .assortment__nuts_2 {
             z-index: 10;
-            left: 74%;
-            top: 58%;
+            left: 71%;
+            top: 68%;
          }
    
          .assortment__nuts_3 {
@@ -1084,7 +1098,7 @@
 }
 
 .products-show-all {
-   @include adaptiveValue("margin-top", 60, 20, 2, 768);
+   margin-top: 60px;
    display: flex;
    justify-content: center;
 }
@@ -1101,4 +1115,7 @@
    max-height: unset;
    opacity: 1;
    overflow: visible;
+   @media (max-width:$mobile){
+      margin-top: 40px; 
+   }
 }

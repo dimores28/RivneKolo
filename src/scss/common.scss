@@ -74,9 +74,9 @@ button.btn strong {
   bottom: 0;
   background: #000;
   border-radius: inherit;
-  box-shadow:
-    0 0 0 2px #00000036,
-    0 0.4em 0 0 #00000028;
+  // box-shadow:
+  //   0 0 0 2px #00000036,
+  //   0 0.4em 0 0 #00000028;
   -webkit-transform: translate3d(0, 0.75em, -1em);
   transform: translate3d(0, 0.75em, -1em);
   transition:
@@ -94,9 +94,9 @@ button.btn:hover {
 }
 
 button.btn:hover strong {
-  box-shadow:
-    0 0 0 2px #00000036,
-    0 0.25em 0 0 #00000028;
+  // box-shadow:
+  //   0 0 0 2px #00000036,
+  //   0 0.25em 0 0 #00000028;
   transform: translate3d(0, 0.5em, -1em);
 }
 
@@ -105,9 +105,9 @@ button.btn:active {
 }
 
 button.btn:active strong {
-  box-shadow:
-    0 0 0 2px #00000036,
-    0 0 0 0 #00000028;
+  // box-shadow:
+  //   0 0 0 2px #00000036,
+  //   0 0 0 0 #00000028;
   transform: translate3d(0, 0, -1em);
 }
 
