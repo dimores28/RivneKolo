@@ -197,6 +197,7 @@ body::after {
         }
 
         @media (max-width: $mobile) {
+          max-width: 340px;
           margin-bottom: 15px;
         }
         @media (max-width: em(950)) {
@@ -397,7 +398,7 @@ body::after {
 
   @media (max-width: $mobile) {
     width: 100%;
-    max-width: 380px;
+    max-width: 340px;
     border-radius: 10px;
     height: 60px;
     padding: 5px;
@@ -503,11 +504,14 @@ body::after {
 .active-form.order {
   height: 360px;
   @media (max-width: $smallLaptop) {
-    height: 460px;
-  }
-  @media (max-width: $mobile) {
     height: 310px;
   }
+  @media (max-width: $bigTablet) {
+    height: 265px;
+  }
+  // @media (max-width: $mobile) {
+  //   height: 310px;
+  // }
 }
 
 .order-form {
@@ -519,6 +523,12 @@ body::after {
   padding-left: 20px;
   padding-right: 20px;
   margin-top: 40px;
+  @media (max-width: $smallLaptop) {
+    margin-top: 20px;
+  }
+  @media (max-width: $bigTablet) {
+    margin-top: 8px;
+  }
   @media (max-width: $mobile) {
     margin-top: 8px;
     padding-left: 10px;
@@ -531,7 +541,7 @@ body::after {
     justify-content: center;
     gap: 20px;
 
-    @media (max-width: $smallLaptop) {
+    @media (max-width: $bigTablet) {
       flex-direction: column;
       align-items: center;
       &:last-child {
@@ -553,20 +563,20 @@ body::after {
   .name-lable {
     max-width: 300px;
     width: 100%;
-    @media (max-width: $smallLaptop) {
+    @media (max-width: $bigTablet) {
       max-width: 100%;
     }
   }
   .phone-lable {
     max-width: 300px;
     width: 100%;
-    @media (max-width: $smallLaptop) {
+    @media (max-width: $bigTablet) {
       max-width: 100%;
     }
   }
   &__btn {
     margin-left: 30px;
-    @media (max-width: $mobile) {
+    @media (max-width: $bigTablet) {
       margin-left: 0;
     }
   }
@@ -574,23 +584,23 @@ body::after {
     height: 73px;
     padding: 4px;
 
-    @media (max-width: $smallLaptop) {
-      height: 69px;
-    }
+    // @media (max-width: $smallLaptop) {
+    //   height: 69px;
+    // }
 
-    @media (max-width: $mobile) {
-      padding: 3px;
-      height: 42px;
-    }
+    // @media (max-width: $mobile) {
+    //   padding: 3px;
+    //   height: 42px;
+    // }
 
     span {
       padding: 15px 37px;
-      @media (max-width: $smallLaptop) {
-        padding: 18px 27px;
-      }
-      @media (max-width: $mobile) {
-        padding: 8px 32px;
-      }
+      // @media (max-width: $smallLaptop) {
+      //   padding: 18px 27px;
+      // }
+      // @media (max-width: $mobile) {
+      //   padding: 8px 32px;
+      // }
     }
     & strong {
       transform: translate3d(0, 0.4em, -1em);
@@ -604,6 +614,49 @@ body::after {
         0 0.1em 0 0 #00000028;
       transform: translate3d(0, 0.2em, -1em);
     }
+
+    @media (max-width: em(1920)) {
+      height: 72px;
+      border-radius: 18px;
+      padding: 3.5px;
+      span {
+        padding: 16px 33px;
+        border-radius: 14px;
+        font-size: 21px;
+      }
+    }
+
+    @media (max-width: $smallLaptop) {
+      height: 55px;
+      border-radius: 13px;
+      padding: 2.6px;
+      span {
+        padding: 12px 25px;
+        border-radius: 10px;
+        font-size: 16px;
+      }
+    }
+    @media (max-width: $bigTablet) {
+      height: 36px;
+      border-radius: 8px;
+      padding: 1.8px;
+      span {
+        padding: 8px 16px;
+        border-radius: 7px;
+        font-size: 10px;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      height: 42px;
+      border-radius: 8px;
+      padding: 2.5px;
+      span {
+        padding: 9px 30px;
+        border-radius: 6px;
+        font-size: 12px;
+      }
+    }
   }
   &__lable {
     display: flex;
@@ -616,7 +669,7 @@ body::after {
     appearance: none;
     -webkit-appearance: none;
     border-radius: 0;
-    @media (max-width: $mobile) {
+    @media (max-width: $bigTablet) {
       padding: 6px 0;
     }
   }
@@ -626,24 +679,13 @@ body::after {
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 24px;
+    line-height: 1.2;
     width: 100%;
+    @media (max-width: $bigTablet) {
+      font-size: 13px;
+    }
   }
   &__amount {
-    @media (max-width: $smallLaptop) {
-      margin-top: 10px;
-      width: 120px;
-      height: 65px;
-      margin-bottom: 0;
-    }
-
-    @media (max-width: $mobile) {
-      margin-top: 5px;
-      margin-bottom: 0;
-      padding: 8px;
-      height: 42px;
-      border-radius: 8px;
-    }
     margin-top: 4px;
     margin-bottom: 27px;
     padding: 15px;
@@ -652,15 +694,44 @@ body::after {
     height: 77px;
     border-radius: 16px;
     font-family: Montserrat;
-    @include adaptiveValue("font-size", 40, 20);
+    font-size: 40px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     text-transform: uppercase;
     text-align: center;
 
-    @media (max-width: $mobile) {
-      width: auto;
+    @media (max-width: em(1920)) {
+      height: 72px;
+      margin-top: 7px;
     }
+    @media (max-width: $smallLaptop) {
+      margin-top: 7px;
+      width: 120px;
+      // height: 65px;
+      height: 55px;
+      margin-bottom: 0;
+      font-size: 30px;
+    }
+
+    @media (max-width: $bigTablet) {
+      width: 99px;
+      height: 36px;
+      font-size: 25px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: $mobile) {
+      margin-top: 8px;
+      margin-bottom: 0;
+      padding: 8px;
+      height: 42px;
+      border-radius: 8px;
+      font-size: 20px;
+    }
+
+    // @media (max-width: $mobile) {
+    //   width: auto;
+    // }
   }
 }

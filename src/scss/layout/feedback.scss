@@ -127,7 +127,7 @@
   align-items: center;
   width: 100%;
   @media (max-width: $mobile) {
-    padding-bottom: 102px;
+    padding-bottom: 40px;
   }
 
   &__wrap {
@@ -212,6 +212,19 @@
       border-radius: 16px;
     }
 
+    & strong {
+      transform: translate3d(0, 0.4em, -1em);
+      box-shadow:
+        0 0 0 2px rgba(0, 0, 0, 0.2117647059),
+        0 0.2em 0 0 rgba(0, 0, 0, 0.1568627451);
+    }
+    &:hover strong {
+      box-shadow:
+        0 0 0 2px #00000036,
+        0 0.1em 0 0 #00000028;
+      transform: translate3d(0, 0.2em, -1em);
+    }
+
     @media (max-width: em(1920)) {
       height: 72px;
       border-radius: 18px;
@@ -232,20 +245,7 @@
         border-radius: 10px;
         font-size: 16px;
       }
-      & strong {
-        transform: translate3d(0, 0.4em, -1em);
-        box-shadow:
-          0 0 0 2px rgba(0, 0, 0, 0.2117647059),
-          0 0.2em 0 0 rgba(0, 0, 0, 0.1568627451);
-      }
-      &:hover strong {
-        box-shadow:
-          0 0 0 2px #00000036,
-          0 0.1em 0 0 #00000028;
-        transform: translate3d(0, 0.2em, -1em);
-      }
     }
-
     @media (max-width: $bigTablet) {
       height: 36px;
       border-radius: 8px;
@@ -262,7 +262,7 @@
       border-radius: 12px;
       padding: 3px;
       span {
-        padding: 15px 76px;
+        padding: 14px 76px;
         border-radius: 10px;
         font-size: 14px;
       }
