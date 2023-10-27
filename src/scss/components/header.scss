@@ -197,12 +197,14 @@
   width: 70px;
   height: 45px;
   gap: 10px;
+  padding-bottom: 10px;
 
   @media (max-width: $mobile) {
     flex-direction: row;
     position: relative;
     width: auto;
     height: auto;
+    padding-bottom: 0;
   }
 
   &__menu-item {

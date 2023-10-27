@@ -441,7 +441,7 @@
             }
 
             .assortment__info-price {
-               padding-left: 164px;
+               padding-left: 170px;
                margin-top: -10px;
             }
          }
@@ -929,6 +929,10 @@
       &:hover {
          .assortment__product {
             transform: rotate(-10deg);
+
+            @media (max-width: $smallLaptop){
+               transform: rotate(-6deg);
+            }
          }
    
          .assortment__nuts_1 {

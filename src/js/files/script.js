@@ -296,7 +296,7 @@ if (document.querySelector(".header__lang")) {
       let { isDesktop, isMobile } = context.conditions;
 
       if (isDesktop) {
-        openMenu.to(".lang", { height: "210px", duration: 0.6 });
+        openMenu.to(".lang", { height: "auto", duration: 0.6 });
         closeMenu.to(".lang", { height: "45px", duration: 0.6, delay: 0.4 });
       }
 
@@ -522,7 +522,6 @@ if (document.querySelector(".about__scene_1")) {
             duration: 0.4,
             ease: "power3.out",
           })
-          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_1 .row_2 img", {
             y: 200,
             x: 100,
@@ -530,6 +529,7 @@ if (document.querySelector(".about__scene_1")) {
             duration: 0.4,
             ease: "back.out(1.7)",
           })
+          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_1 .row_3", {
             y: 200,
             opacity: 0,
@@ -658,7 +658,6 @@ if (document.querySelector(".about__scene_2")) {
             ease: "power3.out",
             immediateRender: true,
           })
-          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_2 .row_3", {
             y: 200,
             opacity: 0,
@@ -667,6 +666,7 @@ if (document.querySelector(".about__scene_2")) {
             ease: "power3.out",
             immediateRender: true,
           })
+          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_2 .row_4", {
             y: 200,
             opacity: 0,
@@ -897,7 +897,6 @@ if (document.querySelector(".about__scene_4")) {
             duration: 0.4,
             ease: "power3.out",
           })
-          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_4 .row_3", {
             y: 200,
             opacity: 0,
@@ -905,6 +904,7 @@ if (document.querySelector(".about__scene_4")) {
             duration: 0.4,
             ease: "power3.out",
           })
+          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_4 .row_4", {
             y: 200,
             opacity: 0,
@@ -984,7 +984,7 @@ if (document.querySelector(".about__scene_5")) {
           ease: "back.out(1.7)",
         });
         document.querySelectorAll(".advanteges__item").forEach((item, i) => {
-          if( i == 1) {
+          if( i == 2) {
             Scene_5.to('body', {overflow: 'auto', duration: 0.1})
           }
         
