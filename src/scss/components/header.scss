@@ -53,7 +53,7 @@
 .menu {
   display: flex;
   position: relative;
-  height: 45px;
+  height: 34px;
   width: toRem(51);
   display: flex;
   gap: 116px;
@@ -91,11 +91,21 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    padding-right: 100px;
+
+    @media (max-width: $smallLaptop){
+      padding-right: 70px; 
+    }
+
+    @media (max-width: $bigTablet){
+      padding-right: 16px;
+    }
 
     @media (max-width: $mobile) {
       flex-direction: column;
       text-align: center;
       gap: 20px;
+      padding-right: 0;
     }
   }
 
@@ -187,12 +197,14 @@
   width: 70px;
   height: 45px;
   gap: 10px;
+  padding-bottom: 10px;
 
   @media (max-width: $mobile) {
     flex-direction: row;
     position: relative;
     width: auto;
     height: auto;
+    padding-bottom: 0;
   }
 
   &__menu-item {
