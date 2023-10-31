@@ -359,14 +359,14 @@ function initSliders() {
 
       // Події
       on: {
-        // init() {
-        //   this.el.addEventListener("mouseenter", () => {
-        //     this.autoplay.stop();
-        //   });
-        //   this.el.addEventListener("mouseleave", () => {
-        //     this.autoplay.start();
-        //   });
-        // },
+        init() {
+          this.el.addEventListener("mouseenter", () => {
+            this.autoplay.stop();
+          });
+          this.el.addEventListener("mouseleave", () => {
+            this.autoplay.start();
+          });
+        },
       },
     });
   }

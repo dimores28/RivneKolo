@@ -113,6 +113,10 @@
     position: relative;
     margin-bottom: 350px;
 
+    @media (max-width:$mobile){
+       margin-bottom: 260px; 
+    }
+
     &:last-child {
       margin-bottom: 160px;
 
