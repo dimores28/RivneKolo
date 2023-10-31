@@ -131,14 +131,14 @@ if(document.querySelector('.social__hand')) {
       let { smallLaptop, bigTablet, isMobile } = context.conditions;
 
       const hendTL = gsap.timeline({ repeat: -1, repeatDelay: 1 });
-      let hend_x = 210;
-      let hend_y = -134;
-      let shadow_x = 298;
+      let hend_x = 179;
+      let hend_y = -81;
+      let shadow_x = 254;
       let shadow_y = 128;
       
 
       if (smallLaptop) {
-         shadow_x = 278;
+         shadow_x = 234;
          shadow_y = -110;
       }
 
@@ -150,9 +150,9 @@ if(document.querySelector('.social__hand')) {
       }
 
       if (isMobile) {
-        hend_x = 158;
-        hend_y = -152;
-        shadow_x = 206;
+        hend_x = 130;
+        hend_y = -79;
+        shadow_x = 166;
         shadow_y = -440;
       }
 
@@ -225,6 +225,7 @@ if (document.querySelector(".menu")) {
         openTl
           .to(".menu", {
             width: "100%",
+            height: "45px",
             backgroundColor: "white",
             duration: 1.3,
             ease: CustomEase.create(
@@ -236,6 +237,7 @@ if (document.querySelector(".menu")) {
 
         closeTl.to(".menu__link", { opacity: 0, duration: 0.3 }).to(".menu", {
           width: "51px",
+          height: "34px",
           backgroundColor: "transparent",
           duration: 0.3,
         });
@@ -246,22 +248,22 @@ if (document.querySelector(".menu")) {
           .to(".menu", {
             width: "100%",
             height: "auto",
-            duration: 0.6,
+            duration: 0.5,
             ease: CustomEase.create(
               "custom",
               "M0,0 C0.14,0 0.242,0.438 0.272,0.561 0.313,0.728 0.354,0.963 0.362,1 0.37,0.985 0.43,0.914 0.514,0.914 0.63,0.914 0.626,0.92 0.644,0.93 0.723,0.974 0.719,0.981 0.726,0.998 0.788,0.914 0.84,0.936 0.859,0.95 0.878,0.964 0.897,0.985 0.911,0.998 0.922,0.994 0.939,0.984 0.954,0.984 0.969,0.984 1,1 1,1 "
             ),
           })
-          .to(".menu__link", { opacity: 1, duration: 0.3 }, "-=0.65")
-          .to(".header__lang", { opacity: 1, duration: 0.3 });
+          .to(".menu__link", { opacity: 1, duration: 0.4 }, "-=0.55")
+          .to(".header__lang", { opacity: 1, duration: 0.4 });
 
         closeTl
-          .to(".header__lang", { opacity: 0, duration: 0.3 })
-          .to(".menu__link", { opacity: 0, duration: 0.3 }, "-=0.4")
+          .to(".header__lang", { opacity: 0, duration: 0.4 })
+          .to(".menu__link", { opacity: 0, duration: 0.4 }, "-=0.5")
           .to(".menu", {
             width: "54px",
             height: "46px",
-            duration: 0.3,
+            duration: 0.4,
           });
       }
     }
@@ -296,7 +298,7 @@ if (document.querySelector(".header__lang")) {
       let { isDesktop, isMobile } = context.conditions;
 
       if (isDesktop) {
-        openMenu.to(".lang", { height: "210px", duration: 0.6 });
+        openMenu.to(".lang", { height: "auto", duration: 0.6 });
         closeMenu.to(".lang", { height: "45px", duration: 0.6, delay: 0.4 });
       }
 
@@ -466,7 +468,7 @@ if (document.querySelector(".about__scene_1")) {
           },
         });
         
-        Scene_1.from(".about__scene_1 .row_1", {
+        Scene_1.to('body', {overflow: 'hidden', duration: 0}).from(".about__scene_1 .row_1", {
           y: 200,
           opacity: 0,
           rotate: 16,
@@ -487,6 +489,7 @@ if (document.querySelector(".about__scene_1")) {
             duration: 0.4,
             ease: "back.out(1.7)",
           })
+          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_1 .row_3", {
             y: 200,
             opacity: 0,
@@ -521,7 +524,6 @@ if (document.querySelector(".about__scene_1")) {
             duration: 0.4,
             ease: "power3.out",
           })
-          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_1 .row_2 img", {
             y: 200,
             x: 100,
@@ -529,6 +531,7 @@ if (document.querySelector(".about__scene_1")) {
             duration: 0.4,
             ease: "back.out(1.7)",
           })
+          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_1 .row_3", {
             y: 200,
             opacity: 0,
@@ -540,7 +543,6 @@ if (document.querySelector(".about__scene_1")) {
     }
   );
 }
-
 
 
 //about__scene_2
@@ -561,13 +563,13 @@ if (document.querySelector(".about__scene_2")) {
         const Scene_2 = gsap.timeline({
           scrollTrigger: {
             trigger: ".about__scene_2",
-            start: "top center",
+            start: "top 35%",
             end: "+=40%",
             // markers: true
           },
         });
         
-        Scene_2.from(".about__scene_2 .row_1", {
+        Scene_2.to('body', {overflow: 'hidden', duration: 0}).from(".about__scene_2 .row_1", {
           y: 200,
           opacity: 0,
           rotate: 16,
@@ -583,6 +585,7 @@ if (document.querySelector(".about__scene_2")) {
             ease: "power3.out",
             immediateRender: true,
           })
+          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_2 .row_3", {
             y: 200,
             opacity: 0,
@@ -657,7 +660,6 @@ if (document.querySelector(".about__scene_2")) {
             ease: "power3.out",
             immediateRender: true,
           })
-          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_2 .row_3", {
             y: 200,
             opacity: 0,
@@ -666,6 +668,7 @@ if (document.querySelector(".about__scene_2")) {
             ease: "power3.out",
             immediateRender: true,
           })
+          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_2 .row_4", {
             y: 200,
             opacity: 0,
@@ -727,15 +730,21 @@ if (document.querySelector(".about__scene_3")) {
         const Scene_3 = gsap.timeline({
           scrollTrigger: {
             trigger: ".about__scene_3",
-            start: "top center",
+            start: "top 30%",
             end: "+=30%",
             // markers: true
           },
         });
+
+        Scene_3.to('body', {overflow: 'hidden', duration: 0})
         document.querySelectorAll(".about__scene_3 p").forEach((row, i) => {
           let deg = 16;
           if (i % 2 == 0) {
             deg = -16;
+          }
+
+          if(i == 2) {
+            Scene_3.to('body', {overflow: 'auto', duration: 0.2})
           }
           
           Scene_3.from(row, {
@@ -809,12 +818,12 @@ if (document.querySelector(".about__scene_4")) {
         const Scene_4 = gsap.timeline({
           scrollTrigger: {
             trigger: ".about__scene_4",
-            start: "top center",
+            start: "top 40%",
             end: "+=30%",
             // markers: true
           },
         });
-        Scene_4.from(".about__scene_4 .row_1", {
+        Scene_4.to('body', {overflow: 'hidden', duration: 0}).from(".about__scene_4 .row_1", {
           y: 200,
           opacity: 0,
           rotate: 16,
@@ -835,6 +844,7 @@ if (document.querySelector(".about__scene_4")) {
             duration: 0.4,
             ease: "power3.out",
           })
+          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_4 .row_3", {
             y: 200,
             opacity: 0,
@@ -889,7 +899,6 @@ if (document.querySelector(".about__scene_4")) {
             duration: 0.4,
             ease: "power3.out",
           })
-          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_4 .row_3", {
             y: 200,
             opacity: 0,
@@ -897,6 +906,7 @@ if (document.querySelector(".about__scene_4")) {
             duration: 0.4,
             ease: "power3.out",
           })
+          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_4 .row_4", {
             y: 200,
             opacity: 0,
@@ -935,20 +945,24 @@ if (document.querySelector(".about__scene_5")) {
         const Scene_5 = gsap.timeline({
           scrollTrigger: {
             trigger: ".about__scene_5",
-            start: "top center",
+            start: "top 38%",
             end: "+=60%",
             // markers: true
           },
         });
         
-        Scene_5.from(".about__scene_5 .row_1", {
+        Scene_5.to('body', {overflow: 'hidden', duration: 0}).from(".about__scene_5 .row_1", {
           y: 200,
           opacity: 0,
           rotate: 16,
           duration: 0.4,
           ease: "back.out(1.7)",
         });
-        document.querySelectorAll(".advanteges__item").forEach((item) => {       
+        document.querySelectorAll(".advanteges__item").forEach((item, i) => { 
+          if(i == 2) 
+          {
+            Scene_5.to('body', {overflow: 'auto', duration: 0.1})
+          }     
           Scene_5.from(item, { y: 200, opacity: 0, duration: 0.4, ease: "power3.out" });
         });
       }
@@ -972,7 +986,7 @@ if (document.querySelector(".about__scene_5")) {
           ease: "back.out(1.7)",
         });
         document.querySelectorAll(".advanteges__item").forEach((item, i) => {
-          if( i == 1) {
+          if( i == 2) {
             Scene_5.to('body', {overflow: 'auto', duration: 0.1})
           }
         
@@ -1041,7 +1055,7 @@ if (document.querySelector(".about__bagel")) {
 
       if (isMobile) {
         pin = false;
-        sh = -13786;
+        sh = -17232;
         coef = 1;
       }
 
@@ -1073,7 +1087,7 @@ let animation = gsap.to(arrowsBtn, {
   paused: true,
   backgroundPosition: `50% ${arrowPos}%`,
   ease: "elastic.out(1, 0.3)",
-  duration: 1.2,
+  duration: 2,
 });
 
 spanBtn.addEventListener("mouseenter", () => animation.play());
