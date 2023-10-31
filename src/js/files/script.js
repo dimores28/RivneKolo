@@ -503,7 +503,7 @@ if (document.querySelector(".about__scene_1")) {
         const Scene_1 = gsap.timeline({
           scrollTrigger: {
             trigger: ".about__scene_1",
-            start: "center 60%",
+            start: "top 60%",
             end: "+=100%",
             // markers: true
           },
@@ -767,7 +767,7 @@ if (document.querySelector(".about__scene_3")) {
         const Scene_3 = gsap.timeline({
           scrollTrigger: {
             trigger: ".about__scene_3",
-            start: "top 60%",
+            start: "top 55%",
             end: "+=30%",
             // markers: true
           },
@@ -971,7 +971,7 @@ if (document.querySelector(".about__scene_5")) {
         const Scene_5 = gsap.timeline({
           scrollTrigger: {
             trigger: ".about__scene_5",
-            start: "top 55%",
+            start: "top 54%",
             end: "+=60%",
             // markers: true
           },
@@ -1055,7 +1055,7 @@ if (document.querySelector(".about__bagel")) {
 
       if (isMobile) {
         pin = false;
-        sh = -17232;
+        sh = -17236;
         coef = 1;
       }
 
