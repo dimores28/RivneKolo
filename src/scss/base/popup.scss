@@ -120,7 +120,7 @@ body::after {
     width: 100%;
     height: 100%;
     padding-bottom: 45px;
-    gap: 112px;
+    gap: 80px;
     @media (max-width: em(2100)) {
       max-width: 1660px;
     }
@@ -150,10 +150,10 @@ body::after {
       // padding-top: 150px;
       padding: 150px 125px 0 125px;
       @media (max-width: em(1920)) {
-        padding: 150px 100px 0 100px;
+        padding: 150px 50px 0 80px;
       }
       @media (max-width: $smallLaptop) {
-        padding: 80px 100px 0 100px;
+        padding: 80px 70px 0 70px;
       }
 
       @media (max-width: $bigTablet) {
@@ -173,35 +173,35 @@ body::after {
           margin: 0;
         }
         @media (max-width: em(1920)) {
-          transform: scale(1.55);
+          transform: scale(1.4);
         }
-        @media (max-width: em(950)) {
-          transform: scale(1.46);
+
+        @media (max-width: $bigTablet) {
+          transform: scale(1.3);
         }
         @media (max-width: $mobile) {
-          transform: scale(1);
-        }
-        @media (max-width: $mobileSmall) {
           transform: scale(1);
         }
       }
 
       &__info {
-        max-width: 680px;
+        max-width: 720px;
         position: relative;
         margin-bottom: 154px;
         padding-top: 10px;
         @media (max-width: em(1920)) {
-          max-width: 568px;
+          // max-width: 568px;
+          max-width: 680px;
         }
         @media (max-width: $smallLaptop) {
-          max-width: 453px;
+          // max-width: 453px;
           margin-bottom: 88px;
         }
 
         @media (max-width: $bigTablet) {
-          max-width: 302px;
+          // max-width: 302px;
           margin-bottom: 44px;
+          max-width: 453px;
         }
 
         @media (max-width: $mobile) {
@@ -225,10 +225,7 @@ body::after {
         @media (max-width: $smallLaptop) {
           margin-top: 20px;
         }
-        @media (max-width: em(1350)) {
-          display: flex;
-          justify-content: center;
-        }
+
         @media (max-width: $bigTablet) {
           margin-top: 13px;
         }
@@ -255,7 +252,7 @@ body::after {
         }
       }
       &__info-text {
-        max-width: 680px;
+        max-width: 720px;
         padding-left: 10px;
         // margin-bottom: 18px;
         @media (max-width: $mobile) {
