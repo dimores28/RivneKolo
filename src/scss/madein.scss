@@ -1,277 +1,309 @@
 .madein {
-   background: #FFF8E0;
-   padding-bottom: 50px;
-   position: relative;
-   z-index: 20;
+  background: #fff8e0;
+  padding-bottom: 50px;
+  position: relative;
+  z-index: 20;
 
-   // .madein__container
-   &__container {
-      @media (max-width: $smallLaptop){
-         max-width: 1100px;
-       }
- 
-       @media (max-width: $bigTablet){
-          max-width: 740px; 
-       }
-   }
+  // .madein__container
+  &__container {
+    @media (max-width: $smallLaptop) {
+      max-width: 1100px;
+    }
 
-   // .madein__heading
-   &__heading {
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-      margin-bottom: 0;
-      transform: translateY(-50%);
+    @media (max-width: $bigTablet) {
+      max-width: 740px;
+    }
+  }
 
-      span:first-child {
-         display: block;
-         margin-bottom: 32px;
+  // .madein__heading
+  &__heading {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 0;
+    transform: translateY(-50%);
 
-         @media (max-width: $smallLaptop) {
-            margin-bottom: 24px;
-         }
-
-         @media (max-width: $bigTablet) {
-            margin-bottom: 16px;
-         }
-      }
-
-      @media (max-width: $smallLaptop){
-         max-width: 760px;
-      }
-
-      @media (max-width: $bigTablet){
-         max-width: 490px;
-      }
-
-
-      @media (max-width: $mobileSmall){
-         transform: translateY(-42%);   
-      }
-   }
-
-   // .madein__block
-   &__block {
-      display: flex;
-      justify-content: space-between;
-      gap: 60px;
-      position: relative;
-      transform-style: preserve-3d;
-      box-sizing: border-box;
-      margin-top: -50px;
+    span:first-child {
+      display: block;
+      margin-bottom: 32px;
 
       @media (max-width: $smallLaptop) {
-         margin-top: -65px; 
+        margin-bottom: 24px;
       }
 
-      @media (max-width: $bigTablet){
-         margin-top: -50px;
+      @media (max-width: $bigTablet) {
+        margin-bottom: 16px;
       }
+    }
 
-      @media (max-width:$mobile){
-          flex-direction: column; 
-          gap: 0px;
-          margin-top: -30px;
-      }
-   }
+    @media (max-width: $smallLaptop) {
+      max-width: 760px;
+    }
 
-   // .madein__text
-   &__text {
-      width: calc(50% - 30px);
-      padding-top: 66px;
-      max-width: 640px;
+    @media (max-width: $bigTablet) {
+      max-width: 490px;
+    }
 
-      @media (max-width: $smallLaptop){
-         max-width: 464px;
-      }
- 
-      @media (max-width: $bigTablet){
-         padding-top: 34px;
-      }
+    @media (max-width: $mobileSmall) {
+      transform: translateY(-42%);
+    }
+  }
 
-      @media (max-width:$mobile){
-          width: 100%; 
-          padding-top: 0;
-      }
+  // .madein__block
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    position: relative;
+    transform-style: preserve-3d;
+    box-sizing: border-box;
+    margin-top: -50px;
 
-      p {
-         margin-bottom: 120px;
-         max-width: 697px;
+    @media (max-width: $smallLaptop) {
+      margin-top: -65px;
+    }
 
-         @media (max-width: $smallLaptop) {
-            margin-bottom: 90px;
-         }
+    @media (max-width: $bigTablet) {
+      margin-top: -50px;
+    }
 
-         @media (max-width: $bigTablet){
-            margin-bottom: 70px; 
-         }
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: 0px;
+      margin-top: -30px;
+    }
+  }
 
-         @media (max-width:$mobile){
-             margin-bottom: 30px; 
-         }
-      }
-   }
+  // .madein__text
+  &__text {
+    width: calc(50% - 30px);
+    padding-top: 66px;
+    max-width: 640px;
 
-   // .madein__illustration
-   &__illustration {
-      width: calc(50% - 30px);
-      position: relative;
+    @media (max-width: $smallLaptop) {
+      max-width: 464px;
+    }
 
+    @media (max-width: $bigTablet) {
+      padding-top: 34px;
+    }
 
-      @media (max-width:$mobile){
-         width: 50%; 
-         margin-left: auto;
-      }
-
-      @media (max-width: em(498)){
-         width: 54%;
-      }
-
-      @media (max-width:$mobileSmall){
-         margin-right: -25px; 
-         width: 78%;
-      }
-
- 
-   }
-
-   &__img {
+    @media (max-width: $mobile) {
       width: 100%;
-      height: auto;
-      max-width: 620px;
+      padding-top: 0;
+    }
 
-      @media (max-width: $smallLaptop){
-         max-width: 464px;
-      }
- 
-      @media (max-width: $bigTablet){
-          max-width: 309px; 
+    p {
+      margin-bottom: 120px;
+      max-width: 697px;
+
+      @media (max-width: $smallLaptop) {
+        margin-bottom: 90px;
       }
 
-      @media (max-width:$mobileSmall){
-          width: 110%; 
+      @media (max-width: $bigTablet) {
+        margin-bottom: 70px;
       }
-   }
 
-   &__sticker {
-      position: absolute;
-      transform-style: preserve-3d;
-      z-index: 2;
+      @media (max-width: $mobile) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  // .madein__illustration
+  &__illustration {
+    width: calc(50% - 30px);
+    position: relative;
+
+    @media (max-width: $mobile) {
+      width: 50%;
+      margin-left: auto;
+    }
+
+    @media (max-width: em(498)) {
+      width: 54%;
+    }
+
+    @media (max-width: $mobileSmall) {
+      margin-right: -25px;
+      width: 78%;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    max-width: 620px;
+
+    @media (max-width: $smallLaptop) {
+      max-width: 464px;
+    }
+
+    @media (max-width: $bigTablet) {
+      max-width: 309px;
+    }
+
+    @media (max-width: $mobileSmall) {
+      width: 110%;
+    }
+  }
+
+  &__sticker {
+    position: absolute;
+    transform-style: preserve-3d;
+    z-index: 2;
+    top: 23%;
+    left: -33%;
+    width: 320px;
+    height: auto;
+    transform-origin: left center;
+    transform: translate(0%, 0%) rotateY(0deg);
+
+    @media (max-width: $smallLaptop) {
+      width: 230px;
       top: 23%;
       left: -33%;
-      width: 320px;
+    }
+
+    @media (max-width: $bigTablet) {
+      width: 162px;
+      left: -36%;
+    }
+
+    @media (max-width: $mobile) {
+      top: 19%;
+      left: -46%;
+    }
+
+    @media (max-width: $mobileSmall) {
+      top: 26%;
+      left: -21%;
+    }
+
+    @media (max-width: em(480)) {
+      top: 22%;
+      left: -35%;
+    }
+
+    @media (max-width: em(442)) {
+      top: 22%;
+      left: -35%;
+    }
+
+    @media (max-width: em(415)) {
+      top: 22%;
+      left: -40%;
+    }
+
+    @media (max-width: em(382)) {
+      width: 146px;
+    }
+
+    @media (max-width: em(350)) {
+      top: 22%;
+      left: -45%;
+    }
+  }
+
+  // .madein__slider-wrap
+  &__slider-wrap {
+    position: relative;
+    margin-top: -6%;
+
+    @media (max-width: $mobile) {
+      margin-top: -15%;
+    }
+
+    @media (max-width: $mobileSmall) {
+      margin-top: -10%;
+    }
+  }
+
+  // .madein__slider
+  &__slider {
+  }
+
+  // .madein__wrapper
+  &__wrapper {
+    transition-timing-function: linear;
+  }
+
+  // .madein__slide
+  &__slide {
+    border-radius: 32px;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    @media (max-width: em(1920)) {
+      border-radius: 24px;
+    }
+
+    @media (max-width: $smallLaptop) {
+      border-radius: 18px;
+    }
+
+    @media (max-width: $bigTablet) {
+      border-radius: 12px;
+    }
+
+    img {
+      width: 100%;
       height: auto;
-      transform-origin: left center;
-      transform: translate(0%, 0%) rotateY(0deg);
-
-      @media (max-width: $smallLaptop){
-         width: 230px;
-         top: 23%;
-         left: -33%;
-      }
- 
-      @media (max-width: $bigTablet){
-         width: 162px; 
-         left: -36%;
-      }
-
-      @media (max-width:$mobile){
-         top: 19%;
-         left: -46%;
-      }
-
-      @media (max-width:$mobileSmall){
-         top: 26%;
-         left: -21%;
-      }
-
-      @media (max-width: em(480)){
-         top: 22%;
-         left: -35%; 
-      }
-      
-      @media (max-width: em(442)){
-         top: 22%;
-         left: -35%;
-      }
-
-      @media (max-width: em(415)){
-         top: 22%;
-         left: -40%;     
-      }
-
-      @media (max-width: em(382)){
-         width: 146px; 
-      }
-
-      @media (max-width: em(350)){
-         top: 22%;
-         left: -45%;  
-      }
-
-   }
-
-   // .madein__slider-wrap
-   &__slider-wrap {
-      position: relative;
-      margin-top: -6%;
-
-
-      @media (max-width:$mobile){
-         margin-top: -15%; 
-      }
-
-      @media (max-width:$mobileSmall){
-         margin-top: -10%;
-      }
-   }
-
-   // .madein__slider
-   &__slider {
-   }
-
-   // .madein__wrapper
-   &__wrapper {
-      transition-timing-function: linear;
-   }
-
-   // .madein__slide
-   &__slide {
       border-radius: 32px;
-      overflow: hidden;
-      position: relative;
-      box-sizing: border-box;
 
-      @media (max-width:$mobile){
-         border-radius: 14px; 
+      @media (max-width: em(1920)) {
+        border-radius: 24px;
       }
 
-      img {
-         width: 100%;
-         height: auto;
-         border-radius: 32px;
-
-         @media (max-width:$mobile){
-            border-radius: 14px; 
-         }
+      @media (max-width: $smallLaptop) {
+        border-radius: 18px;
       }
 
-      &::before {
-         content: '';
-         position: absolute;
-         border-radius: 24px;
-         border: 2px solid #000;
-         top: 10px;
-         left: 10px;
-         width: calc(100% - 20px);
-         height: calc(100% - 20px);
-
-
-         @media (max-width:$mobile){
-            border-radius: 14px; 
-            border: 1px solid #000;
-         }
+      @media (max-width: $bigTablet) {
+        border-radius: 12px;
       }
-   }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      border-radius: 32px;
+      border: 3px solid #000;
+      top: 10px;
+      left: 10px;
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+
+      @media (max-width: em(1920)) {
+        border-radius: 24px;
+      }
+
+      @media (max-width: $smallLaptop) {
+        border: 2px solid #000;
+        border-radius: 18px;
+        top: 8px;
+        left: 8px;
+        width: calc(100% - 16px);
+        height: calc(100% - 16px);
+      }
+
+      @media (max-width: $bigTablet) {
+        border: 1px solid #000;
+        border-radius: 12px;
+        top: 6px;
+        left: 6px;
+        width: calc(100% - 12px);
+        height: calc(100% - 12px);
+      }
+
+      @media (max-width: $mobile) {
+        top: 3px;
+        left: 3px;
+        width: calc(100% - 6px);
+        height: calc(100% - 6px);
+      }
+    }
+  }
 }

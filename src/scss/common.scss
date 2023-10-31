@@ -332,34 +332,36 @@ button.btn:active strong {
     position: absolute;
     display: flex;
     flex-direction: column;
-    .ticker-bg:nth-child(5) {
-      @media (max-width: $smallLaptop) {
-        .thrid-line {
-          display: none;
-        }
+
+    .ticker-bg:nth-child(4) {
+      .thrid-line {
+        display: none;
       }
-      @media (max-width: $mobile) {
+      .fourth-line {
+        display: none;
+      }
+
+      @media (max-width: $bigTablet) {
         .thrid-line {
           display: flex;
         }
       }
     }
+
     .ticker-bg:last-child {
       display: none;
 
-      @media (max-width: em(500)) {
-        display: flex;
-        .second-line,
-        .thrid-line {
-          display: none;
+      @media (max-width: $mobileSmall) {
+        .first-line {
+          display: flex;
         }
-      }
-      @media (max-width: em(400)) {
-        display: flex;
         .second-line {
           display: flex;
         }
         .thrid-line {
+          display: none;
+        }
+        .fourth-line {
           display: none;
         }
       }

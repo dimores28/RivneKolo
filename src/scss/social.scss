@@ -3,14 +3,19 @@
    margin-bottom: 540px;
    position: relative;
    // min-height: 100vh;
-
-   @media (max-width: em(1440)){
-      margin-bottom: 440px; 
-   }
-
-   @media (max-width:$mobile){
-      margin-bottom: 280px; 
-   }
+   @media (max-width: em(1920)) {
+      margin-bottom: 440px;
+    }
+    @media (max-width: $smallLaptop) {
+      margin-bottom: 300px;
+    }
+  
+    @media (max-width: $bigTablet) {
+      margin-bottom: 150px;
+    }
+    @media (max-width: $mobile) {
+      margin-bottom: 250px;
+    }
 
    // .social__container
    &__container {
@@ -23,8 +28,7 @@
 
       @media (max-width: $bigTablet){
          max-width: 740px; 
-      }
-       
+      } 
    }
 
    &__content {
@@ -34,11 +38,9 @@
       gap: 40px;
       padding: 30px 0;
 
-
       @media (max-width:$mobile){
           flex-direction: column; 
       }
-
    }
 
    &__heading {
