@@ -181,17 +181,18 @@
    &__hand {
       position: absolute;
       left: -38%;
-      bottom: -58%;
+      bottom: -36%;
       z-index: 5;
       pointer-events: none;
       transform-style: preserve-3d;
       width: 176px;
       height: auto;
-      // transform: translate(158%, -152%);
+      // transform: translate(130%, -79%);
 
       @media (max-width: $smallLaptop) {
          width: 132px;
          left: -64%;
+         bottom: -48%;
       }
 
       @media (max-width: $bigTablet) {
@@ -217,17 +218,18 @@
    &__shadow {
       position: absolute;
       left: -38%;
-      bottom: -62%;
+      bottom: -36%;
       transform-style: preserve-3d;
       width: 133px;
       height: 12px;
-      // transform: translate(206%, -440%) scale(0.45);
+      // transform: translate(166%, -440%) scale(0.45);
    
 
       @media (max-width: $smallLaptop) {
          width: 100px;
          height: 9.3px;
          left: -64%;
+         bottom: -48%;
       }
 
       @media (max-width: $bigTablet) {

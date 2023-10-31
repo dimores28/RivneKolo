@@ -77,7 +77,7 @@
       left: -15px;
       width: calc(100% + 30px);
       margin: 0 -15px;
-      height: 240px;
+      height: 300px;
       z-index: 100;
     }
   }
@@ -103,8 +103,8 @@
     }
 
     @media (max-width: $mobile) {
-      width: 240px;
-      height: 240px;
+      width: 300px;
+      height: 300px;
       margin: 16px auto 0 auto;
     }
   }

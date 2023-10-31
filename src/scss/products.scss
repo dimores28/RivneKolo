@@ -227,12 +227,17 @@
       }
 
       @media (max-width:$mobileSmall){ 
-         width: 280px;
-         height: 276px;
+         width: 316px;
+         height: 312px;
          margin-left: 0;
          margin-right: 0;
          margin-bottom: -144px;
 
+      }
+
+      @media (max-width: 360px){
+         width: 280px;
+         height: 276px; 
       }
 
      .bagels &_2 {
@@ -299,7 +304,8 @@
 
             .assortment__info-title {
                padding-left: 84px;
-               margin-top: 68px;
+               margin-top: 64px;
+               margin-bottom: 28px;
             }
 
             .assortment__info-price {
@@ -373,7 +379,7 @@
 
             .assortment__info-title {
                padding-left: 92px;
-               margin-top: 90px;
+               margin-top: 80px;
             }
 
             .assortment__info-price {
@@ -718,8 +724,8 @@
          }
    
          .assortment__bagels_5 {
-            left: 60%;
-            top: 61%;
+            left: 68%;
+            top: 64%;
             z-index: 11;
          }
       }
@@ -896,7 +902,7 @@
    .assortment__product {
       max-width: 590px;
       margin-left: -52px;
-      transform-origin: 80% 50%;
+      transform-origin: 90% 80%;
    } 
 
    @media (max-width: $smallLaptop){
@@ -928,11 +934,11 @@
    @media (any-hover: hover) {
       &:hover {
          .assortment__product {
-            transform: rotate(-10deg);
+            transform: rotate(-4deg);
 
-            @media (max-width: $smallLaptop){
-               transform: rotate(-6deg);
-            }
+            // @media (max-width: $smallLaptop){
+            //    transform: rotate(-6deg);
+            // }
          }
    
          .assortment__nuts_1 {
@@ -963,7 +969,7 @@
    &._watcher-view {
       @media (max-width:$mobileSmall){
          .assortment__product {
-            transform: rotate(-15deg);
+            transform: rotate(-4deg);
          }
    
          .assortment__nuts_1 {
@@ -973,12 +979,12 @@
    
          .assortment__nuts_2 {
             z-index: 10;
-            left: 76%;
-            top: 58%;
+            left: 74%;
+            top: 69%;
          }
    
          .assortment__nuts_3 {
-            top: 4%;
+            top: 10%;
             left: 53%;        
             z-index: 11;
          }

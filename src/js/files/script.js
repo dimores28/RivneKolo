@@ -131,14 +131,14 @@ if(document.querySelector('.social__hand')) {
       let { smallLaptop, bigTablet, isMobile } = context.conditions;
 
       const hendTL = gsap.timeline({ repeat: -1, repeatDelay: 1 });
-      let hend_x = 210;
-      let hend_y = -134;
-      let shadow_x = 298;
+      let hend_x = 179;
+      let hend_y = -81;
+      let shadow_x = 254;
       let shadow_y = 128;
       
 
       if (smallLaptop) {
-         shadow_x = 278;
+         shadow_x = 234;
          shadow_y = -110;
       }
 
@@ -150,9 +150,9 @@ if(document.querySelector('.social__hand')) {
       }
 
       if (isMobile) {
-        hend_x = 158;
-        hend_y = -152;
-        shadow_x = 206;
+        hend_x = 130;
+        hend_y = -79;
+        shadow_x = 166;
         shadow_y = -440;
       }
 
@@ -225,6 +225,7 @@ if (document.querySelector(".menu")) {
         openTl
           .to(".menu", {
             width: "100%",
+            height: "45px",
             backgroundColor: "white",
             duration: 1.3,
             ease: CustomEase.create(
@@ -236,6 +237,7 @@ if (document.querySelector(".menu")) {
 
         closeTl.to(".menu__link", { opacity: 0, duration: 0.3 }).to(".menu", {
           width: "51px",
+          height: "34px",
           backgroundColor: "transparent",
           duration: 0.3,
         });
@@ -359,14 +361,14 @@ function initSliders() {
 
       // Події
       on: {
-        init() {
-          this.el.addEventListener("mouseenter", () => {
-            this.autoplay.stop();
-          });
-          this.el.addEventListener("mouseleave", () => {
-            this.autoplay.start();
-          });
-        },
+        // init() {
+        //   this.el.addEventListener("mouseenter", () => {
+        //     this.autoplay.stop();
+        //   });
+        //   this.el.addEventListener("mouseleave", () => {
+        //     this.autoplay.start();
+        //   });
+        // },
       },
     });
   }
@@ -561,7 +563,7 @@ if (document.querySelector(".about__scene_2")) {
         const Scene_2 = gsap.timeline({
           scrollTrigger: {
             trigger: ".about__scene_2",
-            start: "top center",
+            start: "top 35%",
             end: "+=40%",
             // markers: true
           },
@@ -728,7 +730,7 @@ if (document.querySelector(".about__scene_3")) {
         const Scene_3 = gsap.timeline({
           scrollTrigger: {
             trigger: ".about__scene_3",
-            start: "top center",
+            start: "top 30%",
             end: "+=30%",
             // markers: true
           },
@@ -816,7 +818,7 @@ if (document.querySelector(".about__scene_4")) {
         const Scene_4 = gsap.timeline({
           scrollTrigger: {
             trigger: ".about__scene_4",
-            start: "top center",
+            start: "top 40%",
             end: "+=30%",
             // markers: true
           },
@@ -943,7 +945,7 @@ if (document.querySelector(".about__scene_5")) {
         const Scene_5 = gsap.timeline({
           scrollTrigger: {
             trigger: ".about__scene_5",
-            start: "top center",
+            start: "top 38%",
             end: "+=60%",
             // markers: true
           },
@@ -1053,7 +1055,7 @@ if (document.querySelector(".about__bagel")) {
 
       if (isMobile) {
         pin = false;
-        sh = -13786;
+        sh = -17232;
         coef = 1;
       }
 
