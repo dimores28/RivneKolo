@@ -61,6 +61,14 @@ body::after {
     top: 50px;
     z-index: 10004;
     display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-image: url(../../img/close.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
     @media (max-width: $mobile) {
       right: 24px;
       top: 24px;
