@@ -49,8 +49,8 @@
       transform: translateY(-52%);
     }
 
-    @media (max-width: 392px) {
-      transform: translateY(-43%);
+    @media (max-width: em(392)){
+      transform: translateY(-43%);  
     }
   }
 
@@ -281,12 +281,12 @@
       height: calc(100% - 20px);
 
       @media (max-width: em(1920)) {
-        border-radius: 24px;
+        border-radius: 20px;
       }
 
       @media (max-width: $smallLaptop) {
         border: 2px solid #000;
-        border-radius: 18px;
+        border-radius: 16px;
         top: 8px;
         left: 8px;
         width: calc(100% - 16px);

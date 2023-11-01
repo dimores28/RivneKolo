@@ -68,11 +68,19 @@
          display: none;
       }
 
+      br {
+         display: none;
+      }
+
       @media (max-width:$mobileSmall){
           i {
             display: inline;
             font-style: normal;
           } 
+
+          br {
+            display: inline;
+          }
       }
    }
 
