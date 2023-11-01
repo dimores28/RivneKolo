@@ -779,12 +779,12 @@
       }
 
       .assortment__bagels_1 {
-         top: 1%;
+         top: 0;
          left: 20%;
       }
 
       .assortment__bagels_2 {
-         left: 2%;
+         left: 0;
          z-index: 10;
       }
 
@@ -794,13 +794,13 @@
       }
 
       .assortment__bagels_4 {
-         left: 55%;
+         left: 62%;
          top: 44%;
       }
 
       .assortment__bagels_5 {
-         left: 64%;
-         top: 66%;
+         left: 68%;
+         top: 64%;
          z-index: 11;
       }
    }
@@ -943,10 +943,6 @@
       &:hover {
          .assortment__product {
             transform: rotate(-4deg);
-
-            // @media (max-width: $smallLaptop){
-            //    transform: rotate(-6deg);
-            // }
          }
    
          .assortment__nuts_1 {
@@ -1006,29 +1002,29 @@
 
    &._watcher-view-popup {
       .assortment__product {
-         transform: rotate(-15deg);
+         transform: rotate(-4deg);
       }
 
       .assortment__nuts_1 {
-         left: 8%;
-         top: 53%;
+         left: 0;
+         top: 54%;
       }
 
       .assortment__nuts_2 {
          z-index: 10;
-         left: 86%;
-         top: 58%;
+         left: 71%;
+         top: 68%;
       }
 
       .assortment__nuts_3 {
-         top: -1%;
-         left: 60%;
+         top: 4%;
+         left: 46%;
          z-index: 11;
       }
 
       .assortment__nuts_4 { 
-         top: 4%;
-         left: 15%;
+         top: 9%;
+         left: 4%;
       } 
    }
 
