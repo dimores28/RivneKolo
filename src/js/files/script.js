@@ -509,7 +509,7 @@ if (document.querySelector(".about__scene_1")) {
           },
         });
         
-        Scene_1.to('body', {overflow: 'hidden', duration: 0})
+        Scene_1
         .from(".about__scene_1 .row_1", {
           y: 200,
           opacity: 0,
@@ -531,7 +531,6 @@ if (document.querySelector(".about__scene_1")) {
             duration: 0.4,
             ease: "back.out(1.7)",
           })
-          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_1 .row_3", {
             y: 200,
             opacity: 0,
@@ -643,7 +642,7 @@ if (document.querySelector(".about__scene_2")) {
           },
         });
         
-        Scene_2.to('body', {overflow: 'hidden', duration: 0})
+        Scene_2
         .from(".about__scene_2 .row_1", {
           y: 200,
           opacity: 0,
@@ -668,7 +667,6 @@ if (document.querySelector(".about__scene_2")) {
             ease: "power3.out",
             immediateRender: true,
           })
-          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_2 .row_4", {
             y: 200,
             opacity: 0,
@@ -772,7 +770,6 @@ if (document.querySelector(".about__scene_3")) {
             // markers: true
           },
         });
-        Scene_3.to('body', {overflow: 'hidden', duration: 0});
         document.querySelectorAll(".about__scene_3 p").forEach((row, i) => {
           let deg = 16;
           if (i % 2 == 0) {
@@ -787,7 +784,6 @@ if (document.querySelector(".about__scene_3")) {
             ease: "power3.out",
           });
         });
-        Scene_3.to('body', {overflow: 'auto', duration: 0})
         Scene_3.from(".row_5", {
           y: 200,
           opacity: 0,
@@ -877,7 +873,7 @@ if (document.querySelector(".about__scene_4")) {
             // markers: true
           },
         });
-        Scene_4.to('body', {overflow: 'hidden', duration: 0})
+        Scene_4
         .from(".about__scene_4 .row_1", {
           y: 200,
           opacity: 0,
@@ -906,7 +902,6 @@ if (document.querySelector(".about__scene_4")) {
             duration: 0.4,
             ease: "power3.out",
           })
-          .to('body', {overflow: 'auto', duration: 0.1})
           .from(".about__scene_4 .row_4", {
             y: 200,
             opacity: 0,
@@ -977,7 +972,7 @@ if (document.querySelector(".about__scene_5")) {
           },
         });
         
-        Scene_5.to('body', {overflow: 'hidden', duration: 0})
+        Scene_5
         .from(".about__scene_5 .row_1", {
           y: 200,
           opacity: 0,
@@ -985,11 +980,7 @@ if (document.querySelector(".about__scene_5")) {
           duration: 0.4,
           ease: "back.out(1.7)",
         });
-        document.querySelectorAll(".advanteges__item").forEach((item, i) => {
-          if( i == 2) {
-            Scene_5.to('body', {overflow: 'auto', duration: 0.1})
-          }
-        
+        document.querySelectorAll(".advanteges__item").forEach((item) => {
           Scene_5.from(item, { y: 200, opacity: 0, duration: 0.4, ease: "power3.out" });
         });
       }
@@ -1289,3 +1280,50 @@ nextBtn.addEventListener("click", () => {
 prevBtn.addEventListener("click", () => {
   previous();
 });
+
+
+//GSAP Slider
+if(document.querySelector('.about__content')) {
+  let mm = gsap.matchMedia(),
+  breakPoint = 480;
+
+  mm.add(
+    {
+      isDesktop: `(min-width: ${breakPoint}px)`,
+      isMobile: `(max-width: ${breakPoint - 1}px)`,
+      reduceMotion: "(prefers-reduced-motion: reduce)",
+    },
+    (context) => {
+      let { isMobile } = context.conditions;
+
+
+      if (isMobile) {
+        let scenes = gsap.utils.toArray(".about__scene");
+        let tops = scenes.map(scene => ScrollTrigger.create({trigger: scene, start: "top top"}));
+
+        scenes.forEach((scene, i) => {
+          ScrollTrigger.create({
+            trigger: scene,
+            start: () =>  "bottom bottom",
+            pin: true, 
+            pinSpacing: false,
+          });
+        });
+
+        ScrollTrigger.create({
+          snap: {
+            snapTo: (progress, self) => {
+              let panelStarts = tops.map(st => st.start),
+                  snapScroll = gsap.utils.snap(panelStarts, self.scroll());
+              return gsap.utils.normalize(0, ScrollTrigger.maxScroll(window), snapScroll); 
+            },
+            duration: 0.5
+          }
+        });
+
+
+
+      }
+    }
+  );
+}

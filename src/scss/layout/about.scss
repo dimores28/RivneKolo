@@ -800,3 +800,21 @@
     background-position-y: 10%;
   }
 }
+
+.about__content {
+  @media (max-width:$mobileSmall){
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative; 
+    margin-top: -300px;
+  }
+}
+
+.about__scene {
+ @media (max-width:$mobileSmall){
+  min-height: 100vh;
+  background: #ffdf00;
+  padding-top: 430px !important; 
+ }
+}
