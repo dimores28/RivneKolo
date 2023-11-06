@@ -1299,14 +1299,15 @@ if(document.querySelector('.about__content')) {
 
       if (isMobile) {
         let scenes = gsap.utils.toArray(".about__scene");
-        let tops = scenes.map(scene => ScrollTrigger.create({trigger: scene, start: "top top"}));
+        let tops = scenes.map(scene => ScrollTrigger.create({trigger: scene, start: "top +298px"}));
 
         scenes.forEach((scene, i) => {
           ScrollTrigger.create({
             trigger: scene,
-            start: () =>  "bottom bottom",
+            start: () =>  "top +298px",
+            end: () => i === 2 ? "+400px" : '',
             pin: true, 
-            pinSpacing: false,
+            pinSpacing: false
           });
         });
 
@@ -1320,8 +1321,6 @@ if(document.querySelector('.about__content')) {
             duration: 0.5
           }
         });
-
-
 
       }
     }
