@@ -165,7 +165,7 @@
       position: absolute;
       top: 36%;
       left: 30%;
-      transition: all 0.4s cubic-bezier(0.42, 2, 0.03, 0.33);
+      transition: all 0.3s cubic-bezier(0.42, 2, 0.03, 0.33);
 
       // .assortment__bagels_1
       &_1 {
@@ -193,7 +193,7 @@
       position: absolute;
       top: 36%;
       left: 30%;
-      transition: all 0.4s cubic-bezier(0.42, 2, 0.03, 0.33);
+      transition: all 0.3s cubic-bezier(0.42, 2, 0.03, 0.33);
       // .assortment__nuts_1
       &_1 {
       }
@@ -703,7 +703,7 @@
 
 
 .bagels {
-   transition: all 0.4s cubic-bezier(0.42, 2, 0.03, 0.33);
+   transition: all 0.3s cubic-bezier(0.42, 2, 0.03, 0.33);
 
    @media (any-hover: hover) {
       &:hover {
@@ -905,7 +905,7 @@
 
 .nuts {
    // margin-left: -46px;
-   transition: all 0.4s cubic-bezier(0.42, 2, 0.03, 0.33);
+   transition: all 0.3s cubic-bezier(0.42, 2, 0.03, 0.33);
 
    .assortment__product {
       max-width: 590px;
@@ -946,7 +946,7 @@
          }
    
          .assortment__nuts_1 {
-            left: 0;
+            left: -3%;
             top: 54%;
          }
    

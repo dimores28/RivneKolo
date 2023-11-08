@@ -170,6 +170,16 @@
       @media (max-width:$mobile){
          top: 40px;
       }
+
+      .ticker-bg:last-child {
+         .ticker-bg__content:nth-child(2),
+         .ticker-bg__content:nth-child(3),
+         .ticker-bg__content:nth-child(4) {
+            @media (min-width:$mobile){
+               display: none;
+            }
+         }
+      }
    }
 
    &__bg-item:last-child {
@@ -269,6 +279,7 @@
    position: relative;
    flex-shrink: 0;
    box-sizing: border-box;
+   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
    @media (max-width: $smallLaptop){
       border-radius: 34px;
@@ -469,7 +480,7 @@
 
       @media (max-width: $smallLaptop) {
          padding: 25px 36px 25px;
-         border-radius: 34px;
+         border-radius: 30px;
 
          span {
             margin-top: 14px;

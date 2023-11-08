@@ -28,12 +28,12 @@ const productTl = gsap.timeline({
 productTl.fromTo(
   ".heading__span-1",
   { opacity: 0, y: 200, x: -300, rotate: 16 },
-  { opacity: 1, y: 0, x: 0, rotate: 0, duration: 0.6 }
+  { opacity: 1, y: 0, x: 0, rotate: 0, duration: 0.3 }
 );
 productTl.fromTo(
   ".heading__span-2",
   { opacity: 0, y: 200, x: 300, rotate: -16 },
-  { opacity: 1, y: 0, x: 0, rotate: 0, duration: 0.6 }
+  { opacity: 1, y: 0, x: 0, rotate: 0, duration: 0.3 }
 );
 
 if(document.querySelector('.madein__sticker')) {
@@ -109,8 +109,8 @@ const madeinTlHero = gsap.timeline({
   },
 });
 
-madeinTlHero.from(".hero__heading", { opacity: 0, x: -400 });
-madeinTlHero.from(".hero__text", { opacity: 0, x: 400 });
+madeinTlHero.from(".hero__heading", { opacity: 0, x: -400, duration: 0.3 });
+madeinTlHero.from(".hero__text", { opacity: 0, x: 400, duration: 0.3 });
 
 //=========== Social lincks animation ================
 gsap.registerPlugin(MotionPathPlugin);
