@@ -7,7 +7,7 @@ body::after {
   top: 0;
   left: 0;
   opacity: 0;
-  transition: opacity 0.8s ease 0s;
+  transition: opacity 0.1s ease 0s;
   pointer-events: none;
   z-index: 10002;
 }
@@ -20,7 +20,7 @@ body::after {
   left: 0;
   bottom: 0;
   right: 0;
-  transition: visibility 0.8s ease 0s;
+  transition: visibility 0.1s ease 0s;
   visibility: hidden;
   pointer-events: none;
   background-color: #59fbff;
@@ -44,7 +44,7 @@ body::after {
   position: relative;
   visibility: hidden;
   transform: scale(0);
-  transition: transform 0.3s ease 0s;
+  transition: transform 0.1s ease 0s;
   width: 100%;
   height: 100%;
   // padding-top: 224px;
@@ -385,7 +385,7 @@ body::after {
   -webkit-transform-style: preserve-3d;
   box-sizing: border-box;
   z-index: 1;
-  transition: all 0.3s ease-in;
+  transition: transform 0.15s;
 
   @media (max-width: $smallLaptop) {
     max-width: 453px;
@@ -478,26 +478,37 @@ body::after {
     //   0 0 0 2px #00000036,
     //   0 0.4em 0 0 #00000028;
     transform: translate3d(0, 0.75em, -1em);
+    -webkit-transform: translate3d(0, 0.75em, -1em);
     transition:
       transform 0.15s,
       box-shadow 0.15s;
+
+    @media (max-width: $smallLaptop) {
+      transform: translate3d(0, 0.5em, -1em);
+      -webkit-transform: translate3d(0, 0.5em, -1em);
+    }
   }
 
   &:hover {
-    transform: translate(0, 0.25em);
+    transform: translate(0, 0.5em);
+    @media (max-width: $smallLaptop) {
+      transform: translate(0, 0.3em);
+    }
   }
 
   &:hover strong {
-    // box-shadow:
-    //   0 0 0 2px #00000036,
-    //   0 0.25em 0 0 #00000028;
-    transform: translate3d(0, 0.5em, -1em);
+    transform: translate3d(0, 0.25em, -1em);
+    -webkit-transform: translate3d(0, 0.25em, -1em);
+    @media (max-width: $smallLaptop) {
+      transform: translate3d(0, 0.2em, -1em);
+      -webkit-transform: translate3d(0, 0.25em, -1em);
+    }
   }
 
   &:active {
     transform: translate(0em, 0.75em);
 
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       transform: translate(0em, 0.55em);
     }
   }
@@ -521,6 +532,38 @@ body::after {
   // @media (max-width: $mobile) {
   //   height: 310px;
   // }
+
+  &:hover {
+    transform: translate3d(0, 0, 0);
+  }
+
+  &:hover strong {
+    transform: translate3d(0, 0.75em, -1em);
+    -webkit-transform: translate3d(0, 0.75em, -1em);
+
+    @media (max-width: $smallLaptop) {
+      transform: translate3d(0, 0.5em, -1em);
+      -webkit-transform: translate3d(0, 0.5em, -1em);
+    }
+  }
+
+  .order-form {
+    button.btn {
+      &:hover {
+        transform: translate(0, 0.2em);
+        -webkit-transform: translate(0, 0.2em);
+      }
+
+      & strong {
+        transform: translate3d(0, 0.4em, -1em);
+        -webkit-transform: translate3d(0, 0.4em, -1em);
+      }
+      &:hover strong {
+        transform: translate3d(0, 0.2em, -1em);
+        -webkit-transform: translate3d(0, 0.2em, -1em);
+      }
+    }
+  }
 }
 
 .order-form {
@@ -593,35 +636,8 @@ body::after {
     height: 73px;
     padding: 4px;
 
-    // @media (max-width: $smallLaptop) {
-    //   height: 69px;
-    // }
-
-    // @media (max-width: $mobile) {
-    //   padding: 3px;
-    //   height: 42px;
-    // }
-
     span {
       padding: 15px 37px;
-      // @media (max-width: $smallLaptop) {
-      //   padding: 18px 27px;
-      // }
-      // @media (max-width: $mobile) {
-      //   padding: 8px 32px;
-      // }
-    }
-    & strong {
-      transform: translate3d(0, 0.3em, -1em);
-      // box-shadow:
-      //   0 0 0 2px rgba(0, 0, 0, 0.2117647059),
-      //   0 0.2em 0 0 rgba(0, 0, 0, 0.1568627451);
-    }
-    &:hover strong {
-      // box-shadow:
-      //   0 0 0 2px #00000036,
-      //   0 0.1em 0 0 #00000028;
-      transform: translate3d(0, 0.1em, -1em);
     }
 
     @media (max-width: em(1920)) {
