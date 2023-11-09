@@ -408,19 +408,20 @@
           content: "";
           position: absolute;
           width: 12px;
-          height: 25px;
+          height: 36px;
           display: inline-block;
           top: -25px;
           left: -1px;
           background: url(../img/about/arrows.png) center no-repeat;
           background-size: cover;
-          background-position-y: 100%;
+          background-position-y: 166%;
 
           @media (max-width: $bigTablet) {
             width: 10px;
             height: 24px;
             top: -22px;
             left: -4px;
+            background-position-y: 100%;
           }
         }
       }

@@ -1002,7 +1002,7 @@ if (document.querySelector(".about__scene_5")) {
 
 const arrowsBtn = document.querySelector(".about__download-btn span i");
 const spanBtn = document.querySelector(".about__download-btn span");
-let arrowPos = -10;
+let arrowPos = -20;
 
 let bgPos = 0;
 function changeImg(progress) {

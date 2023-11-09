@@ -129,8 +129,8 @@
 		}
 		/* Блок з лічильником */
 		.fls-preloader__counter{
-			width: 540px;
-			height: 540px;
+			width: 480px;
+			height: 480px;
 			background: url(img/preloader/sprites.png) center no-repeat;
 			background-size: cover;
 			background-position-y: 100%;
@@ -142,19 +142,19 @@
 			top:50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
-			width: 290px;
-    		height: 290px;
+			width: 270px;
+    		height: 270px;
 		}
 
 		@media (max-width: 1440px){
 			.fls-preloader__counter {
-				width: 480px;
-				height: 480px;
+				width: 380px;
+				height: 380px;
 			}	
 
 			.fls-preloader__gif {
-				width: 250px;
-    			height: 250px;
+				width: 210px;
+    			height: 210px;
 			}
 		}
 		@media (max-width: 1080px){
@@ -245,7 +245,7 @@
 		}
 
 		.ticker-bg__item {
-			max-height: 188px;
+			max-height: 177px;
 		}
 
 		@-webkit-keyframes ticker {
@@ -262,9 +262,26 @@
 			}
 		}
 
+		@media (max-width: 1920px){
+			.ticker-bg__item {
+				max-height: 165px;
+			}  
+		}
+		@media (max-width: 1650px){
+			.ticker-bg__item {
+				max-height: 150px;
+			}  
+		}
+		@media (max-width: 1470px){
+			.ticker-bg__item {
+				max-height: 125px;
+			}  
+		}
+		
+
 		@media (max-width:767px){
 			.ticker-bg__item {
-				max-height: 140px;
+				max-height: 82px;
 			} 
 
 			.ticker-bg__row {
@@ -273,10 +290,6 @@
 		}
 
 		@media (max-width: 480px) {
-			.ticker-bg__item {
-				max-height: 89px;
-			}
-
 			.ticker-bg__row {
 				padding: 3px 0;
 			}
