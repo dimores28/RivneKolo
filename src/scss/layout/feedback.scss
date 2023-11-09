@@ -202,7 +202,7 @@
 }
 
 .feedback .form {
-  &__btn {
+  button.btn {
     z-index: 10;
     height: 80px;
     border-radius: 20px;
@@ -212,17 +212,18 @@
       border-radius: 16px;
     }
 
+    &:hover {
+      transform: translate(0, 0.2em);
+      -webkit-transform: translate(0, 0.2em);
+    }
+
     & strong {
       transform: translate3d(0, 0.4em, -1em);
-      box-shadow:
-        0 0 0 2px rgba(0, 0, 0, 0.2117647059),
-        0 0.2em 0 0 rgba(0, 0, 0, 0.1568627451);
+      -webkit-transform: translate3d(0, 0.4em, -1em);
     }
     &:hover strong {
-      box-shadow:
-        0 0 0 2px #00000036,
-        0 0.1em 0 0 #00000028;
       transform: translate3d(0, 0.2em, -1em);
+      -webkit-transform: translate3d(0, 0.2em, -1em);
     }
 
     @media (max-width: em(1920)) {

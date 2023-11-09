@@ -105,8 +105,8 @@
     position: relative;
     margin-bottom: 350px;
 
-    @media (max-width:$mobile){
-       margin-bottom: 260px; 
+    @media (max-width: $mobile) {
+      margin-bottom: 260px;
     }
 
     &:last-child {
@@ -372,7 +372,7 @@
 
     .about__download-btn {
       background: #00c4fd;
-      transition: background 0.3s ease-in 0.25s;
+      // transition: background 0.3s ease-in 0.25s;
 
       span {
         position: relative;
@@ -580,7 +580,7 @@
         transform: translate(-13%, 16%);
       }
 
-      @media (max-width: em(390)){
+      @media (max-width: em(390)) {
         transform: translate(-13%, 10%);
       }
     }
