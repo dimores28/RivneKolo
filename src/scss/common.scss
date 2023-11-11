@@ -21,11 +21,11 @@ button.btn {
   text-transform: uppercase;
   text-align: center;
   padding: 6px;
-  height: 90px;
+  height: 84px;
   background: #fff;
   border: 2px solid transparent;
   border-radius: 18px;
-  transition: transform 0.15s;
+  transition: transform 0.15s, background-color 0.02s ease 0.36s;
   transform-style: preserve-3d;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -35,13 +35,32 @@ button.btn {
 
   span {
     padding: 21px 42px;
-    border-radius: 14px;
+    border-radius: 16px;
     border: 2px solid #000;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 1;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      background: #D79BFF;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      opacity: 0;
+      transition: width 0.4s ease 0.1s, height 0.4s ease 0.1s;
+    }
   }
 
   @media (max-width: $smallLaptop) {
     border-radius: 13px;
-    height: 68px;
+    height: 66px;
     span {
       font-size: 16px;
       padding: 16px 32px;
@@ -52,7 +71,7 @@ button.btn {
 
   @media (max-width: $bigTablet) {
     border-radius: 10px;
-    height: 52px;
+    height: 50px;
     padding: 3px;
     span {
       font-size: 14px;
@@ -89,10 +108,30 @@ button.btn strong {
   }
 }
 
+// button.btn mark {
+//   position: absolute;
+//   background: #D79BFF;
+//   width: 20px;
+//   height: 20px;
+//   border-radius: 50%;
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+//   transition: border-radius 0.4s ease 0.1s, width 0.3s, height 0.3s;
+// }
+
 button.btn:hover {
   transform: translate(0, 0.5em);
+  background: #D79BFF;
   @media (max-width: $smallLaptop) {
     transform: translate(0, 0.3em);
+  }
+}
+button.btn:hover span{
+  &::after {
+    opacity: 1;
+    width: 400px;
+    height: 400px;
   }
 }
 
@@ -107,6 +146,12 @@ button.btn:hover strong {
     -webkit-transform: translate3d(0, 0.25em, -1em);
   }
 }
+
+// button.btn:hover mark {
+//   width: 102%;
+//   height: 104%;
+//   border-radius: 18px;
+// }
 
 button.btn:active {
   transform: translate(0em, 0.75em);

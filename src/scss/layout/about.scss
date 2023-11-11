@@ -64,9 +64,9 @@
 
     @media (max-width: $mobile) {
       background: #ffdf00;
-      position: sticky;
-      top: 0;
-      left: -15px;
+      // position: sticky;
+      // top: 0;
+      // left: -15px;
       width: calc(100% + 30px);
       margin: 0 -15px;
       height: 300px;
@@ -371,19 +371,44 @@
     }
 
     .about__download-btn {
-      background: #00c4fd;
+      background-color: #00c4fd;
       // transition: background 0.3s ease-in 0.25s;
+      height: 95px;
+
+      @media (max-width: $smallLaptop){
+        height: 77px;
+      }
+
+      @media (max-width: $bigTablet) {
+        height: 61px;
+      }
+
+      &:hover {
+        background-color: #8DE5FF;
+        span::after {
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+          }
+        
+      }
 
       span {
         position: relative;
         padding: 24px 42px;
+        overflow: visible;
+        line-height: normal;
 
         @media (max-width: $smallLaptop) {
-          padding: 0px 42px;
+          padding: 20px 42px;
         }
 
         @media (max-width: $bigTablet) {
-          padding: 3px 28px;
+          padding: 16px 28px;
+        }
+
+        &::after {
+          background: #8DE5FF;
         }
 
         &::before {
@@ -424,6 +449,7 @@
             background-position-y: 100%;
           }
         }
+
       }
     }
   }

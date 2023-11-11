@@ -63,7 +63,7 @@
 			background-size: cover;
 			background-position-y: 100%;
 			position: relative;
-			animation: play 5s steps(10);
+			animation: play 3s steps(10);
 		}
 		.fls-preloader__gif {
 			position: absolute;
@@ -394,7 +394,7 @@
 					const intervalId = setInterval(() => {
 						counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
 						counter >= 100 ? addLoadedClass() : null;
-					}, 5100);//10
+					}, 3650);//10
 				}
 				function addLoadedClass() {
 					htmlDocument.classList.add('loaded');
@@ -403,7 +403,7 @@
 					setInterval(() => {
 						preloader.remove();
 						preloaderContainer.remove();
-					}, 300);
+					}, 50);
 				}
 			}else{
 				preloaderContainer.remove();

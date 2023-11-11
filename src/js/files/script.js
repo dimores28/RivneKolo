@@ -1035,6 +1035,7 @@ if (document.querySelector(".about__bagel")) {
       let sh = -32170;
       let coef = 0.85;
       let pin = true;
+      let start = 20;
 
       if (isDesktop) {
         coef = 0.85;
@@ -1056,13 +1057,14 @@ if (document.querySelector(".about__bagel")) {
       if (isMobile) {
         pin = false;
         sh = -17236;
-        coef = 1;
+        coef = 0.3;
+        start = 85
       }
 
       const bagel = gsap.timeline({
         scrollTrigger: {
           trigger: ".about__bagel",
-          start: "top 20%",
+          start: `top ${start}%`,
           end: `+=${contentHeight * coef}`,
           scrub: true,
           pin: pin,

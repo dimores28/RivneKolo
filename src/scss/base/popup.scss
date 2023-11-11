@@ -633,7 +633,7 @@ body::after {
     }
   }
   button.btn {
-    height: 73px;
+    height: 67px;
     padding: 4px;
 
     span {
@@ -641,18 +641,18 @@ body::after {
     }
 
     @media (max-width: em(1920)) {
-      height: 72px;
+      height: 66px;
       border-radius: 18px;
       padding: 3.5px;
       span {
         padding: 16px 33px;
-        border-radius: 14px;
+        border-radius: 16px;
         font-size: 21px;
       }
     }
 
     @media (max-width: $smallLaptop) {
-      height: 55px;
+      height: 53px;
       border-radius: 13px;
       padding: 2.6px;
       span {
@@ -662,7 +662,7 @@ body::after {
       }
     }
     @media (max-width: $bigTablet) {
-      height: 36px;
+      height: 35px;
       border-radius: 8px;
       padding: 1.8px;
       span {
@@ -673,7 +673,7 @@ body::after {
     }
 
     @media (max-width: $mobile) {
-      height: 42px;
+      height: 40px;
       border-radius: 8px;
       padding: 2.5px;
       span {
