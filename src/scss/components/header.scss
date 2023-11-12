@@ -126,7 +126,7 @@
   position: relative;
   width: toRem(31);
   height: toRem(28);
-  z-index: 5;
+  z-index: 10005;
   flex-shrink: 0;
 
   @media (max-width:$mobile){

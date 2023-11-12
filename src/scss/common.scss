@@ -408,7 +408,7 @@ button.btn:active strong {
       }
     }
 
-    .ticker-bg:last-child {
+    .ticker-bg:last-child{
       display: none;
 
       @media (max-width: $mobileSmall) {
@@ -424,6 +424,17 @@ button.btn:active strong {
         .fourth-line {
           display: none;
         }
+      }
+    }
+
+    .ticker-bg:first-child {
+      display: none;
+      @media (max-width:$mobileSmall){
+          display: flex;
+
+          .fourth-line {
+            display: none;
+          }
       }
     }
   }
