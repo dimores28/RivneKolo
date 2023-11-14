@@ -1146,25 +1146,25 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// const showProdutsBtn = document.querySelector(".products-show-btn");
-// if (showProdutsBtn) {
-//   showProdutsBtn.addEventListener("click", function () {
-//     document
-//       .querySelector(".all-assortment")
-//       .classList.toggle("_show-assortment");
-//     let show = parseInt(showProdutsBtn.getAttribute("data-showed"));
-//     console.log(show);
+const showProdutsBtn = document.querySelector(".products-show-btn");
+if (showProdutsBtn) {
+  showProdutsBtn.addEventListener("click", function () {
+    document
+      .querySelector(".all-assortment")
+      .classList.toggle("_show-assortment");
+    let show = parseInt(showProdutsBtn.getAttribute("data-showed"));
+    console.log(show);
 
-//     if (!show) {
-//       showProdutsBtn.querySelector("span").innerText = "Приховати";
-//       showProdutsBtn.setAttribute("data-showed", "1");
-//     } else {
-//       showProdutsBtn.querySelector("span").innerText = "Подивитись ще";
-//         gsap.to(window, {duration: 2, scrollTo: ".products__container"});
-//       showProdutsBtn.setAttribute("data-showed", "0");
-//     }
-//   });
-// }
+    if (!show) {
+      showProdutsBtn.querySelector("span").innerText = "Приховати";
+      showProdutsBtn.setAttribute("data-showed", "1");
+    } else {
+      showProdutsBtn.querySelector("span").innerText = "Подивитись ще";
+        gsap.to(window, {duration: 2, scrollTo: ".products__container"});
+      showProdutsBtn.setAttribute("data-showed", "0");
+    }
+  });
+}
 
 const images = document.querySelectorAll(".parallax-image");
 
