@@ -372,8 +372,11 @@
 
     .about__download-btn {
       background-color: #00c4fd;
-      // transition: background 0.3s ease-in 0.25s;
       height: 95px;
+
+      mark::after {
+        background-color: #8DE5FF;
+      }
 
       @media (max-width: $smallLaptop){
         height: 77px;
@@ -384,7 +387,6 @@
       }
 
       &:hover {
-        background-color: #8DE5FF;
         span::after {
             width: 100%;
             height: 100%;
