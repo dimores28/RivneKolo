@@ -1146,25 +1146,25 @@ document.addEventListener("click", (event) => {
   }
 });
 
-const showProdutsBtn = document.querySelector(".products-show-btn");
-if (showProdutsBtn) {
-  showProdutsBtn.addEventListener("click", function () {
-    document
-      .querySelector(".all-assortment")
-      .classList.toggle("_show-assortment");
-    let show = parseInt(showProdutsBtn.getAttribute("data-showed"));
-    console.log(show);
+// const showProdutsBtn = document.querySelector(".products-show-btn");
+// if (showProdutsBtn) {
+//   showProdutsBtn.addEventListener("click", function () {
+//     document
+//       .querySelector(".all-assortment")
+//       .classList.toggle("_show-assortment");
+//     let show = parseInt(showProdutsBtn.getAttribute("data-showed"));
+//     console.log(show);
 
-    if (!show) {
-      showProdutsBtn.querySelector("span").innerText = "Приховати";
-      showProdutsBtn.setAttribute("data-showed", "1");
-    } else {
-      showProdutsBtn.querySelector("span").innerText = "Подивитись ще";
-        gsap.to(window, {duration: 2, scrollTo: ".products__container"});
-      showProdutsBtn.setAttribute("data-showed", "0");
-    }
-  });
-}
+//     if (!show) {
+//       showProdutsBtn.querySelector("span").innerText = "Приховати";
+//       showProdutsBtn.setAttribute("data-showed", "1");
+//     } else {
+//       showProdutsBtn.querySelector("span").innerText = "Подивитись ще";
+//         gsap.to(window, {duration: 2, scrollTo: ".products__container"});
+//       showProdutsBtn.setAttribute("data-showed", "0");
+//     }
+//   });
+// }
 
 const images = document.querySelectorAll(".parallax-image");
 
@@ -1291,3 +1291,25 @@ nextBtn.addEventListener("click", () => {
 prevBtn.addEventListener("click", () => {
   previous();
 });
+
+
+const marks = document.querySelectorAll('.btn');
+if(marks){
+  marks.forEach(item => {
+    let cirkle = item.querySelector('mark i');
+    
+    item.addEventListener("click", () => {
+
+      let animation = gsap.timeline();
+
+      animation.to(cirkle, {opacity: 0.4, duration: 0.15,})
+        .to(cirkle, {width: "80px", height: "80px", opacity: 0.6, duration: 0.15})
+        .to(cirkle, {width: "140px", height: "140px", opacity: 0.8, duration: 0.15})
+        .to(cirkle, {width: "400px", height: "400px", opacity: 1, duration: 0.2});
+     
+        setTimeout(()=> {
+          animation.reverse();
+        }, 2000);
+    });
+  })
+}

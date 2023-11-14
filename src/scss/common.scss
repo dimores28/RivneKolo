@@ -53,7 +53,7 @@ button.btn {
     overflow: hidden;
     background: transparent;
   
-    &::after {
+    i {
       content: '';
       position: absolute;
       background-color: #D79BFF;
@@ -67,10 +67,10 @@ button.btn {
       opacity: 0;
       // transition: width 0.5s ease 0.1s, height 0.5s ease 0.1s;
       z-index: 1;
-      animation-name: circle;
-      animation-duration: 0.7s;
-      animation-iteration-count: infinite;
-      animation-play-state: paused;
+      // animation-name: circle;
+      // animation-duration: 0.7s;
+      // animation-iteration-count: infinite;
+      // animation-play-state: paused;
       
     }
   }
@@ -167,11 +167,11 @@ button.btn:active {
 }
 
 button.btn:active mark{
-  &::after {
+  i {
     // opacity: 1;
     // width: 400px;
     // height: 400px;
-    animation-play-state: running;
+    // animation-play-state: running;
   }
 }
 
