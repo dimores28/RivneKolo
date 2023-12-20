@@ -2,6 +2,7 @@
 import { isMobile } from "./functions.js";
 // Підключення списку активних модулів
 import { flsModules } from "./modules.js";
+import "./form_validation.js";
 
 // document.getElementById("select_btn").onclick = function () {
 //   document.getElementById("lang").classList.add("active");
@@ -1316,3 +1317,4 @@ if(marks){
     });
   })
 }
+

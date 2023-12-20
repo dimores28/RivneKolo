@@ -3,65 +3,19 @@
     <div class="popup__content">
       <div class="popup__container">
         <button class="popup__close" data-close="popup" style="opacity: 0">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
-            fill="none"
-            viewBox="0 0 40 40"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40">
             <circle cx="20" cy="20" r="20" fill="#000" />
-            <path
-              stroke="#59FAFF"
-              stroke-width="6"
-              d="m27.428 27.439-15.03-15.03m15.03.152-15.03 15.03"
-            />
+            <path stroke="#59FAFF" stroke-width="6" d="m27.428 27.439-15.03-15.03m15.03.152-15.03 15.03" />
           </svg>
         </button>
         <div class="product bagels _watcher-view-popup">
           <div class="product__image-wrap assortment__image-wrap">
-            <img
-              src="@img/products/flow_pack.png"
-              class="assortment__product"
-              width="622"
-              height="651"
-              alt="product img"
-            />
-            <img
-              src="@img/products/Bagels1.png"
-              class="assortment__bagels assortment__bagels_1"
-              width="153"
-              height="102"
-              alt="Bagels"
-            />
-            <img
-              src="@img/products/Bagels2.png"
-              class="assortment__bagels assortment__bagels_2"
-              width="202"
-              height="200"
-              alt="Bagels"
-            />
-            <img
-              src="@img/products/Bagels3.png"
-              class="assortment__bagels assortment__bagels_3"
-              width="202"
-              height="200"
-              alt="Bagels"
-            />
-            <img
-              src="@img/products/Bagels4.png"
-              class="assortment__bagels assortment__bagels_4"
-              width="153"
-              height="102"
-              alt="Bagels"
-            />
-            <img
-              src="@img/products/Bagels5.png"
-              class="assortment__bagels assortment__bagels_5"
-              width="202"
-              height="200"
-              alt="Bagels"
-            />
+            <img src="@img/products/flow_pack.png" class="assortment__product" width="622" height="651" alt="product img" />
+            <img src="@img/products/Bagels1.png" class="assortment__bagels assortment__bagels_1" width="153" height="102" alt="Bagels" />
+            <img src="@img/products/Bagels2.png" class="assortment__bagels assortment__bagels_2" width="202" height="200" alt="Bagels" />
+            <img src="@img/products/Bagels3.png" class="assortment__bagels assortment__bagels_3" width="202" height="200" alt="Bagels" />
+            <img src="@img/products/Bagels4.png" class="assortment__bagels assortment__bagels_4" width="153" height="102" alt="Bagels" />
+            <img src="@img/products/Bagels5.png" class="assortment__bagels assortment__bagels_5" width="202" height="200" alt="Bagels" />
           </div>
         </div>
         <div class="product__info">
@@ -105,47 +59,25 @@
                     <p class="form__success-msg">
                       Дякуємо! ваша заявка прийнята
                     </p>
-                    <img
-                      class="form__success-mark"
-                      src="@img/feedback/ok_mark.png"
-                      alt="ok-mark"
-                    />
+                    <img class="form__success-mark" src="@img/feedback/ok_mark.png" alt="ok-mark" />
                   </div>
                   <div class="order-form__wrap">
-                    <label class="order-form__lable name-lable" for="">
+                    <label class="order-form__lable name-lable" for="popupUserName">
                       <span class="order-form__placeholder">Ваше ім’я</span>
-                      <input
-                        class="order-form__input"
-                        name="yourName"
-                        type="text"
-                        aria-label="your name"
-                        id="userName"
-                      />
+                      <input class="order-form__input" name="yourName" type="text" aria-label="your name"
+                        id="popupUserName" />
                     </label>
 
-                    <label class="order-form__lable phone-lable" for="">
-                      <span class="order-form__placeholder"
-                        >Номер телефону</span
-                      >
-                      <input
-                        class="order-form__input"
-                        name="yourPhone"
-                        type="text"
-                        aria-label="your phone"
-                        id="userPhone"
-                      />
+                    <label class="order-form__lable phone-lable" for="popupUserPhone">
+                      <span class="order-form__placeholder">Номер телефону</span>
+                      <input class="order-form__input" name="yourPhone" type="text" aria-label="your phone"
+                        id="popupUserPhone" />
                     </label>
                   </div>
                   <div class="order-form__wrap">
-                    <label class="order-form__lable amount-lable" for="">
-                      <input
-                        type="number"
-                        class="order-form__amount"
-                        name="amount"
-                        min="1"
-                        max="1000"
-                        placeholder="0"
-                      />
+                    <label class="order-form__lable amount-lable" for="amount">
+                      <input type="number" class="order-form__amount" name="amount" min="1" max="1000" placeholder="0"
+                        id="amount" />
                     </label>
 
                     <div class="popup__alert"></div>

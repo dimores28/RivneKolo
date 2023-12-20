@@ -242,12 +242,6 @@ button.btn:active strong {
   background-color: #f8d7da;
 }
 
-// .form__success
-._show__success {
-  opacity: 1;
-  visibility: visible;
-}
-
 .form__success {
   position: absolute;
   display: flex;
@@ -377,6 +371,16 @@ button.btn:active strong {
       }
     }
   }
+}
+
+.form__input._notvalid {
+  border: 2px solid #d20505;
+}
+
+// .form__success
+._show__success {
+  opacity: 1;
+  visibility: visible;
 }
 
 .cooperation-offer-insta {

@@ -8,27 +8,13 @@ function isValidEmail(value) {
   return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(value);
 }
 
-function isValidLastName(value) {
-  return /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/.test(value);
-}
-
 function isValidName(value) {
-  return /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/.test(value);
+  return /^[а-яА-Яa-zA-Z]+$/.test(value);
 }
 
-function isValidZipCode(value) {
-  return /^(?:[0-9a-zA-Z]+([- ]?[0-9a-zA-Z]+)*)?$/.test(value);
-}
 
-function isValidAdress(value) {
-  return /^(?![ -.&,_'":?!/])(?!.*[- &_'":]$)(?!.*[-.#@&,:?!/]{2})[a-zA-Z0-9- .#@&,_'":.?!/]+$/.test(
-    value
-  );
-}
 
-function isValidCityName(value) {
-  return /^\s*[a-zA-Z]{1}[0-9a-zA-Z][0-9a-zA-Z '-.=#/]*$/.test(value);
-}
+
 
 const userEmail = document.querySelector("#userEmail");
 const userPhone = document.querySelector("#userPhone");
@@ -58,19 +44,82 @@ userName?.addEventListener("input", function () {
   }
 });
 
-const form = document.querySelector("#form");
+const form = document.querySelector("#form-feedback");
 form?.addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  let error =
+  let isValid =
     isValidEmail(userEmail.value) &&
     isValidPhone(userPhone.value) &&
     isValidName(userName.value);
 
   let formData = new FormData(form);
 
-  if (error) {
+  if (isValid) {
     form.classList.add("_sending");
+
+    let response = await fetch("mail.php", {
+      method: "POST",
+      body: formData,
+    });
+
+
+    if (response.ok) {
+      let result = await response.json();
+      let alertMsg = document.querySelector(".feedback__wrap .form__success");
+      alertMsg.classList.add("_show__success");
+      form.reset();
+      form.classList.remove("_sending");
+      let msg = document.querySelector(".popup__alert");
+      msg.innerHTML ='';
+    } else {
+      let alertMsg = document.querySelector("#form-feedback .popup__alert");
+      alertMsg.innerHTML = '<p class="alert__msg" >Помилка! Спробуйте пізніше</p>';
+      alertMsg.classList.add("_show");
+      console.log(response.data);
+      form.classList.remove("_sending");
+    }
+  } else {
+    let alertMsg = document.querySelector("#form-feedback .popup__alert");
+    alertMsg.innerHTML =
+      '<p class="alert__msg" >Заповніть будь ласка порожні поля!!!</p>';
+    alertMsg.classList.add("_show");
+    // alert("Fill in required fields!");
+  }
+});
+
+
+const popupUserName = document.querySelector('#popupUserName');
+const popupUserPhone = document.querySelector('#popupUserPhone');
+
+popupUserName?.addEventListener('input', function() {
+  if (!isValidName(popupUserName.value)) {
+    popupUserName.classList.add("_notvalid");
+  } else {
+    popupUserName.classList.remove("_notvalid");
+  }
+});
+
+popupUserPhone?.addEventListener('input', function() {
+  if (!isValidPhone(popupUserPhone.value)) {
+    popupUserPhone.classList.add("_notvalid");
+  } else {
+    popupUserPhone.classList.remove("_notvalid");
+  }
+});
+
+const popupPorm = document.querySelector("#popup-form");
+popupPorm?.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  let isValid =
+    isValidPhone(popupUserPhone.value) &&
+    isValidName(popupUserName.value);
+
+  let formData = new FormData(popupPorm);
+
+  if (isValid) {
+    popupPorm.classList.add("_sending");
 
     let response = await fetch("mail.php", {
       method: "POST",
@@ -79,23 +128,23 @@ form?.addEventListener("submit", async function (e) {
 
     if (response.ok) {
       let result = await response.json();
-      let alertMsg = document.querySelector(".form__success");
-      alertMsg.innerHTML =
-        ' <p class="form__success-msg">Дякуємо! ваша заявка прийнята</p>';
+      let alertMsg = document.querySelector("#popup-form .form__success");
       alertMsg.classList.add("_show__success");
-      form.reset();
-      form.classList.remove("_sending");
+      popupPorm.reset();
+      popupPorm.classList.remove("_sending");
+      let msg = document.querySelector(".popup__alert");
+      msg.innerHTML ='';
     } else {
-      let alertMsg = document.querySelector(".popup__alert");
-      alertMsg.innerHTML = '<p class="alert__msg" >Error!!!</p>';
+      let alertMsg = document.querySelector("#popup-form .popup__alert");
+      alertMsg.innerHTML = '<p class="alert__msg" >Помилка! Спробуйте пізніше</p>';
       alertMsg.classList.add("_show");
       console.log(response.data);
-      form.classList.remove("_sending");
+      popupPorm.classList.remove("_sending");
     }
   } else {
-    let alertMsg = document.querySelector(".popup__alert");
+    let alertMsg = document.querySelector("#popup-form .popup__alert");
     alertMsg.innerHTML =
-      '<p class="alert__msg" >Fill in required fields!!!</p>';
+      '<p class="alert__msg" >Заповніть будь ласка порожні поля!!!</p>';
     alertMsg.classList.add("_show");
     // alert("Fill in required fields!");
   }
